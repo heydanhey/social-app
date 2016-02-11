@@ -16,6 +16,30 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
 
+    if params[:excited]
+      Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 1)
+      post = Post.all.sample
+      redirect_to "/posts/#{post.id}"
+    end
+
+    if params[:amused]
+      Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 2)
+      post = Post.all.sample
+      redirect_to "/posts/#{post.id}"
+    end
+
+    if params[:sympathetic]
+      Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 3)
+      post = Post.all.sample
+      redirect_to "/posts/#{post.id}"
+    end
+
+    if params[:annoyed]
+      Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 4)
+      post = Post.all.sample
+      redirect_to "/posts/#{post.id}"
+    end
+
     if params[:random_next]
       post = Post.all.sample
       redirect_to "/posts/#{post.id}"

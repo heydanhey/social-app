@@ -2,6 +2,13 @@
 
 <h1><%= @post.text %> </h1>
 
+<%= link_to "Excited", "/posts/#{@post.id}?excited=id", class: "btn btn-default" %>
+
+<%= link_to "Amused", "/posts/#{@post.id}?amused=id", class: "btn btn-default" %>
+
+<%= link_to "Annoyed", "/posts/#{@post.id}?annoyed=id", class: "btn btn-default" %>
+
+<%= link_to "Sympathetic", "/posts/#{@post.id}?sympathetic=id", class: "btn btn-default" %>
 
 <p></p>
 <%= link_to "Next Post", "/posts/#{@post.id}?random_next=id", class: "btn btn-default" %>
