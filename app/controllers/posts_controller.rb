@@ -14,7 +14,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
+    @post = Post.all.sample
 
     if params[:excited]
       Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 1)

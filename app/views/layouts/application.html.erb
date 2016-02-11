@@ -22,14 +22,9 @@
 <%= yield %>
 
   <% if current_user %>
-    <li><a href="/">Loggend in as: <%= current_user.email %></a></li>
-    <li><a href="/users/edit">Edit Profile</a></li>
-    <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
-  <% end %>
-
-  <% if current_user.nil? %>
-    <li><a href="/users/sign_up">Sign Up</a></li>
-    <li><a href="/users/sign_in">Log In</a></li>
+    <p><a href="/">Logged in as: <%= current_user.email %></a>
+    <a href="/users/edit">Edit Profile</a>
+    <%= link_to "Sign Out", "/users/sign_out", method: :delete %></p>
   <% end %>
 </body>
 </html>
