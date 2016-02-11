@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SocialApp</title>
+  <title>WeFreshed</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<!-- FLASH MESSAGE -->
+
+    <div class="container">
+      <% flash.each do |name, message| %>
+        <div class="alert alert-<%= name == "alert" || name == "notice" ? "warning" : "name" %> alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= message %>
+          </div>
+      <% end %>
+    </div>
+
 <%= yield %>
 
+  <% if current_user %>
+    <li><a href="/">Loggend in as: <%= current_user.email %></a></li>
+    <li><a href="/users/edit">Edit Profile</a></li>
+    <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
+  <% end %>
+
+  <% if current_user.nil? %>
+    <li><a href="/users/sign_up">Sign Up</a></li>
+    <li><a href="/users/sign_in">Log In</a></li>
+  <% end %>
 </body>
 </html>

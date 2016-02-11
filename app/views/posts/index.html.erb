@@ -1,0 +1,23 @@
+<h1>All Posts</h1>
+
+<table class="table table-condensed">
+  <tr>
+    <th>User</th>
+    <th>Post</th>
+    <th>Emotion</th>
+    <th>Date/Time</th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.user.name %></td>
+    <td><%= post.text %></td>
+    <td><%= post.emotion.name %></td>
+    <td><%= post.friendly_post_time %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "View Random Post", "/posts/1?random_next=id", class: "btn btn-default" %> 
+<%= link_to "Add Post", "/posts/new", class: "btn btn-default" %> 
+<%= link_to "See All Users", "/users", class: "btn btn-default" %> 

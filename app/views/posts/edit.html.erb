@@ -1,0 +1,17 @@
+<h1> Edit Post </h1>
+
+<%= form_tag "/posts/#{@post.id}", method: :patch do %>
+
+  <div class="input-group input-group-lg">
+    <%= label_tag :text, "Edit Text:" %>
+    <%= text_field_tag :text, @post.text, class: 'form-control' %>
+  </div>
+
+  <div class="input-group">
+    <%= label_tag :emotion_id, "Enter Your Emotion:" %>
+    <%= collection_select :emotion, :emotion_id, Emotion.all, :id, :name, selected: @post.emotion.name, prompt: "#{Emotion.find_by(@post.emotion_id)}", class: 'form-control' %>
+  </div>
+
+  <%= submit_tag "Submit", class: "input-group btn btn-primary" %>
+
+<% end %>

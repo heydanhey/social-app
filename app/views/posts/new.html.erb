@@ -1,0 +1,17 @@
+<h1> Add New Post </h1>
+
+<%= form_tag '/posts', method: :post do %>
+
+  <div class="input-group input-group-lg">
+    <%= label_tag :text, "Enter Text:" %>
+    <%= text_field_tag :text, nil, class: 'form-control' %>
+  </div>
+
+  <div class="input-group">
+    <%= label_tag :emotion_id, "Enter Your Emotion:" %>
+    <%= collection_select :emotion, :emotion_id, Emotion.all, :id, :name, prompt: "Please Select", class: 'form-control' %>
+  </div>
+
+  <%= submit_tag "Submit", class: "input-group btn btn-primary" %>
+
+<% end %>

@@ -1,0 +1,11 @@
+<h3>Post Show</h3>
+
+<h1><%= @post.text %> </h1>
+
+
+<p></p>
+<%= link_to "Next Post", "/posts/#{@post.id}?random_next=id", class: "btn btn-default" %>
+
+<%= link_to "Edit Post", "/posts/#{@post.id}/edit", class: "btn btn-default" %>
+
+<%= link_to "Delete Post", "/posts/#{@post.id}", method: :delete, data:{confirm: "Are You Sure"}, class: "btn btn-default" %>
