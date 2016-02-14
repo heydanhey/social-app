@@ -17,88 +17,32 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if params[:excited]
-      if @post.emotion_id == 1
-        Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 1, match: 1)
 
-        # Begin Weef check
-        weactions = Weaction.where(user_id: @post.user_id).where(match: true)
-        weactions.each do |weaction|
-          if weaction.post.user_id == current_user.id
-            flash[:success] = "You Weef'd!"
-            Weef.create(weaction_A_id: @post.user_id, weaction_B_id: current_user.id)
-          end
-        end
-        # End Weef check
-
-      else
-        Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 1)
-      end
-
+      post_action(1)
+      
       post = Post.all.sample
       redirect_to "/posts/#{post.id}"
     end
 
     if params[:amused]
-      if @post.emotion_id == 2
-        Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 2, match: 1)
-
-        # Begin Weef check
-        weactions = Weaction.where(user_id: @post.user_id).where(match: true)
-        weactions.each do |weaction|
-          if weaction.post.user_id == current_user.id
-            flash[:success] = "You Weef'd!"
-            Weef.create(weaction_A_id: @post.user_id, weaction_B_id: current_user.id)
-          end
-        end
-        # End Weef check
-
-      else
-        Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 2)
-      end
+      
+      post_action(2)
 
       post = Post.all.sample
       redirect_to "/posts/#{post.id}"
     end
 
     if params[:sympathetic]
-      if @post.emotion_id == 3
-        Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 3, match: 1)
-
-        # Begin Weef check
-        weactions = Weaction.where(user_id: @post.user_id).where(match: true)
-        weactions.each do |weaction|
-          if weaction.post.user_id == current_user.id
-            flash[:success] = "You Weef'd!"
-            Weef.create(weaction_A_id: @post.user_id, weaction_B_id: current_user.id)
-          end
-        end
-        # End Weef check
-
-      else
-        Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 3)
-      end
+      
+      post_action(3)
 
       post = Post.all.sample
       redirect_to "/posts/#{post.id}"
     end
 
     if params[:annoyed]
-      if @post.emotion_id == 4
-        Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 4, match: 1)
-
-        # Begin Weef check
-        weactions = Weaction.where(user_id: @post.user_id).where(match: true)
-        weactions.each do |weaction|
-          if weaction.post.user_id == current_user.id
-            flash[:success] = "You Weef'd!"
-            Weef.create(weaction_A_id: @post.user_id, weaction_B_id: current_user.id)
-          end
-        end
-        # End Weef check
-
-      else
-        Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: 4)
-      end
+      
+      post_action(4)
 
       post = Post.all.sample
       redirect_to "/posts/#{post.id}"

@@ -5,5 +5,6 @@ class Post < ActiveRecord::Base
   def friendly_post_time
     created_at.strftime("%m-%e-%y %H:%M")
   end
+
   
 end
