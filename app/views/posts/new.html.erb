@@ -1,4 +1,9 @@
-<h1> Add New Post </h1>
+<% if current_user.posts.count == 0 %>
+  <h1> Welcome New User! </h1>
+  <h2> Please create your Anugural Post to Activate your Account! </h2>
+  <% else %>
+  <h1> Add New Post </h1>
+<% end %>
 
 <%= form_tag '/posts', method: :post do %>
 

@@ -19,12 +19,15 @@
       <% end %>
     </div>
 
-<%= yield %>
+<div class="container-narrow">
+  <div class="masthead">
+    <%= render 'layouts/user_header' %>
+    <h3 class="muted"><%= link_to "WeFreshed", "/posts/#{Post.all.sample.id}" %></h3>
+ 
+  </div>
+  <hr />
+  <%= yield %>
+</div>
 
-  <% if current_user %>
-    <p><a href="/">Logged in as: <%= current_user.email %></a>
-    <a href="/users/edit">Edit Profile</a>
-    <%= link_to "Sign Out", "/users/sign_out", method: :delete %></p>
-  <% end %>
 </body>
 </html>

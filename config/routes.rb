@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   devise_scope :user do
-   authenticated :user do
-     root 'posts#show', as: :authenticated_root
-   end
+    authenticated :user do
+      root 'users#show', as: :authenticated_root
+    end
 
-   unauthenticated do
-     root 'devise/registrations#new', as: :unauthenticated_root
-   end
- end
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-  root 'posts#index'
+    unauthenticated do
+      root 'devise/registrations#new', as: :unauthenticated_root
+    end
+  end
+
+  root 'posts#show'
   get '/posts' => 'posts#index'
   get '/posts/new' => 'posts#new'
   post '/posts' => 'posts#create'
@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   get '/posts/:id/edit' => 'posts#edit'
   patch 'posts/:id' => 'posts#update'
   delete '/posts/:id' => 'posts#destroy'
+
+  get '/users/:id' => 'users#show'
 
 end

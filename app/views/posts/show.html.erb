@@ -1,4 +1,8 @@
-<h1><%= @post.text %> </h1>
+<div class="jumbotron">
+
+  <% if user_signed_in? %>
+
+    <h1><%= @post.text %> </h1>
 
 <%= link_to "Excited", "/posts/#{@post.id}?excited=id", class: "btn btn-default" %>
 
@@ -7,4 +11,21 @@
 <%= link_to "Annoyed", "/posts/#{@post.id}?annoyed=id", class: "btn btn-default" %>
 
 <%= link_to "Sympathetic", "/posts/#{@post.id}?sympathetic=id", class: "btn btn-default" %>
+   
+  <% else %>
 
+    <h1>Welcome, you're not logged in!</h1>
+    <p class="lead">
+      You must sign in or sign up before you can access our super sweet,
+      top secret content.
+    </p>
+    <div class="row-fluid">
+      <div class="span6">
+        <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success" %>
+      
+      
+        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+</div>
