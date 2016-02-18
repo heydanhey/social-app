@@ -1,0 +1,30 @@
+<h1>Your Weefs</h1>
+
+
+
+<% @weefs.each do |weef| %>
+<h3> You weef'd with: <%= @weefer.name %> </h3>
+  <table class="table">
+  <tr>
+    <th>Post</th>
+    <th>Emotion</th>
+  </tr>
+  <tr>
+    <td><%= Post.find(Weaction.find(weef.weaction_A_id).post_id).text %></td>
+    <td><%= Post.find(Weaction.find(weef.weaction_A_id).post_id).emotion.name %></td>
+  </tr>
+  </table>
+
+  <table class="table">
+  <tr>
+    <th>Post</th>
+    <th>Emotion</th>
+  </tr>
+  <tr>
+    <td><%= Post.find(Weaction.find(weef.weaction_B_id).post_id).text %></td>
+    <td><%= Post.find(Weaction.find(weef.weaction_B_id).post_id).emotion.name %></td>
+  </tr>
+  </table>
+<hr>
+<hr>
+<% end %>

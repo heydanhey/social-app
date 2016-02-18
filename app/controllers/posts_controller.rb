@@ -15,38 +15,18 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    gon.post = @post
 
     if params[:excited]
-
       post_action(1)
-      
-      post = Post.all.sample
-      redirect_to "/posts/#{post.id}"
-    end
-
-    if params[:amused]
-      
+    elsif params[:amused]
       post_action(2)
-
-      post = Post.all.sample
-      redirect_to "/posts/#{post.id}"
-    end
-
-    if params[:sympathetic]
-      
+    elsif params[:sympathetic]
       post_action(3)
-
-      post = Post.all.sample
-      redirect_to "/posts/#{post.id}"
-    end
-
-    if params[:annoyed]
-      
+    elsif params[:annoyed]
       post_action(4)
-
-      post = Post.all.sample
-      redirect_to "/posts/#{post.id}"
     end
+    
   end
 
   def edit

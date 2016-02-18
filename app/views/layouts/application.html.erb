@@ -3,8 +3,9 @@
 <head>
   <title>WeFreshed</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <%= include_gon %>
 </head>
 <body>
 
@@ -23,9 +24,7 @@
   <div class="masthead">
     <%= render 'layouts/user_header' %>
     <h3 class="muted"><%= link_to "WeFreshed", "/posts/#{Post.all.sample.id}" %></h3>
- 
   </div>
-  <hr />
   <%= yield %>
 </div>
 
