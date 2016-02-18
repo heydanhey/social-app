@@ -1,6 +1,22 @@
 <h4> Profile Page </h4>
 
-<h1>Username: <%= @user.name %> </h1>
+<h1> Username: <%= @user.name %> </h1>
+
+<h4> Set Location Radius: </h4>
+
+<%= form_tag "/users/#{current_user.id}", method: :patch do %>
+
+  <%= radio_button_tag(:location_radius, 100) %>
+  <%= label_tag(:radius_100, "100 miles") %>
+  <%= radio_button_tag(:location_radius, 500) %>
+  <%= label_tag(:radius_500, "500 miles") %>
+  <%= radio_button_tag(:location_radius, 1000) %>
+  <%= label_tag(:radius_1000, "1000 miles") %>
+  <%= radio_button_tag(:location_radius, 5000) %>
+  <%= label_tag(:radius_5000, "5000 miles") %>
+
+<%= submit_tag "Submit", class: "input-group btn btn-primary" %>
+<% end %>
 
 <h4> A list of all your posts: </h4>
 

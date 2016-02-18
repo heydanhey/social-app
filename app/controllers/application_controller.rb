@@ -35,13 +35,21 @@ class ApplicationController < ActionController::Base
       end
 
       # Assign a new random post
-      @post = Post.all.sample
+      # @post = Post.all.sample # Original Call to gather random post
 
-      # this while loop just prevents the current user being fed his own posts, thus you can not weef with yourself
-      while @post.user_id == current_user.id
-        @post = Post.all.sample
+      # This is where I pull in a random post from a selected location radius
+      # If statement to check to make sure a nearby post exits?
+      if (@post = Post.get_post_by_location(current_user)) != nil
+        # this while loop just prevents the current user being fed his own posts, thus you can not weef with yourself
+        while @post.user_id == current_user.id
+          @post = Post.get_post_by_location(current_user)
+        end
+        redirect_to "/posts/#{@post.id}"
+      else
+        flash[:warning] = "No posts in your location radius, please broaden your search!"
+        # If there's no posts within radius, redirect to user profile
+        redirect_to "/users/#{current_user.id}"
       end
-      redirect_to "/posts/#{@post.id}"
     end
 
     def weef_count

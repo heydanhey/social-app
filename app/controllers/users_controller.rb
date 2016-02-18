@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find_by(id: current_user.id)
+    @user = User.find(current_user.id)
     if @user.posts.count == 0
       flash[:warning] == "Account not activated"
       redirect_to '/posts/new'
@@ -11,6 +11,15 @@ class UsersController < ApplicationController
       @user.name = Bazaar.heroku
       @user.save
     end
+  end
+
+  def update
+    @user = User.find(current_user.id)
+
+    @user.update(location_radius: params[:location_radius])
+
+    flash[:success] = "Your Radius is Set"
+    render :show
   end
 
   def destroy

@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :weactions
   has_many :weefs, through: :weactions
+
+  reverse_geocoded_by :latitude, :longitude
 end

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   delete '/posts/:id' => 'posts#destroy'
 
   get '/users/:id' => 'users#show'
+  patch '/users/:id' => 'users#update'
   delete '/users/:id' => 'users#destroy'
 
   get '/weefs/' => 'weefs#index'
