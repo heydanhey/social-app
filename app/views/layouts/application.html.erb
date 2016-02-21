@@ -8,7 +8,7 @@
   <%= include_gon %>
 </head>
 <body>
-
+  <div class="main-body">
 <!-- FLASH MESSAGE -->
 
     <div class="container">
@@ -20,13 +20,14 @@
       <% end %>
     </div>
 
-<div class="container-narrow">
-  <div class="masthead">
-    <%= render 'layouts/user_header' %>
-    <h3 class="muted"><%= link_to "WeFreshed", "/posts/#{Post.all.sample.id}" %></h3>
-  </div>
-  <%= yield %>
-</div>
+ 
+      <%= yield %>
 
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <%= render 'layouts/user_header' %>
+    </nav>
+    
+  </div>
 </body>
 </html>

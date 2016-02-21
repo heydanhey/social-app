@@ -3,28 +3,36 @@
 
 
 <% @weefs.each do |weef| %>
-<h3> You weef'd with: <%= weef.weefer(current_user.id).name %> </h3>
-  <table class="table">
-  <tr>
-    <th>Post</th>
-    <th>Emotion</th>
-  </tr>
-  <tr>
-    <td><%= weef.post_a.text %></td>
-    <td><%= weef.post_a.emotion.name %></td>
-  </tr>
-  </table>
+  <h3> You weef'd with: <%= weef.weefer(current_user.id).name %> </h3>
+    <table class="table">
+    <tr>
+      <th>Post</th>
+      <th>Emotion</th>
+    </tr>
+    <tr>
+      <td><%= weef.post_a.text %></td>
+      <td><%= weef.post_a.emotion.name %></td>
+    </tr>
+    </table>
 
-  <table class="table">
-  <tr>
-    <th>Post</th>
-    <th>Emotion</th>
-  </tr>
-  <tr>
-    <td><%= weef.post_b.text %></td>
-    <td><%= weef.post_b.emotion.name %></td>
-  </tr>
-  </table>
-<hr>
-<hr>
+    <table class="table">
+    <tr>
+      <th>Post</th>
+      <th>Emotion</th>
+    </tr>
+    <tr>
+      <td><%= weef.post_b.text %></td>
+      <td><%= weef.post_b.emotion.name %></td>
+    </tr>
+    </table>
+
+  <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default" %>
+
+    <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default" %>
+
+  <%= link_to "enter weef chat", "/posts/", class: "btn btn-default" %>
+
+  <hr>
+  <hr>  
+
 <% end %>

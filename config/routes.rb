@@ -26,5 +26,6 @@ Rails.application.routes.draw do
   delete '/users/:id' => 'users#destroy'
 
   get '/weefs/' => 'weefs#index'
+  get '/weefs/:id' => 'weefs#show'
 
 end

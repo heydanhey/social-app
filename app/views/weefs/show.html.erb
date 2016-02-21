@@ -1,0 +1,43 @@
+<% if @see_post %>
+
+<h1>their post archive</h1>
+
+<table class="table table-condensed">
+  <tr>
+    <th>User</th>
+    <th>Post</th>
+    <th>Emotion</th>
+    <th>Date/Time</th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.user.name %></td>
+    <td><%= post.text %></td>
+    <td><%= post.emotion.name %></td>
+    <td><%= post.friendly_post_time %></td>
+  </tr>
+<% end %>
+</table>
+
+<% else %>
+
+<h1>their Weactions</h1>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Post</th>
+    <th>Their Weaction</th>
+  </tr>
+
+<% @weactions.each do |weaction| %>
+  <tr>
+    <td><%= weaction.post.text %></td>
+    <td><%= weaction.post.emotion.name %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+
+
