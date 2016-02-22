@@ -9,6 +9,10 @@ class UsersController < ApplicationController
 
     if @user.name == nil
       @user.name = Bazaar.heroku
+      # Assign location coordinates
+      coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
+      @user.latitude = coordinates[0]
+      @user.longitude = coordinates[1]
       @user.save
     end
   end

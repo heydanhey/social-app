@@ -7,7 +7,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create({text: params[:text], user_id: current_user.id, emotion_id: params[:emotion][:emotion_id]})
+    # Assign location coordinates
+    coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
+    @post = Post.create({text: params[:text], user_id: current_user.id, emotion_id: params[:emotion_id], latitude: coordinates[0], longitude: coordinates[1]})
 
     flash[:success] = "Post Created"
     redirect_to "/users/#{current_user.id}"

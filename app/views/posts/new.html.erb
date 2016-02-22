@@ -1,3 +1,5 @@
+<div class="create-post">
+
 <% if current_user.posts.count == 0 %>
   <h1> Welcome New User! </h1>
   <h2> Please create an inaugural post to Activate your Account! </h2>
@@ -9,14 +11,23 @@
 
   <div class="input-group input-group-lg">
     <%= label_tag :text, "Enter Text:" %>
-    <%= text_field_tag :text, nil, class: 'form-control' %>
+    <%= text_field_tag :text, nil, class: 'form-control', rows: "3", placeholder: "Write Something WeFreshing" %>
   </div>
 
   <div class="input-group">
-    <%= label_tag :emotion_id, "Enter Your Emotion:" %>
-    <%= collection_select :emotion, :emotion_id, Emotion.all, :id, :name, prompt: "Please Select", class: 'form-control' %>
-  </div>
+  <%= radio_button_tag(:emotion_id, 1) %>
+  <%= label_tag(:emotion_id, image_tag("Up.png", size: "50x50")) %>
+  <%= radio_button_tag(:emotion_id, 2) %>
+  <%= label_tag(:emotion_id, image_tag("Right.png", size: "50x50")) %>
+  <%= radio_button_tag(:emotion_id, 3) %>
+  <%= label_tag(:emotion_id, image_tag("Down.png", size: "50x50")) %>
+  <%= radio_button_tag(:emotion_id, 4) %>
+  <%= label_tag(:emotion_id, image_tag("Left.png", size: "50x50")) %>
+  <div>
+
 
   <%= submit_tag "Submit", class: "input-group btn btn-primary" %>
 
 <% end %>
+
+</div>
