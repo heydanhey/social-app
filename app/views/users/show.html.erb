@@ -23,7 +23,10 @@
 <table class="table table-condensed">
   <tr>
     <th>Post</th>
-    <th>Emotion</th>
+    <th>Excited</th>
+    <th>Amused</th>
+    <th>Sympathetic</th>
+    <th>Annoyed</th>
     <th>Date/Time</th>
     <th>Action</th>
   </tr>
@@ -31,7 +34,10 @@
 <% @user.posts.each do |post| %>
   <tr>
     <td><%= post.text %></td>
-    <td><%= post.emotion.name %></td>
+    <td><%= post.get_percentage(1) %></td>
+    <td><%= post.get_percentage(2) %></td>
+    <td><%= post.get_percentage(3) %></td>
+    <td><%= post.get_percentage(4) %></td>
     <td><%= post.friendly_post_time %></td>
     <td><%= link_to "Edit", "/posts/#{post.id}/edit", :class => "btn btn-default", :role => "button" %><%= link_to "Delete", "/posts/#{post.id}", method: :delete, data:{confirm: "Are You Sure"}, :class => "btn btn-default", :role => "button" %></td>
   </tr>

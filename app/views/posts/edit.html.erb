@@ -1,5 +1,7 @@
 <h1> Edit Post </h1>
 
+<%= form_tag "/posts/#{@post.id}", method: :patch do %>
+
   <div class="input-group input-group-lg">
     <%= label_tag :text, "Edit Text:" %>
     <%= text_field_tag :text, @post.text, class: 'form-control' %>

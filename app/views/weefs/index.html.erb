@@ -1,38 +1,43 @@
+<div class="jumbotron">
+
 <h1>Your Weefs</h1>
 
-
+<div class="weef-box">
 
 <% @weefs.each do |weef| %>
   <h3> You weef'd with: <%= weef.weefer(current_user.id).name %> </h3>
-    <table class="table">
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-condensed">
     <tr>
-      <th>Post</th>
-      <th>Emotion</th>
+      <th class="post">Your Post</th>
+      <th class="emotion">Your Emotion</th>
     </tr>
     <tr>
-      <td><%= weef.post_a.text %></td>
-      <td><%= weef.post_a.emotion.name %></td>
-    </tr>
-    </table>
-
-    <table class="table">
-    <tr>
-      <th>Post</th>
-      <th>Emotion</th>
-    </tr>
-    <tr>
-      <td><%= weef.post_b.text %></td>
-      <td><%= weef.post_b.emotion.name %></td>
+      <td><%= weef.my_post(current_user.id).text %></td>
+      <td><%= weef.my_post(current_user.id).emotion.name %></td>
     </tr>
     </table>
+  </div>
 
-  <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default" %>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-condensed">
+    <tr>
+      <th class="post">Their Post</th>
+      <th class="emotion">Their Emotion</th>
+    </tr>
+    <tr>
+      <td><%= weef.their_post(current_user.id).text %></td>
+      <td><%= weef.their_post(current_user.id).emotion.name %></td>
+    </tr>
+    </table>
+  </div>
+
+    <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default" %>
 
     <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default" %>
 
-  <%= link_to "enter weef chat", "/posts/", class: "btn btn-default" %>
-
-  <hr>
-  <hr>  
-
+    <%= link_to "enter weef chat", "/posts/", class: "btn btn-default" %>
 <% end %>
+  </div>
+<br> 
+</div>

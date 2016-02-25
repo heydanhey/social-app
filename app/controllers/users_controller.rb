@@ -7,14 +7,18 @@ class UsersController < ApplicationController
       redirect_to '/posts/new'
     end
 
-    if @user.name == nil
+    # Once per Session
+    # Assign location coordinates (Using Faker for Now)
+    # Reassign user name for current session
+    unless session[:update_user]
       @user.name = Bazaar.heroku
-      # Assign location coordinates
       coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
       @user.latitude = coordinates[0]
       @user.longitude = coordinates[1]
+      session[:update_user] = true
       @user.save
     end
+
   end
 
   def update
@@ -29,6 +33,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(current_user.id)
     @posts = @user.posts
+    # I'm removing all the posts for now, but I probably want to just set them to inactive
     @posts.destroy_all
     @user.destroy
 

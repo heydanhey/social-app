@@ -1,9 +1,17 @@
+
 <div class="jumbotron">
 
   <% if user_signed_in? %>
 
     <h1><%= @post.text %></h1>
 
+    <%= link_to "Excited (up)", "/posts/#{@post.id}?excited=id", class: "btn btn-default" %>
+
+    <%= link_to "Amused (right)", "/posts/#{@post.id}?amused=id", class: "btn btn-default" %>
+
+    <%= link_to "Sympathetic (down)", "/posts/#{@post.id}?sympathetic=id", class: "btn btn-default" %>
+
+    <%= link_to "Annoyed (left)", "/posts/#{@post.id}?annoyed=id", class: "btn btn-default" %>
    
   <% else %>
 
@@ -26,24 +34,3 @@
 
 </div>
 
-<div class="posts">
-
-    <%= link_to image_tag("Up.png"), "/posts/#{@post.id}?excited=id" %>
-
-    <%= link_to image_tag("Right.png"), "/posts/#{@post.id}?amused=id" %>
-
-    <%= link_to image_tag("Down.png"), "/posts/#{@post.id}?sympathetic=id" %>
-
-    <%= link_to image_tag("Left.png"), "/posts/#{@post.id}?annoyed=id" %>
-
-    <br>
-
-    <%= link_to "Excited (up)", "/posts/#{@post.id}?excited=id", class: "btn btn-default" %>
-
-    <%= link_to "Amused (right)", "/posts/#{@post.id}?amused=id", class: "btn btn-default" %>
-
-    <%= link_to "Sympathetic (down)", "/posts/#{@post.id}?sympathetic=id", class: "btn btn-default" %>
-
-    <%= link_to "Annoyed (left)", "/posts/#{@post.id}?annoyed=id", class: "btn btn-default" %>
-
-</div>

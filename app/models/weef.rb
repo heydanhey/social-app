@@ -29,4 +29,20 @@ class Weef < ActiveRecord::Base
     end
   end
 
+  def my_post(id)
+    if post_a.user_id == id
+      post_a
+    else
+      post_b
+    end
+  end
+
+  def their_post(id)
+    if post_a.user_id == id
+      post_b
+    else
+      post_a
+    end
+  end
+
 end
