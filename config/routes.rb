@@ -28,4 +28,7 @@ Rails.application.routes.draw do
   get '/weefs/' => 'weefs#index'
   get '/weefs/:id' => 'weefs#show'
 
+  get '/chats/:id' => 'chats#show'
+  post '/chats/:id' => 'chats#create'
+
 end

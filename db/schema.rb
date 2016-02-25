@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218014938) do
+ActiveRecord::Schema.define(version: 20160225023446) do
+
+  create_table "chats", force: :cascade do |t|
+    t.integer  "weef_id",    limit: 4
+    t.integer  "user_id",    limit: 4
+    t.string   "text",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "emotions", force: :cascade do |t|
     t.string   "name",       limit: 255

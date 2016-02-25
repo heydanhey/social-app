@@ -3,6 +3,7 @@ class Weef < ActiveRecord::Base
   # belongs_to :weaction_id, class_name: Weaction, :foreign_key => :weaction_A_id
   # belongs_to :weaction_id, class_name: Weaction, :foreign_key => :weaction_B_id
   has_many :weactions
+  has_many :chats
   # has_many :weactions, class_name: Weaction, :foreign_key => :weaction_B_id
 
   def user_a

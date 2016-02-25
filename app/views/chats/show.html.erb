@@ -1,0 +1,20 @@
+<h1> Weef Chat!!! </h1>
+
+<% @chats.each do |chat| %>
+
+  <p> <%= chat.text %> </p>
+
+<% end %>
+
+<br>
+
+<%= form_tag "/chats/#{@chats[0].weef_id}", method: :post do %>
+
+  <div class="input-group input-group-lg">
+    <%= label_tag :text, "Enter Text:" %>
+    <%= text_field_tag :text, nil, class: 'form-control', rows: "3", placeholder: "Chat with your Weefer!" %>
+  </div>
+
+<%= submit_tag "Submit", class: "input-group btn btn-primary" %>
+
+<% end %>

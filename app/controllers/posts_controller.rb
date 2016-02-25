@@ -7,8 +7,13 @@ class PostsController < ApplicationController
   end
 
   def create
+
     # Assign location coordinates
     coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
+
+    if coordinates == nil
+      coordinates = [0,0]
+    end
 
     @post = Post.create({text: params[:text], user_id: current_user.id, emotion_id: params[:emotion_id], latitude: coordinates[0], longitude: coordinates[1]})
 
@@ -75,6 +80,9 @@ class PostsController < ApplicationController
           weef.save
         end
         # End Weef check
+
+        # Since a new weef was created, lets go ahead and activate the weef chat room [start clock]
+        Chat.create(weef_id: weef.id)
 
       else
         # if the params did not match the post author's intended emotion, then a weaction is created with the default, match=false

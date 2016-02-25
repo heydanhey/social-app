@@ -36,7 +36,7 @@
 
     <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default" %>
 
-    <%= link_to "enter weef chat", "/posts/", class: "btn btn-default" %>
+    <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-default" %>
 <% end %>
   </div>
 <br> 
