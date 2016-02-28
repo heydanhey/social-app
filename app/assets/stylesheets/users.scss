@@ -1,3 +1,26 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.devise {
+  max-width: 80%;
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  border-radius: 5%;
+}
+.devise img {
+  // min-width: 50%;
+  max-height: 300px;
+  padding: 20px;
+}
+
+.user {
+  max-width: 80%;
+  padding: 25px;
+  margin: auto;
+  // text-align: center;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.user table {
+  border: #ff9966;
+}

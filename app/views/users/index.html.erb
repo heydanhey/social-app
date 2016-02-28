@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <div class="user">
+
+<h3> my post archive: </h3>
+
+<table class="table table-condensed">
+
+<% @user.posts.each do |post| %>
+  <tr>
+    <td><%= post.text %></td>
+
+    <td><%= post.get_percentage(1) %></td>
+
+    <td><%= post.get_percentage(2) %></td>
+
+    <td><%= post.get_percentage(3) %></td>
+
+    <td><%= post.get_percentage(4) %></td>
+
+    <td><%= post.friendly_post_time %></td>
+
+    <td><a href=<%="/posts/#{post.id}"%> data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"> </a></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "back", "/users/#{current_user.id}", class: "btn btn-default" %> 
+
+</div>
+</div>

@@ -5,7 +5,7 @@ class WeefsController < ApplicationController
   end
 
   def show
-    # @weef = Weef.find(params[:id])
+    #@weef = Weef.find(params[:id])
     if params[:their_posts]
       @see_post = true
       @posts = Post.where(user_id: params[:id])

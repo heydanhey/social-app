@@ -1,3 +1,6 @@
+<div class="jumbotron">
+<div class="weef">
+
 <% if @see_post %>
 
 <h1>their post archive</h1>
@@ -26,18 +29,23 @@
 
 <table class="table table-condensed">
   <tr>
-    <th>Post</th>
-    <th>Their Weaction</th>
+    <th>Posts</th>
+    <th>Weactions</th>
   </tr>
 
 <% @weactions.each do |weaction| %>
   <tr>
+    <% if weaction.post != nil %>
     <td><%= weaction.post.text %></td>
     <td><%= weaction.post.emotion.name %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <% end %>
+
+</div>
+</div>
 
 

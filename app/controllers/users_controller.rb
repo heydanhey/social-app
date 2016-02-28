@@ -1,7 +1,23 @@
 class UsersController < ApplicationController
 
-  def show
+  def index
+    # This action will be the User Post Arcive, where a user can see a list of all his posts
     @user = User.find(current_user.id)
+
+    # This will be for sorting
+    # if params[:sort_up]
+    #   @posts = Post.order(:emotion_id)
+    # end
+
+    # if params[:sort_down]
+    #   @posts = Post.order(emotion_id: :desc)
+    # end
+  end
+
+  def show
+    # This page will be the standard User Profile page
+    @user = User.find(current_user.id)
+    # If the user has no posts, he is directed to post and inaugural post [Might need to implement before action]
     if @user.posts.count == 0
       flash[:warning] == "Account not activated"
       redirect_to '/posts/new'
@@ -13,11 +29,17 @@ class UsersController < ApplicationController
     unless session[:update_user]
       @user.name = Bazaar.heroku
       coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
+      # if Geocoder fails assigns these fake coords
+      if coordinates == nil
+        coordinates = [Faker::Address.latitude, Faker::Address.longitude]
+      end
+      
       @user.latitude = coordinates[0]
       @user.longitude = coordinates[1]
       session[:update_user] = true
       @user.save
     end
+    @image = Faker::Avatar.image(@user.name, "200x200")
 
   end
 
@@ -27,7 +49,7 @@ class UsersController < ApplicationController
     @user.update(location_radius: params[:location_radius])
 
     flash[:success] = "Your Radius is Set"
-    render :show
+    redirect_to "/users/#{current_user.id}"
   end
 
   def destroy

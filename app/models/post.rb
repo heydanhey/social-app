@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
 
   def friendly_post_time
-    created_at.strftime("%m-%e-%y %H:%M")
+    created_at.strftime("%A, %b %d")
   end
 
   def self.get_post_by_location(user)
@@ -28,3 +28,4 @@ class Post < ActiveRecord::Base
   end
   
 end
+ 

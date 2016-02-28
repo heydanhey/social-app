@@ -1,51 +1,45 @@
-<h4> Profile Page </h4>
+<div class="jumbotron">
+  <div class="user">
+    <table>
+      <tr>
+        <td><%= image_tag(@image) %></td>
+        <td>
+          <h3><%= @user.name %></h3>
+          <br />
+          <h4>Set Location Radius:<h4>
 
-<h1> Username: <%= @user.name %> </h1>
+          <%= form_tag "/users/#{current_user.id}", method: :patch do %>
 
-<h4> Set Location Radius: </h4>
+            <%= radio_button_tag(:location_radius, 100) %>
+            <%= label_tag(:radius_100, "100 miles") %>
+            <%= radio_button_tag(:location_radius, 500) %>
+            <%= label_tag(:radius_500, "500 miles") %>
+            <%= radio_button_tag(:location_radius, 1000) %>
+            <%= label_tag(:radius_1000, "1000 miles") %>
+            <%= radio_button_tag(:location_radius, 5000) %>
+            <%= label_tag(:radius_5000, "5000 miles") %>
 
-<%= form_tag "/users/#{current_user.id}", method: :patch do %>
+          <%= submit_tag "Submit", class: "btn btn-default" %>
+          <% end %>
 
-  <%= radio_button_tag(:location_radius, 100) %>
-  <%= label_tag(:radius_100, "100 miles") %>
-  <%= radio_button_tag(:location_radius, 500) %>
-  <%= label_tag(:radius_500, "500 miles") %>
-  <%= radio_button_tag(:location_radius, 1000) %>
-  <%= label_tag(:radius_1000, "1000 miles") %>
-  <%= radio_button_tag(:location_radius, 5000) %>
-  <%= label_tag(:radius_5000, "5000 miles") %>
+        </td>
+      </tr>
+    </table>
 
-<%= submit_tag "Submit", class: "input-group btn btn-primary" %>
-<% end %>
 
-<h4> A list of all your posts: </h4>
+    <hr>
 
-<table class="table table-condensed">
-  <tr>
-    <th>Post</th>
-    <th>Excited</th>
-    <th>Amused</th>
-    <th>Sympathetic</th>
-    <th>Annoyed</th>
-    <th>Date/Time</th>
-    <th>Action</th>
-  </tr>
 
-<% @user.posts.each do |post| %>
-  <tr>
-    <td><%= post.text %></td>
-    <td><%= post.get_percentage(1) %></td>
-    <td><%= post.get_percentage(2) %></td>
-    <td><%= post.get_percentage(3) %></td>
-    <td><%= post.get_percentage(4) %></td>
-    <td><%= post.friendly_post_time %></td>
-    <td><%= link_to "Edit", "/posts/#{post.id}/edit", :class => "btn btn-default", :role => "button" %><%= link_to "Delete", "/posts/#{post.id}", method: :delete, data:{confirm: "Are You Sure"}, :class => "btn btn-default", :role => "button" %></td>
-  </tr>
-<% end %>
-</table>
+    <%= link_to "my posts", "/users", class: "btn btn-default" %> 
 
-<%= link_to "Back to Posts", "/posts/#{Post.all.sample.id}", class: "btn btn-default" %> 
-<%= link_to "Add Post", "/posts/new", class: "btn btn-default" %>
-<%= link_to "Delete Yourself!", "/users/#{current_user.id}", method: :delete, data:{confirm: "Are You Sure"}, :class => "btn btn-default", :role => "button" %> 
+    <%= link_to "my weefs", "/weefs", class: "btn btn-default" %>
+
+    <%= link_to "settings", "/posts/new", class: "btn btn-default" %>
+
+    <%= link_to "Delete Yourself!", "/users/#{current_user.id}", method: :delete, data:{confirm: "Are You Sure"}, :class => "btn btn-default", :role => "button" %> 
+
+  </div>
+</div>
+
 
 
