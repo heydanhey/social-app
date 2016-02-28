@@ -1,12 +1,16 @@
-<div class="jumbotron">
-  <div class="user">
-    <table>
-      <tr>
-        <td><%= image_tag(@image) %></td>
-        <td>
+<div class="jumbotron user">
+
+<div class="row">
+
+  <div class="col-xs-6 col-md-4"> <%= image_tag(@image, size: "200x200") %></div>
+
+  <div class="col-xs-12 col-md-8">
+
+ 
           <h3><%= @user.name %></h3>
           <br />
-          <h4>Set Location Radius:<h4>
+          <h4>Set Location Radius:</h4>
+          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
 
           <%= form_tag "/users/#{current_user.id}", method: :patch do %>
 
@@ -21,12 +25,8 @@
 
           <%= submit_tag "Submit", class: "btn btn-default" %>
           <% end %>
-
-        </td>
-      </tr>
-    </table>
-
-
+</div>
+</div>
     <hr>
 
 
@@ -38,7 +38,6 @@
 
     <%= link_to "Delete Yourself!", "/users/#{current_user.id}", method: :delete, data:{confirm: "Are You Sure"}, :class => "btn btn-default", :role => "button" %> 
 
-  </div>
 </div>
 
 

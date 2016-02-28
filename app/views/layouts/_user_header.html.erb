@@ -1,8 +1,8 @@
 <ul class="nav nav-pills pull-right">
   <% if user_signed_in? %>
-    <li><a href="/posts/<%=Post.all.sample.id%>"><span class="glyphicon glyphicon-home" aria-hidden="true"> View Posts </a></li>
-    <li><a href="/posts/new"><span class="glyphicon glyphicon-plus" aria-hidden="true"> Create Post </a></li>
-    <li><a href="/users/<%= current_user.id %>"><span class="glyphicon glyphicon-user" aria-hidden="true"> <%= current_user.name %></a></li>
+    <li><a href="/posts/<%=Post.all.sample.id%>"><span class="glyphicon glyphicon-home" aria-hidden="true"></a></li>
+    <li><a href="/posts/new"><span class="glyphicon glyphicon-plus" aria-hidden="true"></a></li>
+    <li><a href="/users/<%= current_user.id %>"><span class="glyphicon glyphicon-user" aria-hidden="true"></a></li>
     <li><a href="/weefs"><span class="glyphicon glyphicon-heart" aria-hidden="true"> <%= @weef_count %></a></li>
     <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
   <% else %>

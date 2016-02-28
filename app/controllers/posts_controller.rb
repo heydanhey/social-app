@@ -60,6 +60,10 @@ class PostsController < ApplicationController
     #number is representative of each emotion_id, 1=excited, 2=amused, 3=sympathetic, 4=annoyed
 
       if @post.emotion_id == emotion
+        # double check to make sure a user isn't weactiong to his own post
+        if @post.user_id == current_user.id
+          redirect_to "/posts/#{Post.sample}"
+        end
         # if the params match the post author's intended emotion, then a weaction is created with match=true
         this_weaction = Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: emotion, match: 1)
 
@@ -95,10 +99,6 @@ class PostsController < ApplicationController
       # This is where I pull in a random post from a selected location radius
       # If statement to check to make sure a nearby post exits?
       if (@post = Post.get_post_by_location(current_user)) != nil
-        # this while loop just prevents the current user being fed his own posts, thus you can not weef with yourself
-        while @post.user_id == current_user.id
-          @post = Post.get_post_by_location(current_user)
-        end
         redirect_to "/posts/#{@post.id}"
       else
         flash[:warning] = "No posts in your location radius, please broaden your search!"

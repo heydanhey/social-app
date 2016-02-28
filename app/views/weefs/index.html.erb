@@ -1,5 +1,4 @@
-<div class="jumbotron">
-<div class="weef">
+<div class="jumbotron weef">
 
 <h2>Your Weefs</h2>
 
@@ -7,6 +6,7 @@
 
 <% @weefs.each do |weef| %>
   <h4> You weef'd with: <%= weef.weefer(current_user.id).name%></h4>
+  <h4> Time left: <%= weef.time_left_display %> </h4>
   <div class="table-responsive">
     <table class="table table-striped table-bordered table-condensed">
     <tr>
@@ -41,5 +41,4 @@
 <% end %>
   </div>
 <br> 
-</div>
 </div>

@@ -1,7 +1,13 @@
 class WeefsController < ApplicationController
 
   def index
-    @weefs = current_user.weefs.all
+    all_weefs = current_user.weefs.all
+    @weefs = []
+    all_weefs.each do |weef|
+      unless weef.time_left <= 0
+        @weefs << weef
+      end
+    end
   end
 
   def show

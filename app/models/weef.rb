@@ -46,4 +46,14 @@ class Weef < ActiveRecord::Base
     end
   end
 
+  def time_left
+    (created_at + 24.hours)-Time.now
+  end
+
+  def time_left_display
+    t = (created_at + 24.hours)-Time.now
+    Time.at(t).utc.strftime("%H:%M:%S")
+  end
+
+
 end

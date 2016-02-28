@@ -6,6 +6,7 @@
   // text-align: center;
   margin: auto;
   background-color: #7786C1;
+  border-radius: 25px;
 }
 
 // .posts a {
@@ -14,10 +15,6 @@
 //     margin-left: auto;
 //     margin-right: auto;
 // }
-
-.nav {
-  margin: auto;
-}
 
 .create-post {
   max-width: 80%;
@@ -29,8 +26,8 @@
 }
 
 .view-post {
-  max-width: 80%;
-  padding: 25px;
+  // max-width: 80%;
+  // padding: 25px;
   margin: auto;
   text-align: center;
   background-color: white;

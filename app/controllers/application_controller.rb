@@ -6,7 +6,15 @@ class ApplicationController < ActionController::Base
 
     def weef_count
       if user_signed_in?
-          @weef_count = current_user.weefs.count
+        all_weefs = current_user.weefs.all
+        weefs = []
+        all_weefs.each do |weef|
+          unless weef.time_left <= 0
+            weefs << weef
+          end
+        end
+      
+        @weef_count = weefs.length
       end
     end
 

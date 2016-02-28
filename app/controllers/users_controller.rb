@@ -39,7 +39,8 @@ class UsersController < ApplicationController
       session[:update_user] = true
       @user.save
     end
-    @image = Faker::Avatar.image(@user.name, "200x200")
+    # @image = Faker::Avatar.image(@user.name, "200x200")
+    @image = "https://api.adorable.io/avatars/285/#{@user.name}.png"
 
   end
 
