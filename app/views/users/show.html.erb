@@ -9,9 +9,39 @@
  
           <h3><%= @user.name %></h3>
           <br />
-          <h4>Set Location Radius:</h4>
-          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
 
+          <p>place hoder slider bar / not yet funcational </p>      
+
+          <section>
+            <div class="view">
+              <div class="example">
+                <div id="slider-range"></div>
+                <span class="example-val" id="slider-range-value"></span>
+                  <script>
+                    var rangeSlider = document.getElementById('slider-range');
+
+                    noUiSlider.create(rangeSlider, {
+                      start: [ <%= @user.location_radius %> ],
+                      range: {
+                        'min': [  5 ],
+                        'max': [ 5000 ]
+                      }
+                    });
+                  </script>   
+
+                  <script>
+                    var rangeSliderValueElement = document.getElementById('slider-range-value');
+
+                    rangeSlider.noUiSlider.on('update', function( values, handle ) {
+                      rangeSliderValueElement.innerHTML = values[handle];
+                    });
+                  </script>   
+              </div>
+            </div>
+          </section>
+
+          
+          <h4>Set Location Radius:</h4>
           <%= form_tag "/users/#{current_user.id}", method: :patch do %>
 
             <%= radio_button_tag(:location_radius, 100) %>
@@ -25,8 +55,8 @@
 
           <%= submit_tag "Submit", class: "btn btn-default" %>
           <% end %>
-</div>
-</div>
+    </div>
+  </div>
     <hr>
 
 

@@ -21,15 +21,35 @@
   border-radius: 25px;
 }
 
-.user table {
-  border: #ff9966;
+// .post-div {
+//   background-color: red;
+//   border-radius: 2px;
+//   border: black;
+//   border-style: solid;
+// }
+
+.post-table {
+  // border: #ff9966;
+  border-style: none;
+  // border-radius: 25px;
 }
 
-#ex1Slider .slider-selection {
-  background: #BABABA;
+td.post-text-td {
+  width: 55%;
 }
+
+td.post-weaction-td {
+  width: 10%;
+}
+
+td.post-time-td {
+  width: 20%;
+}
+
+
 
 .user img {
   border-radius: 15%;
 }
+
 

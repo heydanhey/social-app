@@ -2,26 +2,30 @@
 
 <h3> my post archive: </h3>
 
-<table class="table table-condensed">
 
 <% @user.posts.each do |post| %>
-  <tr>
-    <td><%= post.text %></td>
 
-    <td><%= post.get_percentage(1) %></td>
+<div class="post-div">
+  <table class="table post-table">
+    <tr>
+      <td class="post-text-td"><%= post.text %></td>
 
-    <td><%= post.get_percentage(2) %></td>
+      <td class="post-weaction-td"><%= post.get_percentage(1) %></td>
 
-    <td><%= post.get_percentage(3) %></td>
+      <td class="post-weaction-td"><%= post.get_percentage(2) %></td>
 
-    <td><%= post.get_percentage(4) %></td>
+      <td class="post-weaction-td"><%= post.get_percentage(3) %></td>
 
-    <td><%= post.friendly_post_time %></td>
+      <td class="post-weaction-td"><%= post.get_percentage(4) %></td>
 
-    <td><a href=<%="/posts/#{post.id}"%> data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"> </a></td>
-  </tr>
+  
+
+      <td><a href=<%="/posts/#{post.id}"%> data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+    </tr>
+  </table>
+</div>
+
 <% end %>
-</table>
 
 <%= link_to "back", "/users/#{current_user.id}", class: "btn btn-default" %> 
 

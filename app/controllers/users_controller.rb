@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def index
     # This action will be the User Post Arcive, where a user can see a list of all his posts
     @user = User.find(current_user.id)
+    @image = "https://api.adorable.io/avatars/285/#{@user.name}.png"
 
     # This will be for sorting
     # if params[:sort_up]
