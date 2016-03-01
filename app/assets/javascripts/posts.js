@@ -76,7 +76,7 @@ window.addEventListener('load', function(){
         if (swipedir != 'none'){
             clearTimeout(hidetimer)
             console.log = swipedir + 'hurray!' // naming convention is "leftarrow.png", "rightarrow.png" etc
-            inner.style.background = 'transparent url(' + bgimage + ') center center no-repeat'
+            // inner.style.background = 'transparent url(' + bgimage + ') center center no-repeat'
             hidetimer = setTimeout(function(){ // reset background image after 1 second
                 inner.style.background = ''
             }, 1000)
