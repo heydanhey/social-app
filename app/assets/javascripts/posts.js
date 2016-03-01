@@ -1,6 +1,7 @@
+var idNumber = gon.post.id;
+var idString = idNumber.toString();
+
 document.onkeydown = function(e) {
-    var idNumber = gon.post.id;
-    var idString = idNumber.toString();
     switch (e.keyCode) {
         case 37:
             //alert(idString);
