@@ -75,9 +75,25 @@ window.addEventListener('load', function(){
     swipedetect(el, function(swipedir){
         if (swipedir != 'none'){
             clearTimeout(hidetimer)
-            console.log = swipedir + 'hurray!'
-            alert("SWIPE detected!"); // naming convention is "leftarrow.png", "rightarrow.png" etc
-            // inner.style.background = 'transparent url(' + bgimage + ') center center no-repeat'
+            alert("SWIPE detected!");
+            switch (swipedir) {
+        case "left":
+            //alert(idString);
+            document.location = "/posts/" + idString + "?annoyed=id";
+            break;
+        case "up":
+            // alert('up');
+            document.location = "/posts/" + idString + "?excited=id";
+            break;
+        case "right":
+            // alert('right');
+            document.location = "/posts/" + idString + "?amused=id";
+            break;
+        case "down":
+            // alert('down');
+            document.location = "/posts/" + idString + "?sympathetic=id";
+            break;
+    }
             hidetimer = setTimeout(function(){ // reset background image after 1 second
                 inner.style.background = ''
             }, 1000)
