@@ -1,7 +1,10 @@
 class WeefsController < ApplicationController
 
   def index
-    all_weefs = current_user.weefs.all
+    # all_weefs = current_user.weefs.all
+    # Get all weefs
+    all_weefs = weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_A_id=weactions.id OR weefs.weaction_B_id=weactions.id WHERE weactions.user_id=10")
+    # Check Active weefs
     @weefs = []
     all_weefs.each do |weef|
       unless weef.time_left <= 0
