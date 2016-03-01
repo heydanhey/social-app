@@ -23,8 +23,6 @@ document.onkeydown = function(e) {
 };
 
 function swipedetect(el, callback){
-    var idNumber = gon.post.id;
-    var idString = idNumber.toString();
   
     var touchsurface = el,
     swipedir,
@@ -72,6 +70,8 @@ function swipedetect(el, callback){
 }
 
 window.addEventListener('load', function(){
+    var idNumber = gon.post.id;
+    var idString = idNumber.toString();
     var el = document.getElementById('touchsurface2')
     var inner = document.getElementById('inner')
     var hidetimer = null
