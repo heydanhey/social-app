@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
     def weef_count
       if user_signed_in?
-        all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_A_id=weactions.id OR weefs.weaction_B_id=weactions.id WHERE weactions.user_id=#{current_user.id}")
+        all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_A_id=weactions.id OR weefs.weaction_B_id=weactions.id WHERE weactions.user_id=10")
         weefs = []
         all_weefs.each do |weef|
           unless weef.time_left <= 0
