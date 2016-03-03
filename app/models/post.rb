@@ -4,6 +4,9 @@ class Post < ActiveRecord::Base
   belongs_to :emotion
   has_many :weactions
 
+  validates :text, presence: true
+  validates :emotion_id, presence: true
+
   reverse_geocoded_by :latitude, :longitude
 
   def friendly_post_time

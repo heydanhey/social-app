@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @posts = Post.where(user_id: current_user.id)
   end
 
   def new
+    @post = Post.new
   end
 
   def create
@@ -15,10 +19,14 @@ class PostsController < ApplicationController
       coordinates = [Faker::Address.latitude, Faker::Address.longitude]
     end
 
-    @post = Post.create({text: params[:text], user_id: current_user.id, emotion_id: params[:emotion_id], latitude: coordinates[0], longitude: coordinates[1]})
+    @post = Post.new({text: params[:text], user_id: current_user.id, emotion_id: params[:emotion_id], latitude: coordinates[0], longitude: coordinates[1]})
 
-    flash[:success] = "Post Created, Start Weacting!!!!"
-    redirect_to "/posts/#{Post.all.sample.id}"
+    if @post.save
+      flash[:success] = "Post Created, Start Weacting!!!!"
+      redirect_to "/posts/#{Post.get_post_by_location(current_user).id}"
+    else
+      render :new
+    end
   end
 
   def show

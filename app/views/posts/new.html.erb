@@ -1,3 +1,15 @@
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this product from being saved:</h2>
+ 
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="jumbotron create-post">
 
 <% if current_user.posts.count == 0 %>
@@ -10,23 +22,32 @@
 <%= form_tag '/posts', method: :post do %>
 
   <div class="input-group input-group-lg">
-    <%= label_tag :text, "Enter Text" %>
-    <%= text_field_tag :text, nil, class: 'form-control', rows: "3", placeholder: "Write Something WeFreshing", :size=>"50", :maxlength=>"254" %>
+    <%= label_tag :text, "Enter Text:" %>
+    <%= text_field_tag :text, nil, class: 'form-control', rows: "3", placeholder: "Write Something WeFreshing...", :size=>"50", :maxlength=>"254" %>
   </div>
 <br />
-  <div class="input-group">
+  <%= label_tag :emotion_id, "Attach an emotion:" %><br>
+  <label>
   <%= radio_button_tag(:emotion_id, 1) %>
-  <%= label_tag(:emotion_id, image_tag("Up.png", size: "80x80")) %>
+  <%= image_tag("Up.png", size: "80x80") %>
+  </label>
+  <label>
   <%= radio_button_tag(:emotion_id, 2) %>
-  <%= label_tag(:emotion_id, image_tag("Right.png", size: "80x80")) %>
+  <%= image_tag("Right.png", size: "80x80") %>
+  </label>
+  <label>
   <%= radio_button_tag(:emotion_id, 3) %>
-  <%= label_tag(:emotion_id, image_tag("Down.png", size: "80x80")) %>
+  <%= image_tag("Down.png", size: "80x80") %>
+  </label>
+  <label>
   <%= radio_button_tag(:emotion_id, 4) %>
-  <%= label_tag(:emotion_id, image_tag("Left.png", size: "80x80")) %>
-  <div>
-<br />
+  <%= image_tag("Left.png", size: "80x80") %>
+  </label>
 
-  <%= submit_tag "Submit", class: "input-group btn btn-primary" %>
+<br />
+<hr>
+
+  <%= submit_tag "Submit Post", class: "input-group btn btn-lg btn-custom" %>
 
 <% end %>
 

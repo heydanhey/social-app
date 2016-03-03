@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     # This action will be the User Post Arcive, where a user can see a list of all his posts
     @user = User.find(current_user.id)

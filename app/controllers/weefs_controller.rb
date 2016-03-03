@@ -1,9 +1,10 @@
 class WeefsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
-    # all_weefs = current_user.weefs.all
     # Get all weefs
-    all_weefs = weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_A_id=weactions.id OR weefs.weaction_B_id=weactions.id WHERE weactions.user_id=10")
+    all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_A_id=weactions.id OR weefs.weaction_B_id=weactions.id WHERE weactions.user_id=#{current_user.id}")
     # Check Active weefs
     @weefs = []
     all_weefs.each do |weef|

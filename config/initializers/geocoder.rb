@@ -1,1 +1,1 @@
-Geocoder::Configuration.timeout = 7
+Geocoder::Configuration.timeout = 3
