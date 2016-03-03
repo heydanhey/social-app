@@ -4,7 +4,8 @@ class WeefsController < ApplicationController
 
   def index
     # Get all weefs
-    all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_A_id=weactions.id OR weefs.weaction_B_id=weactions.id WHERE weactions.user_id=#{current_user.id}")
+    # all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_A_id=weactions.id OR weefs.weaction_B_id=weactions.id WHERE weactions.user_id=#{current_user.id}")
+    all_weefs = current_user.weefs.all
     # Check Active weefs
     @weefs = []
     all_weefs.each do |weef|
