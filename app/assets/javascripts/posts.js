@@ -56,7 +56,7 @@ function swipedetect(el, callback){
         distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
         distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
         elapsedTime = new Date().getTime() - startTime // get time elapsed
-        if (elapsedTime <= allowedTime){ // first condition for awipe met
+        if (elapsedTime <= allowedTime){ // first condition for swipe met
             if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
                 swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
             }
@@ -78,7 +78,7 @@ window.addEventListener('load', function(){
     swipedetect(el, function(swipedir){
         if (swipedir != 'none'){
             clearTimeout(hidetimer)
-            alert("SWIPE detected!");
+            // alert("SWIPE detected!");
             switch (swipedir) {
         case "left":
             //alert(idString);
@@ -97,9 +97,9 @@ window.addEventListener('load', function(){
             document.location = "/posts/" + idString + "?sympathetic=id";
             break;
     }
-            hidetimer = setTimeout(function(){ // reset background image after 1 second
-                inner.style.background = ''
-            }, 1000)
+            // hidetimer = setTimeout(function(){ // reset background image after 1 second
+            //     inner.style.background = ''
+            // }, 1000)
         }
     })
 }, false)
