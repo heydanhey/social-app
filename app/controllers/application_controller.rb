@@ -6,8 +6,11 @@ class ApplicationController < ActionController::Base
 
     def weef_count
       if user_signed_in?
-        all_weefs = current_user.weefs.all
-        # all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_A_id=weactions.id OR weefs.weaction_B_id=weactions.id WHERE weactions.user_id=#{current_user.id}")
+
+        # This call isn't currently working on herku because of case sensitivy in postgrql to column names
+        all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_a_id=weactions.id OR weefs.weaction_b_id=weactions.id WHERE weactions.user_id=#{current_user.id}")
+        
+        # all_weefs = current_user.weefs.all
         weefs = []
         all_weefs.each do |weef|
           unless weef.time_left <= 0

@@ -84,7 +84,7 @@ class PostsController < ApplicationController
         their_weactions.each do |weaction|
           if weaction.post.user_id == current_user.id
             flash[:success] = "You Weef'd!"
-            weef.update(weaction_A_id: weaction.id, weaction_B_id: this_weaction.id)
+            weef.update(weaction_a_id: weaction.id, weaction_b_id: this_weaction.id)
           end
         end
         # only save the most recent weef, hence, weef.save after the loop, this prevents multiple weefs being created with the same second-half weaction match  
