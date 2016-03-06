@@ -38,6 +38,10 @@
   color: #ff9966;
 }
 
+.create-post p {
+  color: #ff9966;
+}
+
 .input-group {
   padding: 5px;
   margin: auto;
@@ -58,7 +62,25 @@ label img:hover {
 
 label > input:checked + img {
   opacity: 0.4;
+  border-bottom: solid black 1px;
 }
+
+.post-div{
+  margin: auto;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  width: 90%;
+  text-align: left;
+  border-radius: 25px;
+  padding-top: 12px;
+  padding-left: 12px;
+  margin: 5px;
+}
+
+.table th, .table td { 
+     border-top: none !important; 
+ }
 
 .btn-custom {
   background-color: hsl(86, 79%, 44%) !important;

@@ -1,28 +1,39 @@
+body {
+  padding-bottom: 70px;
+}
+
+body p {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .container .jumbotron {
     border-radius: 25px;
 }
 
 .devise h2 {
-  font-family: 'Fredoka One', cursive;
-  color: #ff9966;
+  font-family: 'Questrial', sans-serif;
+  color: black;
+  font-size: 40px;
 }
 
 .user h3{
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Montserrat', sans-serif;
   color: #ff9966;
 }
 
 body {
   margin-top: 30px;
-  background-color: #7786C1;
-}
-
-.nav ul li a {
-  margin: auto;
-  text-align: center;
+  background-color: #ED5723;
 }
 
 .nav {
+  
+}
 
+.nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin: auto;
+  text-align: center;
 }

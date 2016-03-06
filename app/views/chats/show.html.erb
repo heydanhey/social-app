@@ -1,18 +1,24 @@
 <div class="jumbotron weef">
 
 <h1> Weef Chat!!! </h1>
-
+<p>Time left: <%= @chats[0].weef.time_left_display %></p> 
 <% @chats.each do |chat| %>
-
-  <p> <%= chat.text %> </p>
-
+  <% if chat.user_id == current_user.id %>
+  <div class="chat-left">
+    <p> <%= chat.text %> </p>
+  </div>
+  <% else %>
+  <div class="chat-right">
+    <p> <%= chat.text %> </p>
+  </div>
+  <% end %>
 <% end %>
-
-<br>
+ 
 
 <%= form_tag "/chats/#{@chats[0].weef_id}", method: :post do %>
 
-  <div class="input-group input-group-lg">
+  <div class="input-group input-group-lg chat-submit">
+<hr>
     <%= label_tag :text, "Enter Text:" %>
     <%= text_field_tag :text, nil, class: 'form-control', rows: "3", placeholder: "Chat with your Weefer!" %>
   </div>

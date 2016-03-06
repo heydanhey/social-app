@@ -1,43 +1,31 @@
 <div class="jumbotron weef">
 
-<h2>Your Weefs</h2>
+<h2>Congratulations!</h2>
 
 <div class="weef-box">
 
 <% @weefs.each do |weef| %>
   <h4> You weef'd with: <%= weef.weefer(current_user.id).name%></h4>
   <h4> Time left: <%= weef.time_left_display %> </h4>
-  <div class="table-responsive">
-    <table class="table table-striped table-bordered table-condensed">
-    <tr>
-      <th class="post">Your Post</th>
-      <th class="emotion">Your Emotion</th>
-    </tr>
-    <tr>
-      <td><%= weef.my_post(current_user.id).text %></td>
-      <td><%= weef.my_post(current_user.id).emotion.name %></td>
-    </tr>
-    </table>
+
+  <div class="w1">
+    <h3> You: </h3>
+    <p><%= weef.my_post(current_user.id).text %></p>
+      <%= image_tag("#{weef.my_post(current_user.id).emotion_id}.png", size: "100x100") %>
   </div>
 
-  <div class="table-responsive">
-    <table class="table table-striped table-bordered table-condensed">
-    <tr>
-      <th class="post">Their Post</th>
-      <th class="emotion">Their Emotion</th>
-    </tr>
-    <tr>
-      <td><%= weef.their_post(current_user.id).text %></td>
-      <td><%= weef.their_post(current_user.id).emotion.name %></td>
-    </tr>
-    </table>
+  <div class="w2">
+      <h3> Them: </h3>
+      <p><%= weef.their_post(current_user.id).text %></p>
+      <%= image_tag("#{weef.their_post(current_user.id).emotion_id}.png", size: "100x100") %>
   </div>
-
     <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default" %>
 
     <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default" %>
 
     <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-default" %>
+
+    <hr>
 <% end %>
   </div>
 <br> 

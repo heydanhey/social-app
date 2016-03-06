@@ -2,7 +2,6 @@
 
 <h3> my post archive: </h3>
 
-
 <% @user.posts.each do |post| %>
 
 <div class="post-div">
@@ -18,14 +17,14 @@
 
       <td class="post-weaction-td"><%= post.get_percentage(4) %></td>
 
-  
-
       <td><a href=<%="/posts/#{post.id}"%> data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
     </tr>
   </table>
 </div>
 
 <% end %>
+
+
 
 <%= link_to "back", "/users/#{current_user.id}", class: "btn btn-default" %> 
 

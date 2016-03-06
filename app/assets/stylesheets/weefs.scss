@@ -1,6 +1,6 @@
 table {
   width: 100%;
-  border: 1px solid #000;
+  border: none;
 }
 th.post {
   width: 80%;
@@ -10,6 +10,8 @@ th.emotion {
 }
 
 
+
+
 .weef {
   max-width: 80%;
   padding: 25px;
@@ -17,9 +19,47 @@ th.emotion {
   // text-align: center;
   background-color: white;
   border-radius: 25px;
+  font-family: 'Questrial', sans-serif;
 }
 
-.weef h2{
-  font-family: 'Press Start 2P', cursive;
+.weef h1{
+  font-family: 'Questrial', sans-serif;
   color: #ff9966;
+}
+
+.w1 {
+  background-color: #b1f1f9;
+  border-style: solid;
+  border-color: #13BFD9;
+  width: 45%;
+  float: left;
+  border-radius: 15px;
+  padding-top: 12px;
+  padding-left: 12px;
+  margin: 5px;
+  min-height: 300px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.w2 {
+  background-color: #cbf9b6;
+  border-style: solid;
+  border-color: #6ABD45;
+  width: 45%;
+  float: right;
+  border-radius: 15px;
+  padding-top: 12px;
+  padding-left: 12px;
+  margin: 5px;
+  min-height: 300px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.w1 img {
+  margin: auto;
+}
+
+.w2 img {
+  margin: auto;
 }

@@ -1,3 +1,31 @@
-// Place all the styles related to the chats controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chat-left {
+  background-color: #b1f1f9;
+  border-style: solid;
+  border-color: #13BFD9;
+  width: 90%;
+  float: left;
+  text-align: left;
+  border-radius: 15px;
+  padding-top: 12px;
+  padding-left: 12px;
+  margin: 5px;
+}
+
+
+.chat-right {
+  background-color: #cbf9b6;
+  border-style: solid;
+  border-color: #6ABD45;
+  width: 90%;
+  float: right;
+  text-align: right;
+  border-radius: 15px;
+  padding-top: 12px;
+  padding-right: 12px;
+  margin: 5px;
+}
+
+.chat-submit {
+  width: 50%;
+}

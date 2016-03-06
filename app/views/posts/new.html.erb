@@ -22,26 +22,26 @@
 <%= form_tag '/posts', method: :post do %>
 
   <div class="input-group input-group-lg">
-    <%= label_tag :text, "Enter Text:" %>
+    <p><%= label_tag :text, "Enter Text:" %></p>
     <%= text_field_tag :text, nil, class: 'form-control', rows: "3", placeholder: "Write Something WeFreshing...", :size=>"50", :maxlength=>"254" %>
   </div>
 <br />
   <p>Attach and Emotion:</p><br>
   <label>
   <%= radio_button_tag(:emotion_id, 1) %>
-  <%= image_tag("Up.png", size: "80x80") %>
+  <%= image_tag("1.png", size: "80x80") %>
   </label>
   <label>
   <%= radio_button_tag(:emotion_id, 2) %>
-  <%= image_tag("Right.png", size: "80x80") %>
+  <%= image_tag("2.png", size: "80x80") %>
   </label>
   <label>
   <%= radio_button_tag(:emotion_id, 3) %>
-  <%= image_tag("Down.png", size: "80x80") %>
+  <%= image_tag("3.png", size: "80x80") %>
   </label>
   <label>
   <%= radio_button_tag(:emotion_id, 4) %>
-  <%= image_tag("Left.png", size: "80x80") %>
+  <%= image_tag("4.png", size: "80x80") %>
   </label>
 
 <br />
