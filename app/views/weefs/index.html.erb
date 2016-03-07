@@ -11,20 +11,22 @@
   <div class="w1">
     <h3> You: </h3>
     <p><%= weef.my_post(current_user.id).text %></p>
-      <%= image_tag("#{weef.my_post(current_user.id).emotion_id}.png", size: "100x100") %>
+      <%= image_tag("#{weef.my_post(current_user.id).emotion_id}.png") %>
   </div>
 
   <div class="w2">
       <h3> Them: </h3>
       <p><%= weef.their_post(current_user.id).text %></p>
-      <%= image_tag("#{weef.their_post(current_user.id).emotion_id}.png", size: "100x100") %>
+      <%= image_tag("#{weef.their_post(current_user.id).emotion_id}.png") %>
   </div>
+  <br>
+  <div class="weef-menu">
     <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default" %>
 
     <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default" %>
 
     <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-default" %>
-
+  </div>
     <hr>
 <% end %>
   </div>

@@ -1,26 +1,61 @@
 
-document.onkeydown = function(e) {
+// document.onkeydown = function(e) {
+//     var idNumber = gon.post.id;
+//     var idString = idNumber.toString();
+//     switch (e.keyCode) {
+//         case 37:
+//             //alert(idString);
+//             document.location = "/posts/" + idString + "?annoyed=id";
+//             break;
+//         case 38:
+//             // alert('up');
+//             document.location = "/posts/" + idString + "?excited=id";
+//             break;
+//         case 39:
+//             // alert('right');
+//             document.location = "/posts/" + idString + "?amused=id";
+//             break;
+//         case 40:
+//             // alert('down');
+//             document.location = "/posts/" + idString + "?sympathetic=id";
+//             break;
+//     }
+// };
+
+$(document).ready(function(e){
+    $(".box").fadeIn();
+});
+
+$(document).keydown(function(e){
     var idNumber = gon.post.id;
     var idString = idNumber.toString();
-    switch (e.keyCode) {
-        case 37:
-            //alert(idString);
-            document.location = "/posts/" + idString + "?annoyed=id";
-            break;
-        case 38:
-            // alert('up');
-            document.location = "/posts/" + idString + "?excited=id";
-            break;
-        case 39:
-            // alert('right');
-            document.location = "/posts/" + idString + "?amused=id";
-            break;
-        case 40:
-            // alert('down');
-            document.location = "/posts/" + idString + "?sympathetic=id";
-            break;
+    switch (e.which){
+    case 37:    //left arrow key
+        $(".box").finish().animate({
+            left: "-=1000"
+        });
+        document.location = "/posts/" + idString + "?annoyed=id";
+        break;
+    case 38:    //up arrow key
+        $(".box").finish().animate({
+            top: "-=1000"
+        });
+        document.location = "/posts/" + idString + "?excited=id";
+        break;
+    case 39:    //right arrow key
+        $(".box").finish().animate({
+            left: "+=1000"
+        });
+        document.location = "/posts/" + idString + "?amused=id";
+        break;
+    case 40:    //bottom arrow key
+        $(".box").finish().animate({
+            top: "+=1000"
+        });
+        document.location = "/posts/" + idString + "?sympathetic=id";
+        break;
     }
-};
+});
 
 function swipedetect(el, callback){
   

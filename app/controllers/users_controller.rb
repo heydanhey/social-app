@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     # Assign location coordinates (Using Faker for Now)
     # Reassign user name for current session
     unless session[:update_user]
-      @user.name = Bazaar.heroku
+      @user.name = Bazaar.object.titleize
       coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
       # if Geocoder fails assigns these fake coords
       if coordinates == nil
