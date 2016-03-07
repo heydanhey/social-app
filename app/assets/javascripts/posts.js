@@ -1,4 +1,5 @@
 
+
 // document.onkeydown = function(e) {
 //     var idNumber = gon.post.id;
 //     var idString = idNumber.toString();
@@ -22,6 +23,13 @@
 //     }
 // };
 
+
+// var animateThis = function() {
+//     $(".box").stop().animate({backgroundColor: '#ff0004'}, 500);
+//     $(".box").animate({backgroundColor: '#ff0004'}, 500);
+// }
+
+
 $(document).ready(function(e){
     $(".box").fadeIn();
 });
@@ -32,30 +40,36 @@ $(document).keydown(function(e){
     switch (e.which){
     case 37:    //left arrow key
         $(".box").finish().animate({
-            left: "-=1000"
+            left: "-=1500",
+            backgroundColor: '#ff0004'
         });
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 38:    //up arrow key
         $(".box").finish().animate({
-            top: "-=1000"
+            top: "-=1500",
+            backgroundColor: '#02f90e'
         });
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 39:    //right arrow key
         $(".box").finish().animate({
-            left: "+=1000"
+            left: "+=1500",
+            backgroundColor: '#fc6635'
         });
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 40:    //bottom arrow key
         $(".box").finish().animate({
-            top: "+=1000"
+            top: "+=1500",
+            backgroundColor: '#02c8ff'
         });
         document.location = "/posts/" + idString + "?sympathetic=id";
         break;
     }
 });
+
+
 
 function swipedetect(el, callback){
   
@@ -138,4 +152,112 @@ window.addEventListener('load', function(){
         }
     })
 }, false)
+
+
+
+
+
+var animateThis = function(e, direction) {
+    var idNumber = gon.post.id;
+    var idString = idNumber.toString();
+    switch (direction){
+    case 'left':    //left arrow key
+        $(".box").finish().animate({
+            left: "-=500",
+            backgroundColor: '#ff0004'
+        });
+        document.location = "/posts/" + idString + "?annoyed=id";
+        break;
+    case 'up':    //up arrow key
+        $(".box").finish().animate({
+            top: "-=500",
+            backgroundColor: '#02f90e'
+        });
+        document.location = "/posts/" + idString + "?excited=id";
+        break;
+    case 'right':    //right arrow key
+        $(".box").finish().animate({
+            left: "+=500",
+            backgroundColor: '#fc6635'
+        });
+        document.location = "/posts/" + idString + "?amused=id";
+        break;
+    case 'down':    //bottom arrow key
+        $(".box").finish().animate({
+            top: "+=500",
+            backgroundColor: '#02c8ff'
+        });
+        document.location = "/posts/" + idString + "?sympathetic=id";
+        break;
+    }
+}
+
+
+window.addEventListener('load', function(){
+    var mousePosition;
+    var offset = [0,0];
+    var startCoords = [0,0];
+    var div;
+    var isDown = false;
+
+    div = document.getElementById('touchsurface2');
+
+    div.addEventListener('mousedown', function(e) {
+        isDown = true;
+        offset = [
+            div.offsetLeft - e.clientX,
+            div.offsetTop - e.clientY
+        ];
+        startCoords = [
+            e.clientX,
+            e.clientY
+        ];
+
+    }, true);
+
+    document.addEventListener('mouseup', function() {
+        isDown = false;
+    }, true);
+
+    document.addEventListener('mousemove', function(event) {
+        event.preventDefault();
+        if (isDown) {
+            mousePosition = {
+        
+                x : event.clientX,
+                y : event.clientY
+        
+            };
+            // console.log(startCoords);
+            // console.log(mousePosition);
+            div.style.left = (mousePosition.x + offset[0]) + 'px';
+            div.style.top  = (mousePosition.y + offset[1]) + 'px';
+
+            if (mousePosition.x > (startCoords[0]+300)) {
+                animateThis(div, 'right');
+                console.log("MOVE RIGHT");
+            };
+            if (mousePosition.x < (startCoords[0]-300)) {
+                animateThis(div, 'left');
+                console.log("MOVE LEFT");
+            };
+            if (mousePosition.y > (startCoords[1]+200)) {
+                animateThis(div, 'down');
+                console.log("MOVE DOWN");
+            };
+            if (mousePosition.y < (startCoords[1]-150)) {
+                animateThis(div, 'up');
+                console.log("MOVE UP");
+            };
+
+
+        }
+    }, true);
+});
+
+
+
+
+
+
 
