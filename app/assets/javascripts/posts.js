@@ -180,22 +180,22 @@ window.addEventListener('load', function(){
             switch (swipedir) {
         case "left":
             //alert(idString);
-            animateThis(div, 'left');
+            animateThis(el, 'left');
             document.location = "/posts/" + idString + "?annoyed=id";
             break;
         case "up":
             // alert('up');
-            animateThis(div, 'up');
+            animateThis(el, 'up');
             document.location = "/posts/" + idString + "?excited=id";
             break;
         case "right":
             // alert('right');
-            animateThis(div, 'right');
+            animateThis(el, 'right');
             document.location = "/posts/" + idString + "?amused=id";
             break;
         case "down":
             // alert('down');
-            animateThis(div, 'down');
+            animateThis(el, 'down');
             document.location = "/posts/" + idString + "?sympathetic=id";
             break;
     }
