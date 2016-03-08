@@ -181,23 +181,23 @@ window.addEventListener('load', function(){
         case "left":
             //alert(idString);
             animateThis(el, 'left');
-            document.location = "/posts/" + idString + "?annoyed=id";
-            break;
+            // document.location = "/posts/" + idString + "?annoyed=id";
+            // break;
         case "up":
             // alert('up');
             animateThis(el, 'up');
-            document.location = "/posts/" + idString + "?excited=id";
-            break;
+            // document.location = "/posts/" + idString + "?excited=id";
+            // break;
         case "right":
             // alert('right');
             animateThis(el, 'right');
-            document.location = "/posts/" + idString + "?amused=id";
-            break;
+            // document.location = "/posts/" + idString + "?amused=id";
+            // break;
         case "down":
             // alert('down');
             animateThis(el, 'down');
-            document.location = "/posts/" + idString + "?sympathetic=id";
-            break;
+            // document.location = "/posts/" + idString + "?sympathetic=id";
+            // break;
     }
             // hidetimer = setTimeout(function(){ // reset background image after 1 second
             //     inner.style.background = ''
