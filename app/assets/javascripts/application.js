@@ -13,5 +13,4 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require jquery_touchslider
 //= require_tree .
