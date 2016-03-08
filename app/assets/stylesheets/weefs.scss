@@ -10,6 +10,26 @@ th.emotion {
 }
 
 
+.gallery .holder {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery .list {
+  width: 9999px;
+  overflow: hidden;
+
+}
+
+.gallery .item {
+  float: left;
+}
+
+.gallery .inner {
+  width: 100%;
+  margin: 0 auto;
+}
+
 
 
 .weef {
@@ -32,8 +52,8 @@ th.emotion {
   background-color: white;
   border-style: solid;
   border-color: #13BFD9;
-  width: 45%;
-  float: left;
+  width: 100%;
+  // float: left;
   border-radius: 15px;
   padding-top: 12px;
   padding-left: 12px;
@@ -41,13 +61,12 @@ th.emotion {
   font-family: 'Montserrat', sans-serif;
 }
 
-
 .w2 {
   background-color: white;
   border-style: solid;
   border-color: #6ABD45;
-  width: 45%;
-  float: right;
+  width: 100%;
+  // float: right;
   border-radius: 15px;
   padding-top: 12px;
   padding-left: 12px;
@@ -68,5 +87,6 @@ th.emotion {
 }
 
 .weef-menu {
-  display: inline-block;
+  width: 100%;
+  margin: auto;
 }
