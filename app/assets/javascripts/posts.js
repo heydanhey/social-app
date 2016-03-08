@@ -90,7 +90,7 @@ var animateThis = function(e, direction) {
     switch (direction){
     case 'left':    //left arrow key
         $(".box").finish().animate({
-            left: "-=1500"
+            left: "-=1500",
             // backgroundColor: '#ff0004'
         });
         $(".stat-box .value").html(stats[3]);
@@ -98,7 +98,7 @@ var animateThis = function(e, direction) {
         break;
     case 'up':    //up arrow key
         $(".box").finish().animate({
-            top: "-=1500"
+            top: "-=1500",
             // backgroundColor: '#02f90e'
         });
         $(".stat-box .value").html(stats[0]);
@@ -106,7 +106,7 @@ var animateThis = function(e, direction) {
         break;
     case 'right':    //right arrow key
         $(".box").finish().animate({
-            left: "+=1500"
+            left: "+=1500",
             // backgroundColor: '#fc6635'
         });
         $(".stat-box .value").html(stats[1]);
@@ -114,7 +114,7 @@ var animateThis = function(e, direction) {
         break;
     case 'down':    //bottom arrow key
         $(".box").finish().animate({
-            top: "+=1500"
+            top: "+=1500",
             // backgroundColor: '#02c8ff'
         });
         $(".stat-box .value").html(stats[2]);
@@ -182,11 +182,11 @@ function swipedetect(el, callback){
 }
 
 window.addEventListener('load', function(){
-    // var idNumber = gon.post.id;
+    var idNumber = gon.post.id;
     var idString = idNumber.toString();
-    var el = document.getElementById('touchsurface2');
-    // var inner = document.getElementById('inner')
-    var hidetimer = null;
+    var el = document.getElementById('touchsurface2')
+    var inner = document.getElementById('inner')
+    var hidetimer = null
     swipedetect(el, function(swipedir){
         if (swipedir != 'none'){
             clearTimeout(hidetimer)
