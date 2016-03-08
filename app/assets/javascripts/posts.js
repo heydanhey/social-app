@@ -89,7 +89,7 @@ var animateThis = function(e, direction) {
     var idString = idNumber.toString();
     switch (direction){
     case 'left':    //left arrow key
-        $(".box").animate({
+        $(".box").finish().animate({
             left: "-=1500"
             // backgroundColor: '#ff0004'
         });
@@ -97,7 +97,7 @@ var animateThis = function(e, direction) {
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 'up':    //up arrow key
-        $(".box").animate({
+        $(".box").finish().animate({
             top: "-=1500"
             // backgroundColor: '#02f90e'
         });
@@ -105,7 +105,7 @@ var animateThis = function(e, direction) {
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 'right':    //right arrow key
-        $(".box").animate({
+        $(".box").finish().animate({
             left: "+=1500"
             // backgroundColor: '#fc6635'
         });
@@ -113,7 +113,7 @@ var animateThis = function(e, direction) {
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 'down':    //bottom arrow key
-        $(".box").animate({
+        $(".box").finish().animate({
             top: "+=1500"
             // backgroundColor: '#02c8ff'
         });
