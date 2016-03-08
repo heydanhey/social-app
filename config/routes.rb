@@ -32,6 +32,4 @@ Rails.application.routes.draw do
   get '/chats/:id' => 'chats#show'
   post '/chats/:id' => 'chats#create'
 
-  get '/landing/' => 'weactions#index'
-
 end
