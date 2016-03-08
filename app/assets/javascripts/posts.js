@@ -89,7 +89,7 @@ var animateThis = function(e, direction) {
     var idString = idNumber.toString();
     switch (direction){
     case 'left':    //left arrow key
-        $(".box").finish().animate({
+        $(".box").animate({
             left: "-=1500"
             // backgroundColor: '#ff0004'
         });
@@ -97,7 +97,7 @@ var animateThis = function(e, direction) {
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 'up':    //up arrow key
-        $(".box").finish().animate({
+        $(".box").animate({
             top: "-=1500"
             // backgroundColor: '#02f90e'
         });
@@ -105,7 +105,7 @@ var animateThis = function(e, direction) {
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 'right':    //right arrow key
-        $(".box").finish().animate({
+        $(".box").animate({
             left: "+=1500"
             // backgroundColor: '#fc6635'
         });
@@ -113,7 +113,7 @@ var animateThis = function(e, direction) {
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 'down':    //bottom arrow key
-        $(".box").finish().animate({
+        $(".box").animate({
             top: "+=1500"
             // backgroundColor: '#02c8ff'
         });
@@ -182,11 +182,11 @@ function swipedetect(el, callback){
 }
 
 window.addEventListener('load', function(){
-    var idNumber = gon.post.id;
+    // var idNumber = gon.post.id;
     var idString = idNumber.toString();
-    var el = document.getElementById('touchsurface2')
-    var inner = document.getElementById('inner')
-    var hidetimer = null
+    var el = document.getElementById('touchsurface2');
+    // var inner = document.getElementById('inner')
+    var hidetimer = null;
     swipedetect(el, function(swipedir){
         if (swipedir != 'none'){
             clearTimeout(hidetimer)
