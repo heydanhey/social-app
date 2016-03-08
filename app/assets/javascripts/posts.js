@@ -90,32 +90,32 @@ var animateThis = function(e, direction) {
     switch (direction){
     case 'left':    //left arrow key
         $(".box").finish().animate({
-            left: "-=100",
-            backgroundColor: '#ff0004'
+            left: "-=1500"
+            // backgroundColor: '#ff0004'
         });
         $(".stat-box .value").html(stats[3]);
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 'up':    //up arrow key
         $(".box").finish().animate({
-            top: "-=100",
-            backgroundColor: '#02f90e'
+            top: "-=1500"
+            // backgroundColor: '#02f90e'
         });
         $(".stat-box .value").html(stats[0]);
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 'right':    //right arrow key
         $(".box").finish().animate({
-            left: "+=100",
-            backgroundColor: '#fc6635'
+            left: "+=1500"
+            // backgroundColor: '#fc6635'
         });
         $(".stat-box .value").html(stats[1]);
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 'down':    //bottom arrow key
         $(".box").finish().animate({
-            top: "+=100",
-            backgroundColor: '#02c8ff'
+            top: "+=1500"
+            // backgroundColor: '#02c8ff'
         });
         $(".stat-box .value").html(stats[2]);
         document.location = "/posts/" + idString + "?sympathetic=id";
