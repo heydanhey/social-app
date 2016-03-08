@@ -32,10 +32,15 @@
 
 $(document).ready(function(e){
     $(".box").fadeIn();
+    $(".stat-box").fadeIn(1500);
 });
+
+
+
 
 $(document).keydown(function(e){
     var idNumber = gon.post.id;
+    var stats = gon.stats;
     var idString = idNumber.toString();
     switch (e.which){
     case 37:    //left arrow key
@@ -43,6 +48,7 @@ $(document).keydown(function(e){
             left: "-=1500",
             backgroundColor: '#ff0004'
         });
+        $(".stat-box .value").html(stats[3]);
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 38:    //up arrow key
@@ -50,6 +56,7 @@ $(document).keydown(function(e){
             top: "-=1500",
             backgroundColor: '#02f90e'
         });
+        $(".stat-box .value").html(stats[0]);
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 39:    //right arrow key
@@ -57,6 +64,7 @@ $(document).keydown(function(e){
             left: "+=1500",
             backgroundColor: '#fc6635'
         });
+        $(".stat-box .value").html(stats[1]);
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 40:    //bottom arrow key
@@ -64,6 +72,7 @@ $(document).keydown(function(e){
             top: "+=1500",
             backgroundColor: '#02c8ff'
         });
+        $(".stat-box .value").html(stats[2]);
         document.location = "/posts/" + idString + "?sympathetic=id";
         break;
     }
@@ -76,34 +85,39 @@ $(document).keydown(function(e){
 
 var animateThis = function(e, direction) {
     var idNumber = gon.post.id;
+    var stats = gon.stats;
     var idString = idNumber.toString();
     switch (direction){
     case 'left':    //left arrow key
         $(".box").finish().animate({
-            left: "-=500",
+            left: "-=100",
             backgroundColor: '#ff0004'
         });
+        $(".stat-box .value").html(stats[3]);
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 'up':    //up arrow key
         $(".box").finish().animate({
-            top: "-=500",
+            top: "-=100",
             backgroundColor: '#02f90e'
         });
+        $(".stat-box .value").html(stats[0]);
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 'right':    //right arrow key
         $(".box").finish().animate({
-            left: "+=500",
+            left: "+=100",
             backgroundColor: '#fc6635'
         });
+        $(".stat-box .value").html(stats[1]);
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 'down':    //bottom arrow key
         $(".box").finish().animate({
-            top: "+=500",
+            top: "+=100",
             backgroundColor: '#02c8ff'
         });
+        $(".stat-box .value").html(stats[2]);
         document.location = "/posts/" + idString + "?sympathetic=id";
         break;
     }
@@ -251,26 +265,29 @@ window.addEventListener('load', function(){
             console.log(startCoords);
             console.log(mousePosition);
 
-            if (mousePosition.x)
-            div.style.left = (mousePosition.x + offset[0]) + 'px';
+
+
             div.style.top  = (mousePosition.y + offset[1]) + 'px';
 
-            // if (mousePosition.x > (startCoords[0]+300)) {
-            //     // animateThis(div, 'right');
-            //     console.log("MOVE RIGHT");
-            // };
-            // if (mousePosition.x < (startCoords[0]-300)) {
-            //     // animateThis(div, 'left');
-            //     console.log("MOVE LEFT");
-            // };
-            // if (mousePosition.y > 200) {
-            //     // animateThis(div, 'down');
-            //     console.log("MOVE DOWN");
-            // };
-            // if (mousePosition.y < (-10)) {
-            //     // animateThis(div, 'up');
-            //     console.log("MOVE UP");
-            // };
+            div.style.left = (mousePosition.x + offset[0]) + 'px';
+
+
+            if (mousePosition.x > (startCoords[0]+300)) {
+                animateThis(div, 'right');
+                console.log("MOVE RIGHT");
+            };
+            if (mousePosition.x < (startCoords[0]-300)) {
+                animateThis(div, 'left');
+                console.log("MOVE LEFT");
+            };
+            if (mousePosition.y > 200) {
+                animateThis(div, 'down');
+                console.log("MOVE DOWN");
+            };
+            if (mousePosition.y < (-10)) {
+                animateThis(div, 'up');
+                console.log("MOVE UP");
+            };
 
 
         }

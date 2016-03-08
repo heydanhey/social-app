@@ -5,13 +5,59 @@
 .jumbotron {
   // text-align: center;
   margin: auto;
-  background-color: #7786C1;
+  // background-color: #7786C1;
   border-radius: 25px;
 }
 
-.box {
+#behind{
+  width: 80%;
+  height: 80vh;
+  position: absolute;
+  z-index: -1;
+  text-align: center;
+  color: white;
+  font-size: 80%;
+  background-color: none;
+  vertical-align: middle;
+  line-height: 500px;
+}
+
+#inner2 {
+  height: 100%;
+  line-height: 100%; 
+}
+
+#inner2 h1{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 70vh;
   position: relative;
+  top: 40%;
+  -webkit-transform: translateY(-40%);
+  -ms-transform: translateY(-40%);
+  transform: translateY(-40%);
+}
+
+.stat-box{
   display: none;
+}
+
+.box {
+  display: none;
+  height: 80vh;
+  position: relative;
+}
+
+#inner {
+  height: 100%;
+  line-height: 100%; 
+}
+
+#inner h1 {
+  position: relative;
+  top: 40%;
+  -webkit-transform: translateY(-40%);
+  -ms-transform: translateY(-40%);
+  transform: translateY(-40%);
 }
 // .posts a {
 //     text-align: center;
@@ -34,7 +80,7 @@
   // padding: 25px;
   margin: auto;
   text-align: center;
-  background-color: white;
+  // background-color: white;
   border-radius: 25px;
 }
 
