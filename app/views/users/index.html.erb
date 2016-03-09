@@ -1,23 +1,38 @@
 <div class="jumbotron user">
 
-<h3> my post archive: </h3>
+<h1>post archive</h1>
+<hr>
 
 <% @user.posts.each do |post| %>
 
-<div class="post-div">
+<div class="post-archive">
   <table class="table post-table">
     <tr>
+
       <td class="post-text-td"><%= post.text %></td>
 
-      <td class="post-weaction-td"><%= post.get_percentage(1) %></td>
+      <td class="post-weaction-td">
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: <%= post.get_percentage(1) %>" data-toggle="tooltip" data-placement="top" title="<%= post.get_percentage(1) %>">
+            <span class="sr-only" ><%= post.get_percentage(1) %></span>
+          </div>
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: <%= post.get_percentage(2) %>">
+            <span class="sr-only"><%= post.get_percentage(2) %></span>
+          </div>
+          <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: <%= post.get_percentage(3) %>">
+            <span class="sr-only"><%= post.get_percentage(3) %></span>
+          </div>
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: <%= post.get_percentage(4) %>">
+            <span class="sr-only"><%= post.get_percentage(4) %></span>
+          </div>
+        </div>
+      </td>
 
-      <td class="post-weaction-td"><%= post.get_percentage(2) %></td>
-
-      <td class="post-weaction-td"><%= post.get_percentage(3) %></td>
-
-      <td class="post-weaction-td"><%= post.get_percentage(4) %></td>
-
-      <td><a href=<%="/posts/#{post.id}"%> data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+      <td class="trash">
+        <div>
+          <a href=<%="/posts/#{post.id}"%> data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+        </div>
+      </td>
     </tr>
   </table>
 </div>
@@ -29,3 +44,4 @@
 <%= link_to "back", "/users/#{current_user.id}", class: "btn btn-default" %> 
 
 </div>
+

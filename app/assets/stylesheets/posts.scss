@@ -124,15 +124,17 @@ label > input:checked + img {
 }
 
 .post-div{
+  font-family: 'Montserrat', sans-serif;
   margin: auto;
-  background-color: white;
-  border-style: solid;
-  border-color: black;
+  background-color: #ffe3bc;
+  // border-style: solid;
+  // border-color: black;
   width: 90%;
   text-align: left;
-  border-radius: 25px;
+  border-radius: 15px;
   padding-top: 12px;
   padding-left: 12px;
+  padding-bottom: 1px;
   margin: 5px;
 }
 

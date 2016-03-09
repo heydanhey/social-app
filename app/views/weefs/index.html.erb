@@ -5,7 +5,9 @@
 <div class="weef-box">
 
       <% @weefs.each do |weef| %>
+
         <div class="container">
+
           <h4> You weef'd with: <%= weef.weefer(current_user.id).name%></h4>
           <h4> Time left: <%= weef.time_left_display %> </h4>
 
@@ -25,19 +27,21 @@
                 </div>
             </div>
 
-          <div class="weef-menu container">
+          <div class="weef-menu">
             <div class="col-md-4">
-              <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default" %>
+              <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default weef-btn" %>
             </div>
 
             <div class="col-md-4">
-              <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default" %>
+              <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default weef-btn" %>
             </div>
 
             <div class="col-md-4">
-              <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-default" %>
+              <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-default weef-btn" %>
             </div>
+
           </div>
+
         </div>
       <% end %>
   
