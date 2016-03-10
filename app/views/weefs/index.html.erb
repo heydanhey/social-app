@@ -1,31 +1,28 @@
 <div class="jumbotron weef">
-
-<h2>Congratulations!</h2>
-
-<div class="weef-box">
-
+  <div class="weef-box">
+    <h2>Congratulations!</h2>
+    <div id='mySwipe' class='swipe'>
+      <div class='swipe-wrap'>
       <% @weefs.each do |weef| %>
-
-        <div class="container">
-
+        <div>
           <h4> You weef'd with: <%= weef.weefer(current_user.id).name%></h4>
           <h4> Time left: <%= weef.time_left_display %> </h4>
+    
+          <div class="col-md-6">
+            <div class="w1">
+              <h3> You: </h3>
+              <p><%= weef.my_post(current_user.id).text %></p>
+                <%= image_tag("#{weef.my_post(current_user.id).emotion_id}.png") %>
+            </div>
+          </div>
 
-            <div class="col-md-6">
-              <div class="w1">
-                <h3> You: </h3>
-                <p><%= weef.my_post(current_user.id).text %></p>
-                  <%= image_tag("#{weef.my_post(current_user.id).emotion_id}.png") %>
+          <div class="col-md-6">
+            <div class="w2">
+                <h3> Them: </h3>
+                <p><%= weef.their_post(current_user.id).text %></p>
+                <%= image_tag("#{weef.their_post(current_user.id).emotion_id}.png") %>
               </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="w2">
-                  <h3> Them: </h3>
-                  <p><%= weef.their_post(current_user.id).text %></p>
-                  <%= image_tag("#{weef.their_post(current_user.id).emotion_id}.png") %>
-                </div>
-            </div>
+          </div>
 
           <div class="weef-menu">
             <div class="col-md-4">
@@ -39,13 +36,34 @@
             <div class="col-md-4">
               <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-default weef-btn" %>
             </div>
-
           </div>
-
         </div>
-      <% end %>
-  
-</div>
+        <% end %>
+      </div>
+    </div>
+
+    <div style='text-align:center;padding-top:20px;'>
+      
+      <button onclick='mySwipe.prev()'>prev</button> 
+      <button onclick='mySwipe.next()'>next</button>
+
+    </div>  
+  </div>
 </div>
 
 
+<script>
+// pure JS
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+  // startSlide: 4,
+  // auto: 3000,
+  // continuous: true,
+  // disableScroll: true,
+  // stopPropagation: true,
+  // callback: function(index, element) {},
+  // transitionEnd: function(index, element) {}
+});
+// with jQuery
+// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+</script>
