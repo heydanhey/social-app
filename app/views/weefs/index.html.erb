@@ -1,5 +1,5 @@
 <div class="jumbotron weef">
-  <div class="weef-box">
+  <div >
     <h2>Congratulations!</h2>
     <div id='mySwipe' class='swipe'>
       <div class='swipe-wrap'>
@@ -34,7 +34,9 @@
             </div>
 
             <div class="col-md-4">
-              <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-default weef-btn" %>
+            <button class="weef-btn">
+              <%= link_to "enter weef chat", "/chats/#{weef.id}" %>
+            </button>
             </div>
           </div>
         </div>
