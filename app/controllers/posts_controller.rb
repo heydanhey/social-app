@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   def create
 
     # Assign location coordinates
-    coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
+    # coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
+    coordinates = Geocoder.coordinates(request.remote_ip)
     # if Geocoder fails assigns these fake coords
     if coordinates == nil
       coordinates = [Faker::Address.latitude, Faker::Address.longitude]

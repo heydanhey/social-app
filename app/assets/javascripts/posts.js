@@ -236,7 +236,7 @@ window.addEventListener('load', function(){
 
     div = document.getElementById('touchsurface2');
 
-    div.addEventListener('mousedown', function(e) {
+    div.addEventListener('mousedown' 'touchstart', function(e) {
         isDown = true;
         offset = [
             div.offsetLeft - e.clientX,
@@ -249,11 +249,11 @@ window.addEventListener('load', function(){
 
     }, true);
 
-    document.addEventListener('mouseup', function() {
+    document.addEventListener('mouseup' 'touchend', function() {
         isDown = false;
     }, true);
 
-    document.addEventListener('mousemove', function(event) {
+    document.addEventListener('mousemove' 'touchmove', function(event) {
         event.preventDefault();
         if (isDown) {
             mousePosition = {
