@@ -1,5 +1,5 @@
 body {
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 }
 
 body p {
@@ -23,18 +23,55 @@ body p {
 }
 
 body {
-  margin-top: 30px;
+  margin-top: 15px;
   background-color: #ED5723;
 }
 
-.nav {
-  
-}
-
-.nav {
+.navbar .navbar-nav {
   display: inline-block;
   float: none;
-  vertical-align: top;
-  margin: auto;
+}
+
+.navbar .navbar-collapse{
   text-align: center;
 }
+
+// .nav {
+//   display: inline-block;
+//   float: none;
+//   vertical-align: top;
+//   margin: auto;
+//   text-align: center;
+// }
+
+// html, body {
+//   height: 100%;
+// }
+
+// body {
+//   padding: 50px 0 0 0;
+// }
+
+// .navbar-toggle {
+//   float: left;
+//   margin-left: 15px;
+// }
+
+// @media (min-width: 0) {
+//   .navbar-toggle {
+//     display: block; /* force showing the toggle */
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   body {
+//     padding: 0;
+//   }
+//   .navbar {
+//     right: auto;
+//     background: blue;
+//     border: none;
+//   }
+// }
+
+

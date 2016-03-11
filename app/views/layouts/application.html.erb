@@ -30,9 +30,38 @@
       <%= yield %>
 
 
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <%= render 'layouts/user_header' %>
-    </nav>
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">WeFreshed</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <% if user_signed_in? %>
+
+        <li><a href="/posts/<%= Post.get_post_by_location(current_user).id %>"><span class="glyphicon glyphicon-home" aria-hidden="true"></a></li>
+
+        <li><a href="/posts/new"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></li>
+
+        <li><a href="/users/<%= current_user.id %>"><span class="glyphicon glyphicon-user" aria-hidden="true"></a></li>
+
+        <li><a href="/weefs"><span class="glyphicon glyphicon-heart" aria-hidden="true"> <%= @weef_count %></a></li>
+    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    <% else %>
+    <li><%= link_to "Sign in", new_user_session_path %></li>
+    <li><%= link_to "Sign up", new_user_registration_path %></li>
+    <% end %>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
     
   </div>
 </body>

@@ -31,7 +31,7 @@ th.emotion {
 }
 
 .weef {
-  width: 95%;
+  width: 100%;
   padding: 25px;
   margin: auto;
   // text-align: center;
@@ -46,29 +46,31 @@ th.emotion {
 }
 
 .w1 {
-  background-color: white;
-  border-style: solid;
-  border-color: #13BFD9;
+  background-color: #13BFD9;
+  text-align: center;
+  // border-style: solid;
+  // border-color: #13BFD9;
   width: 100%;
   // float: left;
   border-radius: 15px;
-  padding-top: 12px;
-  padding-left: 12px;
+  padding: 12px;
   margin: 5px;
   font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 .w2 {
-  background-color: white;
-  border-style: solid;
-  border-color: #6ABD45;
+  background-color: #6ABD45;
+  text-align: center;
+  // border-style: solid;
+  // border-color: #6ABD45;
   width: 100%;
   // float: right;
   border-radius: 15px;
-  padding-top: 12px;
-  padding-left: 12px;
+  padding: 12px;
   margin: 5px;
   font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 .w1 img {
@@ -81,6 +83,14 @@ th.emotion {
   display: block;
   margin: auto;
   width: 40%;
+}
+
+.w1 h3 {
+  color: black
+}
+
+.w2 h3 {
+  color: black
 }
 
 .weef-menu {

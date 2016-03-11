@@ -1,7 +1,8 @@
 <div class="jumbotron weef">
 
 <h1> Weef Chat!!! </h1>
-<p>Time left: <%= @chats[0].weef.time_left_display %></p> 
+<p>Weef Expiration Time: <%= @chats[0].weef.expiration %></p> 
+
 <% @chats.each do |chat| %>
   <% if chat.user_id == current_user.id %>
   <div class="chat-left">

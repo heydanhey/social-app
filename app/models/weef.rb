@@ -50,6 +50,11 @@ class Weef < ActiveRecord::Base
     (created_at + 24.hours)-Time.now
   end
 
+  def expiration
+    t = (created_at + 24.hours)
+    Time.at(t).utc.strftime("%A, %B %e, %Y %l:%m %p ")
+  end
+
   def time_left_display
     t = (created_at + 24.hours)-Time.now
     Time.at(t).utc.strftime("%H:%M:%S")
