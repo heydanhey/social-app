@@ -14,6 +14,73 @@
 </head>
 
 <body>
+<!-- ui-8 -->
+    <div class="ui-8">
+      <!-- UI head -->
+      <div class="ui-head">
+        <!-- Button -->
+        <a href="#" class="bg-lblue">Menu</a>
+      </div>
+      <!-- UI content -->
+      <div class="ui-content">
+        <!-- Container fluid -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
+              <!-- UI item -->
+              <div class="ui-item">
+                <!-- Image -->
+                <a href="#"><img src="img/ui-8/1.png" alt="" class="img-responsive" /></a>
+                <!-- Heading -->
+                <h6><a href="/posts/<%= Post.get_post_by_location(current_user).id %>">View</a></h6>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
+              <!-- UI iteme -->
+              <div class="ui-item">
+                <!-- Image -->
+                <a href="#"><img src="img/ui-8/2.png" alt="" class="img-responsive" /></a>
+                <!-- Heading -->
+                <h6><a href="/posts/new">New</a></h6>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
+              <div class="ui-item">
+                <a href="#"><img src="img/ui-8/3.png" alt="" class="img-responsive" /></a>
+                <h6><a href="#">Crown</a></h6>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
+              <div class="ui-item">
+                <a href="#"><img src="img/ui-8/4.png" alt="" class="img-responsive" /></a>
+                <h6><a href="#">Diamond</a></h6>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
+              <div class="ui-item">
+                <a href="#"><img src="img/ui-8/5.png" alt="" class="img-responsive" /></a>
+                <h6><a href="#">Location</a></h6>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
+              <!-- UI Item -->
+              <div class="ui-item">
+                <!-- Image -->
+                <a href="#"><img src="img/ui-8/6.png" alt="" class="img-responsive" /></a>
+                <!-- Heading -->
+                <h6><a href="#">Search</a></h6>
+              </div>
+            </div>
+          </div>
+           
+          
+        </div><!-- /Container fluid -->
+      </div><!-- /UI Content -->
+    </div><!-- /ui-8 -->
+    
+
+
+
   <div class="container">
 <!-- FLASH MESSAGE -->
 
@@ -28,40 +95,6 @@
 
  
       <%= yield %>
-
-
-<div class="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">WeFreshed</a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        
-        <% if user_signed_in? %>
-
-        <li><a href="/posts/<%= Post.get_post_by_location(current_user).id %>"><span class="glyphicon glyphicon-home" aria-hidden="true"></a></li>
-
-        <li><a href="/posts/new"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></li>
-
-        <li><a href="/users/<%= current_user.id %>"><span class="glyphicon glyphicon-user" aria-hidden="true"></a></li>
-
-        <li><a href="/weefs"><span class="glyphicon glyphicon-heart" aria-hidden="true"> <%= @weef_count %></a></li>
-    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-    <% else %>
-    <li><%= link_to "Sign in", new_user_session_path %></li>
-    <li><%= link_to "Sign up", new_user_registration_path %></li>
-    <% end %>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</div>
-
     
   </div>
 </body>

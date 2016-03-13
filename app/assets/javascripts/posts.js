@@ -32,7 +32,7 @@
 
 $(document).ready(function(e){
     $(".box").fadeIn();
-    $(".stat-box").fadeIn(1500);
+    // $(".stat-box").fadeIn(1500);
 });
 
 
@@ -45,34 +45,34 @@ $(document).keydown(function(e){
     switch (e.which){
     case 37:    //left arrow key
         $(".box").finish().animate({
-            left: "-=1500",
-            backgroundColor: '#ff0004'
+            backgroundColor: '#ff0004',
+            left: "-=1500"
         });
-        $(".stat-box .value").html(stats[3]);
+        // $(".stat-bo"x .value").html(stats[3]);
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 38:    //up arrow key
         $(".box").finish().animate({
-            top: "-=1500",
-            backgroundColor: '#02f90e'
+            backgroundColor: '#02f90e',
+            top: "-=1500"
         });
-        $(".stat-box .value").html(stats[0]);
+        // $(".stat-box .value").html(stats[0]);
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 39:    //right arrow key
         $(".box").finish().animate({
-            left: "+=1500",
-            backgroundColor: '#fc6635'
+            backgroundColor: '#fc6635',
+            left: "+=1500"
         });
-        $(".stat-box .value").html(stats[1]);
+        // $(".stat-box .value").html(stats[1]);
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 40:    //bottom arrow key
         $(".box").finish().animate({
-            top: "+=1500",
-            backgroundColor: '#02c8ff'
+            backgroundColor: '#02c8ff',
+            top: "+=1500"
         });
-        $(".stat-box .value").html(stats[2]);
+        // $(".stat-box .value").html(stats[2]);
         document.location = "/posts/" + idString + "?sympathetic=id";
         break;
     }
@@ -227,72 +227,72 @@ window.addEventListener('load', function(){
 
 
 
-window.addEventListener('load', function(){
-    var mousePosition;
-    var offset = [0,0];
-    var startCoords = [0,0];
-    var div;
-    var isDown = false;
+// window.addEventListener('load', function(){
+//     var mousePosition;
+//     var offset = [0,0];
+//     var startCoords = [0,0];
+//     var div;
+//     var isDown = false;
 
-    div = document.getElementById('touchsurface2');
+//     div = document.getElementById('touchsurface2');
 
-    div.addEventListener('mousedown', function(e) {
-        isDown = true;
-        offset = [
-            div.offsetLeft - e.clientX,
-            div.offsetTop - e.clientY
-        ];
-        startCoords = [
-            e.clientX,
-            e.clientY
-        ];
+//     div.addEventListener('mousedown', function(e) {
+//         isDown = true;
+//         offset = [
+//             div.offsetLeft - e.clientX,
+//             div.offsetTop - e.clientY
+//         ];
+//         startCoords = [
+//             e.clientX,
+//             e.clientY
+//         ];
 
-    }, true);
+//     }, true);
 
-    document.addEventListener('mouseup', function() {
-        isDown = false;
-    }, true);
+//     document.addEventListener('mouseup', function() {
+//         isDown = false;
+//     }, true);
 
-    document.addEventListener('mousemove', function(event) {
-        event.preventDefault();
-        if (isDown) {
-            mousePosition = {
+//     document.addEventListener('mousemove', function(event) {
+//         event.preventDefault();
+//         if (isDown) {
+//             mousePosition = {
         
-                x : event.clientX,
-                y : event.clientY
+//                 x : event.clientX,
+//                 y : event.clientY
         
-            };
-            console.log(startCoords);
-            console.log(mousePosition);
+//             };
+//             // console.log(startCoords);
+//             // console.log(mousePosition);
 
 
 
-            div.style.top  = (mousePosition.y + offset[1]) + 'px';
+//             div.style.top  = (mousePosition.y + offset[1]) + 'px';
 
-            div.style.left = (mousePosition.x + offset[0]) + 'px';
-
-
-            if (mousePosition.x > (startCoords[0]+300)) {
-                animateThis(div, 'right');
-                console.log("MOVE RIGHT");
-            };
-            if (mousePosition.x < (startCoords[0]-300)) {
-                animateThis(div, 'left');
-                console.log("MOVE LEFT");
-            };
-            if (mousePosition.y > 200) {
-                animateThis(div, 'down');
-                console.log("MOVE DOWN");
-            };
-            if (mousePosition.y < (-10)) {
-                animateThis(div, 'up');
-                console.log("MOVE UP");
-            };
+//             div.style.left = (mousePosition.x + offset[0]) + 'px';
 
 
-        }
-    }, true);
-});
+//             if (mousePosition.x > (startCoords[0]+300)) {
+//                 animateThis(div, 'right');
+//                 console.log("MOVE RIGHT");
+//             };
+//             if (mousePosition.x < (startCoords[0]-300)) {
+//                 animateThis(div, 'left');
+//                 console.log("MOVE LEFT");
+//             };
+//             if (mousePosition.y > 200) {
+//                 animateThis(div, 'down');
+//                 console.log("MOVE DOWN");
+//             };
+//             if (mousePosition.y < (-10)) {
+//                 animateThis(div, 'up');
+//                 console.log("MOVE UP");
+//             };
+
+
+//         }
+//     }, true);
+// });
 
 
 
