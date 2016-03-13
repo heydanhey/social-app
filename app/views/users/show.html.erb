@@ -54,11 +54,21 @@
   <hr>
 
 
-<ul class="nav nav-tabs nav-justified">
-  <li role="presentation" > <%= link_to "my posts", "/users"%></li>
-  <li role="presentation"> <%= link_to "my weefs", "/weefs"%></li>
-  <li role="presentation"><a data-toggle="modal" data-target="#myModal"> Settings </a></li>
-</ul>
+          <div class="weef-menu">
+            <div class="col-md-4">
+              <%= link_to "my posts", "/users", class: "btn btn-green weef-btn" %>
+            </div>
+
+            <div class="col-md-4">
+              <%= link_to "my weefs", "/weefs", class: "btn btn-blue weef-btn" %>
+            </div>
+
+            <div class="col-md-4">
+              <a data-toggle="modal" data-target="#myModal" class="btn btn-red weef-btn"> User Settings </a>
+            </div>
+          </div>
+          <br>
+
 </div>
 
 <!-- Modal -->

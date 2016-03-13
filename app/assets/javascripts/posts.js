@@ -32,11 +32,8 @@
 
 $(document).ready(function(e){
     $(".box").fadeIn();
-    // $(".stat-box").fadeIn(1500);
+    $(".stat-box").fadeIn(500);
 });
-
-
-
 
 $(document).keydown(function(e){
     var idNumber = gon.post.id;
@@ -48,7 +45,8 @@ $(document).keydown(function(e){
             backgroundColor: '#ff0004',
             left: "-=1500"
         });
-        // $(".stat-bo"x .value").html(stats[3]);
+        $(".stat-box .value").html(stats[0]);
+        // $("#emot").html("<img src='4.png'/>");
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 38:    //up arrow key
@@ -56,7 +54,7 @@ $(document).keydown(function(e){
             backgroundColor: '#02f90e',
             top: "-=1500"
         });
-        // $(".stat-box .value").html(stats[0]);
+        $(".stat-box .value").html(stats[0]);
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 39:    //right arrow key
@@ -64,7 +62,7 @@ $(document).keydown(function(e){
             backgroundColor: '#fc6635',
             left: "+=1500"
         });
-        // $(".stat-box .value").html(stats[1]);
+        $(".stat-box .value").html(stats[1]);
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 40:    //bottom arrow key
@@ -72,7 +70,7 @@ $(document).keydown(function(e){
             backgroundColor: '#02c8ff',
             top: "+=1500"
         });
-        // $(".stat-box .value").html(stats[2]);
+        $(".stat-box .value").html(stats[2]);
         document.location = "/posts/" + idString + "?sympathetic=id";
         break;
     }
@@ -294,9 +292,28 @@ window.addEventListener('load', function(){
 //     }, true);
 // });
 
+//dropdown
 
+$(document).ready(function() {
+                var hidden = true;
+                $('.dd-link').click(function(e) {
+                    e.preventDefault();
+                    if (hidden){
+                       $(this).next('.dd-dropdown').fadeToggle(200, function(){hidden = false;});
+                    }
+                });
 
+                $('html').click(function() {
+                    if (!hidden) {
+                        $('.dd-dropdown').fadeOut();
+                        hidden=true;
+                    }
+                });
 
+                $('.dd-dropdown').click(function(event) {
+                    event.stopPropagation();
+                });
+            });
 
 
 

@@ -6,9 +6,15 @@ body p {
   font-family: 'Montserrat', sans-serif;
 }
 
-.container .jumbotron {
+.main-container .jumbotron {
     border-radius: 25px;
     max-width: 900px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main-container {
+  padding-top: 40px;
 }
 
 .devise h2 {
@@ -24,7 +30,7 @@ body p {
 
 body {
   // margin-top: 15px;
-  background-color: #ED5723;
+  background-color: #ededed;
 }
 
 .navbar .navbar-nav {
@@ -35,43 +41,4 @@ body {
 .navbar .navbar-collapse{
   text-align: center;
 }
-
-// .nav {
-//   display: inline-block;
-//   float: none;
-//   vertical-align: top;
-//   margin: auto;
-//   text-align: center;
-// }
-
-// html, body {
-//   height: 100%;
-// }
-
-// body {
-//   padding: 50px 0 0 0;
-// }
-
-// .navbar-toggle {
-//   float: left;
-//   margin-left: 15px;
-// }
-
-// @media (min-width: 0) {
-//   .navbar-toggle {
-//     display: block; /* force showing the toggle */
-//   }
-// }
-
-// @media (min-width: 992px) {
-//   body {
-//     padding: 0;
-//   }
-//   .navbar {
-//     right: auto;
-//     background: blue;
-//     border: none;
-//   }
-// }
-
 

@@ -5,6 +5,7 @@
 .jumbotron {
   margin: auto;
   border-radius: 25px;
+  background-color: white;
 }
 
 #behind{
@@ -153,5 +154,9 @@ label > input:checked + img {
   color: #333 !important;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.66);
   -webkit-font-smoothing: antialiased;
+}
+
+.dropup {
+  float: left;
 }
 
