@@ -1,0 +1,240 @@
+<div class="jumbotron user">
+
+<div class="row">
+
+  <div class="col-xs-6 col-md-4"> <%= image_tag(@image, size: "200x200") %></div>
+
+  <div class="col-xs-12 col-md-8">
+
+ 
+          <h3><%= @user.name %></h3>
+          <br />
+
+          <p>set radius:</p>      
+
+          <section>
+            <div class="view">
+              <div class="example">
+                <div id="slider-range"></div>
+                <span class="example-val" id="slider-range-value"></span>
+                <hr>
+          <%= form_tag "/users/#{current_user.id}", method: :patch do %>
+
+         <%= text_field_tag(:location_radius) %>
+          
+
+          <%= submit_tag "Update", class: "btn btn-default" %>
+          <% end %>
+                  <script>
+                    var rangeSlider = document.getElementById('slider-range');
+
+                    noUiSlider.create(rangeSlider, {
+                      start: [ <%= @user.location_radius %> ],
+                      range: {
+                        'min': [  5 ],
+                        'max': [ 5000 ]
+                      }
+                    });
+                  </script>   
+
+                  <script>
+                    var rangeSliderValueElement = document.getElementById('location_radius');
+
+                    rangeSlider.noUiSlider.on('update', function( values, handle ) {
+                      rangeSliderValueElement.value = values[handle];
+                    });
+                  </script>   
+
+              </div>
+            </div>
+          </section>
+
+    </div>
+
+
+  
+  
+
+
+
+  </div>
+  <h1>Number of weactions: <%= @user.weactions.count %></h1>
+
+   <h1>Excited: <%= @user.weactions.where(emotion_id: 1).count %></h1>
+   <h1>Amused: <%= @user.weactions.where(emotion_id: 2).count %></h1>
+   <h1>Sympathetic: <%= @user.weactions.where(emotion_id: 3).count %></h1>
+   <h1>Annoyed: <%= @user.weactions.where(emotion_id: 4).count %></h1>
+
+
+<!-- UI # -->
+    <div class="ui-255">
+    
+      <div class="container">
+        <!-- UI content -->
+        <div class="block-content">
+          <!-- Bar chart -->
+          <div class="chart-container">
+            <!-- Vertical bar  -->
+            <div class="vertical-bar">
+              <!-- Vertical bar content -->
+              <div class="bar-content bg-lblue">
+                <!-- Bar hover -->
+                <div class="bar-hover">
+                  <!-- Heading -->
+                  <h6>Excited</h6>
+                  <!-- Numbers with icon -->
+                  <span class="num"><%= @user.weactions.where(emotion_id: 1).count %><i class="fa fa-arrow-down green"></i></span>
+                </div>
+                <div class="img-container">
+                  <!-- Transparent image -->
+                  <img class="trans-img" src="img/ui-255/transparent.png" alt="" />
+                </div>
+              </div>
+              <!-- Vertical bar limit -->
+              <span class="bar-limit" data-limit="<%= @user.weactions.where(emotion_id: 1).count %>"></span>
+            </div>
+            <!-- Vertical bar  -->
+            <div class="vertical-bar">
+              <!-- Vertical bar content -->
+              <div class="bar-content bg-green">
+                <!-- Bar hover -->
+                <div class="bar-hover">
+                  <!-- Heading -->
+                  <h6>Report</h6>
+                  <!-- Numbers with icon -->
+                  <span class="num">40&#37; <i class="fa fa-arrow-up red"></i> &nbsp; 10&#37; <i class="fa fa-arrow-down green"></i></span>
+                </div>
+                <div class="img-container">
+                  <!-- Transparent image -->
+                  <img class="trans-img" src="img/ui-255/transparent.png" alt="" />
+                </div>
+              </div>
+              <!-- Vertical bar limit -->
+              <span class="bar-limit" data-limit="<%= @user.weactions.where(emotion_id: 2).count %>"></span>
+            </div>
+            <!-- Vertical bar  -->
+            <div class="vertical-bar">
+              <!-- Vertical bar content -->
+              <div class="bar-content bg-red">
+                <!-- Bar hover -->
+                <div class="bar-hover">
+                  <!-- Heading -->
+                  <h6>Report</h6>
+                  <!-- Numbers with icon -->
+                  <span class="num">60&#37; <i class="fa fa-arrow-up red"></i> &nbsp; 40&#37; <i class="fa fa-arrow-down green"></i></span>
+                </div>
+                <div class="img-container">
+                  <!-- Transparent image -->
+                  <img class="trans-img" src="img/ui-255/transparent.png" alt="" />
+                </div>
+              </div>
+              <!-- Vertical bar limit -->
+              <span class="bar-limit" data-limit="<%= @user.weactions.where(emotion_id: 3).count %>"></span>
+            </div>
+            <!-- Vertical bar  -->
+            <div class="vertical-bar">
+              <!-- Vertical bar content -->
+              <div class="bar-content bg-yellow">
+                <!-- Bar hover -->
+                <div class="bar-hover">
+                  <!-- Heading -->
+                  <h6>Report</h6>
+                  <!-- Numbers with icon -->
+                  <span class="num">30&#37; <i class="fa fa-arrow-up red"></i> &nbsp; 30&#37; <i class="fa fa-arrow-down green"></i></span>
+                </div>
+                <div class="img-container">
+                  <!-- Transparent image -->
+                  <img class="trans-img" src="img/ui-255/transparent.png" alt="" />
+                </div>
+              </div>
+              <!-- Vertical bar limit -->
+              <span class="bar-limit" data-limit="<%= @user.weactions.where(emotion_id: 4).count %>"></span>
+            </div>
+  
+
+              
+          
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  <hr>
+
+
+          <div class="weef-menu">
+            <div class="col-md-4">
+              <%= link_to "my posts", "/users", class: "btn btn-green weef-btn" %>
+            </div>
+
+            <div class="col-md-4">
+              <%= link_to "my weefs", "/weefs", class: "btn btn-blue weef-btn" %>
+            </div>
+
+            <div class="col-md-4">
+              <a data-toggle="modal" data-target="#myModal" class="btn btn-red weef-btn"> User Settings </a>
+            </div>
+          </div>
+          <br>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">User Settings</h4>
+      </div>
+      <div class="modal-body">
+        <%= link_to "Delete Yourself!", "/users/#{current_user.id}", method: :delete, data:{confirm: "Are You Sure"}, :class => "btn btn-default", :role => "button" %> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+      
+      $(function() {
+          
+        setTimeout(function(){
+        
+          $('.bar-limit').each(function() {
+            var me = $(this);
+            var perc = me.attr("data-limit");
+            var current_perc = 0;
+            
+            if(!$(this).hasClass('stop')){
+            
+              var progress = setInterval(function() {
+                              
+                if (current_perc>=perc) {
+                  clearInterval(progress);
+                } else {
+                  current_perc +=1;
+                  me.parent().children('.bar-content').css('height', (current_perc)+'%');
+                  me.html(current_perc+'%');
+                }
+            
+              }, 15);
+              
+              me.addClass('stop');
+              me.parent().children('.bar-content').addClass('stop');
+              
+            }
+            
+          });
+          
+        }, 0);
+        
+      });
+    
+      
+    </script>
+
+

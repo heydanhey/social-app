@@ -10,7 +10,7 @@
           <h3><%= @user.name %></h3>
           <br />
 
-          <p>set radius</p>      
+          <p>set radius:</p>      
 
           <section>
             <div class="view">
@@ -50,7 +50,23 @@
           </section>
 
     </div>
+
+
+  
+  
+
+
+
   </div>
+  <p>Number of weactions: <%= @user.weactions.count %></p>
+
+   <p>Excited: <%= @user.weactions.where(emotion_id: 1).count %></p>
+   <p>Amused: <%= @user.weactions.where(emotion_id: 2).count %></p>
+   <p>Sympathetic: <%= @user.weactions.where(emotion_id: 3).count %></p>
+   <p>Annoyed: <%= @user.weactions.where(emotion_id: 4).count %></p>
+
+
+
   <hr>
 
 
@@ -89,5 +105,44 @@
     </div>
   </div>
 </div>
+
+  <script>
+      
+      $(function() {
+          
+        setTimeout(function(){
+        
+          $('.bar-limit').each(function() {
+            var me = $(this);
+            var perc = me.attr("data-limit");
+            var current_perc = 0;
+            
+            if(!$(this).hasClass('stop')){
+            
+              var progress = setInterval(function() {
+                              
+                if (current_perc>=perc) {
+                  clearInterval(progress);
+                } else {
+                  current_perc +=1;
+                  me.parent().children('.bar-content').css('height', (current_perc)+'%');
+                  me.html(current_perc+'%');
+                }
+            
+              }, 15);
+              
+              me.addClass('stop');
+              me.parent().children('.bar-content').addClass('stop');
+              
+            }
+            
+          });
+          
+        }, 0);
+        
+      });
+    
+      
+    </script>
 
 

@@ -1,0 +1,133 @@
+<div class="jumbotron weef">
+  <div >
+    <h3>Congratulations, 
+    <% if @weef_count == 1 %>
+       You have <%= @weef_count %> weef! 
+    <% else %>
+       You have <%= @weef_count %> weefs! </h3>
+    <% end %> 
+            
+    <div id='mySwipe' class='swipe'>
+      <div class='swipe-wrap'>
+      <% @weefs.each do |weef| %>
+
+      
+      <div class="ui-153">
+      <h4> You weef'd with: <%= weef.weefer(current_user.id).name%></h4>
+          <h4> Time left: <%= weef.time_left_display %>
+    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+          
+            <!-- Item -->
+            <div class="ui-item">
+              <!-- Heading -->
+              <div class="ui-head">
+                <!-- Heading -->
+                <h2><i class="fa fa-gift lblue"></i>This was your post:</a></h2>
+                <!-- Para -->
+                <h3>"<%= weef.my_post(current_user.id).text %>"</h3>
+              </div>
+              <!-- Body -->
+              <div class="ui-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6  col-xs-6 col-padd">
+                      <!-- Body item -->
+                      <div class="ui-bitem clearfix">
+                        <!-- Image -->
+                        <%= image_tag("#{weef.my_post(current_user.id).emotion_id}.png") %>
+                        <!-- Heading -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Foot -->
+            </div>
+          
+          </div>
+          
+          <div class="col-md-6">
+          
+            <!-- Item -->
+            <div class="ui-item">
+              <!-- Heading -->
+              <div class="ui-head">
+                <!-- Heading -->
+                <h2><i class="fa fa-gift lblue"></i>This was their post:</a></h2>
+                <!-- Para -->
+                <h3>"<%= weef.their_post(current_user.id).text %>"</h3>
+              </div>
+              <!-- Body -->
+              <div class="ui-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6  col-xs-6 col-padd">
+                      <!-- Body item -->
+                      <div class="ui-bitem clearfix">
+                        <!-- Image -->
+                        <%= image_tag("#{weef.their_post(current_user.id).emotion_id}.png") %>
+                        <!-- Heading -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Foot -->
+            </div>
+          
+          </div>
+          <div class="weef-menu">
+            <div class="col-md-4">
+              <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-green weef-btn" %>
+            </div>
+
+            <div class="col-md-4">
+              <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-blue weef-btn" %>
+            </div>
+
+            <div class="col-md-4">
+              <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-red weef-btn" %>
+            </div>
+          </div>
+            </div>
+          
+          </div>
+          
+        </div>
+      </div>
+    
+    </div>
+    <% end %>
+      </div>
+    </div>
+    
+
+    <% if @weef_count > 1 %>
+      <div style='text-align:center;padding-top:20px;'>
+        <button onclick='mySwipe.prev()'>prev</button> 
+        <button onclick='mySwipe.next()'>next</button>
+      </div>  
+    <% end %> 
+
+  </div>
+</div>
+
+
+<script>
+// pure JS
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+  // startSlide: 4,
+  // auto: 3000,
+  // continuous: true,
+  // disableScroll: true,
+  // stopPropagation: true,
+  // callback: function(index, element) {},
+  // transitionEnd: function(index, element) {}
+});
+// with jQuery
+// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+</script>

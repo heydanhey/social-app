@@ -1,66 +1,33 @@
 
 
 <% if user_signed_in? %>
-    <div class="ui-8">
-      <!-- UI head -->
-      <div class="ui-head">
-        <!-- Button -->
-        <a href="#" class="bg-lblue">Menu</a>
-      </div>
-      <!-- UI content -->
-      <div class="ui-content">
-        <!-- Container fluid -->
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
-              <!-- UI item -->
-              <div class="ui-item">
-                <!-- Image -->
-                <a href="#"><img src="img/ui-8/1.png" alt="" class="img-responsive" /></a>
-                <!-- Heading -->
-                <h6><a href="/posts/<%= Post.get_post_by_location(current_user).id %>">Weact</a></h6>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
-              <!-- UI iteme -->
-              <div class="ui-item">
-                <!-- Image -->
-                <a href="#"><img src="img/ui-8/2.png" alt="" class="img-responsive" /></a>
-                <!-- Heading -->
-                <h6><a href="/posts/new">Create</a></h6>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
-              <div class="ui-item">
-                <a href="#"><img src="img/ui-8/3.png" alt="" class="img-responsive" /></a>
-                <h6><a href="/users/<%= current_user.id %>">User</a></h6>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
-              <div class="ui-item">
-                <a href="#"><img src="img/ui-8/4.png" alt="" class="img-responsive" /></a>
-                <h6><a href="/weefs">Weefs: <%= @weef_count %></a></h6>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
-              <div class="ui-item">
-                <a href="#"><img src="img/ui-8/5.png" alt="" class="img-responsive" /></a>
-                <h6><a href="#">Leaderboard</a></h6>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-4 ui-padd">
-              <!-- UI Item -->
-              <div class="ui-item">
-                <!-- Image -->
-                <a href="#"><img src="img/ui-8/6.png" alt="" class="img-responsive" /></a>
-                <!-- Heading -->
-                <h6><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></h6>
-              </div>
-            </div>
-          </div>
-           
-          
-        </div><!-- /Container fluid -->
-      </div><!-- /UI Content -->
-    </div><!-- /ui-8 -->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">WeFreshed</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/posts/new">Create</a></li>
+        <li><a href="/posts/<%= Post.get_post_by_location(current_user).id %>">Weact</a></li>
+        <li><a href="/weefs">Weefs: <%= @weef_count %></a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li> <a href="/users/<%= current_user.id %>">User</a></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        
+      </ul>
+      
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
     <% end %>
