@@ -27,4 +27,4 @@
 }());
 
 
-postsCtrl.$inject = ['$scope', '$http'];
+// postsCtrl.$inject = ['$scope', '$http'];
