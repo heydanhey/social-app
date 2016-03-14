@@ -9,4 +9,4 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( 1.png, 3.png, 4.png, 2.png, Wefresh_logo.jpg, wefresh_logo_2.png, wefresh_logo_3.jpg, congruent_pentagon.png, title.png, title_black.png, title_white.png)
+Rails.application.config.assets.precompile += %w( 1.png, 3.png, 4.png, 2.png, Wefresh_logo.jpg, wefresh_logo_2.png, wefresh_logo_3.jpg, congruent_pentagon.png, title.png, title_black.png, title_white.png, postsCtrl.js)
