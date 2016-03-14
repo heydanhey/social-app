@@ -14,13 +14,14 @@
 </head>
 
 <body>
+
 <%= render "layouts/user_header" %>
 
 
   <div class="main-container">
 <!-- FLASH MESSAGE -->
 
-    <div class="container">
+    <div class="alert-container">
       <% flash.each do |name, message| %>
         <div class="alert alert-<%= name == "alert" || name == "notice" ? "warning" : "name" %> alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

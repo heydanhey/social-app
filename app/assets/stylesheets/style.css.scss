@@ -1,5 +1,8 @@
 body {
-  padding-bottom: 50px;
+  padding-bottom: 55px;
+  background-image: url("congruent_pentagon.png");
+  background-color: black;
+  background-attachment: fixed;
 }
 
 body p {
@@ -8,13 +11,15 @@ body p {
 
 .main-container .jumbotron {
     border-radius: 25px;
+    width: 95%;
     max-width: 900px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
 }
 
 .main-container {
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
 .devise h2 {
@@ -42,3 +47,19 @@ body {
   text-align: center;
 }
 
+.flags {
+  display: inline-block;
+  float: right;
+}
+
+
+.alert {
+  position: absolute;
+  z-index: 1;
+  background-color: red;
+  opacity: 0.6;
+}
+
+.fa{
+  padding: 3px;
+}

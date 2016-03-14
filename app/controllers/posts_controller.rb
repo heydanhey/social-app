@@ -46,7 +46,6 @@ class PostsController < ApplicationController
     elsif params[:annoyed]
       post_action(4)
     end
-    
   end
 
   def edit

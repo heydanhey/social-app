@@ -17,13 +17,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/posts/new">Create</a></li>
-        <li><a href="/posts/<%= Post.get_post_by_location(current_user).id %>">Weact</a></li>
-        <li><a href="/weefs">Weefs: <%= @weef_count %></a></li>
-        <li><a href="#">Leaderboard</a></li>
-        <li> <a href="/users/<%= current_user.id %>">User</a></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-        
+        <li><a href="/posts/new"><i class="fa fa-pencil-square-o fa-2x"></i> Create</a></li>
+        <li><a href="/posts/<%= Post.get_post_by_location(current_user).id %>"><i class="fa fa-refresh fa-2x"></i> Weact</a></li>
+        <li><a href="/weefs"><i class="fa fa-heart fa-2x"></i> Weefs: <%= @weef_count %></a></li>
+        <li><a href="#"><i class="fa fa-tachometer fa-2x"></i> Leaderboard</a></li>
+        <li><a href="/users/<%= current_user.id %>"><i class="fa fa-user-secret fa-2x"></i> User</a></li>
+        <li><%= link_to '<i class="fa fa-minus-square fa-2x"></i> Sign out'.html_safe, destroy_user_session_path, :method => :delete %></li>
       </ul>
       
 

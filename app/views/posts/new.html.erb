@@ -17,16 +17,15 @@
   <h2> Please create an inaugural post to Activate your Account! </h2>
 <% end %>
 
-<h1> Write something WeFreshing! </h1>
+<h1> Write something WeFreshing </h1>
 
 <%= form_tag '/posts', method: :post do %>
 
   <div class="input-group input-group-lg">
-    <p><%= label_tag :text, "Enter Text:" %></p>
     <%= text_field_tag :text, nil, class: 'form-control', rows: "3", placeholder: "Write Something WeFreshing...", :size=>"50", :maxlength=>"254" %>
   </div>
 <br />
-  <p>Attach and Emotion:</p><br>
+  <p>then attach an emotion</p><br>
   <label>
   <%= radio_button_tag(:emotion_id, 1) %>
   <%= image_tag("1.png", size: "80x80") %>

@@ -32,4 +32,14 @@ Rails.application.routes.draw do
   get '/chats/:id' => 'chats#show'
   post '/chats/:id' => 'chats#create'
 
+  namespace :api do
+    namespace :v1 do  
+      get "/posts" => "posts#index"
+      post "/posts" => "posts#create"
+      get "/posts/:id" => "posts#show"
+      patch "/posts/:id" => "posts#update"
+      delete "posts/:id" => "posts#destroy"
+    end
+  end
+
 end
