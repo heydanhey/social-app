@@ -11,29 +11,8 @@
         });
       };
 
-
-      // $scope.addPost = function(newPostName, newPostText, newPostEmotion_id){
-      //   var newPost = {
-      //     user_id: newPostUserId,
-      //     text: newPostText,
-      //     "emotion_id": newPostEmotion_id
-      //   };
-
-      //   $http.post('/api/v1/posts.json', newPost).then(function(response){
-      //     $scope.posts.push(response.data);
-      //     $location.path("/weefs/" + response.data.id);
-      //   }, function(response){
-      //     $scope.errors = response.data.errors;
-      //   });
-
-      //   $scope.newPostUserId = "";
-      //   $scope.newPostText = "";
-      //   $scope.newPostEmotion_id = "";
-
-      //   };
-
       $scope.descending = false;
-    // }
+ 
       $scope.sortBy = function(sortAttribute) {
         if (sortAttribute != $scope.sortByAttribute) {
           $scope.descending = false;
@@ -46,3 +25,6 @@
       window.scope = $scope; 
     });
 }());
+
+
+postsCtrl.$inject = ['$scope', '$http'];
