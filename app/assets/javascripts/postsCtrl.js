@@ -7,6 +7,7 @@
 
         $http.get('../api/v1/posts.json').then(function(response){
           $scope.posts = response.data;
+          console.log(response.data);
         });
       };
 

@@ -33,9 +33,9 @@ class UsersController < ApplicationController
       @user.name = Bazaar.object.titleize
       # coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
       coordinates = Geocoder.coordinates(request.remote_ip)
-      # if Geocoder fails assigns these fake coords
+      # if Geocoder fails, assigns these fake coords
       if coordinates == nil
-        coordinates = [Faker::Address.latitude, Faker::Address.longitude]
+        coordinates = [41.9474, -87.7037]
       end
       
       @user.latitude = coordinates[0]

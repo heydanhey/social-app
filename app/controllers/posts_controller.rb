@@ -15,9 +15,9 @@ class PostsController < ApplicationController
     # Assign location coordinates
     # coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
     coordinates = Geocoder.coordinates(request.remote_ip)
-    # if Geocoder fails assigns these fake coords
+    # if Geocoder fails, assign these fake coords
     if coordinates == nil
-      coordinates = [Faker::Address.latitude, Faker::Address.longitude]
+      coordinates = [41.9474, -87.7037]
     end
 
     @post = Post.new({text: params[:text], user_id: current_user.id, emotion_id: params[:emotion_id], latitude: coordinates[0], longitude: coordinates[1]})

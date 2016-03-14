@@ -1,47 +1,69 @@
 <div class="jumbotron user">
 
 <h1>post archive</h1>
+
 <hr>
 
-<% @user.posts.each do |post| %>
+<div ng-app="app">
+  <div ng-controller="postsCtrl" ng-init="setup()">
 
-<div class="post-archive">
-  <table class="table post-table">
-    <tr>
+    <div class="post-archive">
 
-      <td class="post-text-td"><%= post.text %></td>
+      <table class="table post-table">
+        <tr>
+          <th ng-click="sortBy('text')">Text</th>
+          <th ng-click="sortBy('emotion_id')"><i class="fa fa-meh-o fa-2x"></i></th>
+          <th ng-click="sortBy('stats[0]')">1</th>
+          <th ng-click="sortBy('stats[1]')">2</th>
+          <th ng-click="sortBy('stats[2]')">3</th>
+          <th ng-click="sortBy('stats[3]')">4</th>
+          <th>Action</th>
+        </tr>
 
-      <td class="post-weaction-td">
+    <tr ng-repeat="post in posts | filter: {text: textFilter, emotion_id: emotionFilter} | orderBy:sortByAttribute:descending">
+
+      <td class="post-text-td">{{post.text}}</td>
+
+      <td>{{post.emotion_id}}</td>
+
+      <td colspan="4" class="post-weaction-td">
         <div class="progress">
-          <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: <%= post.get_percentage(1) %>" data-toggle="tooltip" data-placement="top" title="<%= post.get_percentage(1) %>">
-            <span class="sr-only" ><%= post.get_percentage(1) %></span>
+          <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: {{post.stats[0]}}" data-toggle="tooltip" data-placement="top" title="{{post.stats[0]}}">
+            <span class="sr-only" >{{post.stats[0]}}</span>
           </div>
-          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: <%= post.get_percentage(2) %>">
-            <span class="sr-only"><%= post.get_percentage(2) %></span>
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: {{post.stats[1]}}" data-toggle="tooltip" data-placement="top" title="{{post.stats[1]}}">
+            <span class="sr-only">{{post.stats[1]}}</span>
           </div>
-          <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: <%= post.get_percentage(3) %>">
-            <span class="sr-only"><%= post.get_percentage(3) %></span>
+          <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: {{post.stats[2]}}" data-toggle="tooltip" data-placement="top" title="{{post.stats[2]}}">
+            <span class="sr-only">{{post.stats[2]}}</span>
           </div>
-          <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: <%= post.get_percentage(4) %>">
-            <span class="sr-only"><%= post.get_percentage(4) %></span>
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: {{post.stats[3]}}" data-toggle="tooltip" data-placement="top" title="{{post.stats[3]}}">
+            <span class="sr-only">{{post.stats[3]}}</span>
           </div>
         </div>
       </td>
 
       <td class="trash">
         <div>
-          <a href=<%="/posts/#{post.id}"%> data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+          <a href="/posts/{{post.id}}" data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
         </div>
       </td>
     </tr>
   </table>
 </div>
 
-<% end %>
+
 
 
 
 <%= link_to "back", "/users/#{current_user.id}", class: "btn btn-default" %> 
+
+
+
+
+  </div>
+</div>
+
 
 </div>
 
