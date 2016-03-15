@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-  app.controller("postsCtrl", function($scope, $http){
+  app.controller("postsCtrl",["$scope", "$http", function($scope, $http){
       
       $scope.setup = function(){
 
@@ -23,7 +23,7 @@
       };
 
       window.scope = $scope; 
-    });
+    }]);
 }());
 
 
