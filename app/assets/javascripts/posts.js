@@ -45,8 +45,9 @@ $(document).keydown(function(e){
             backgroundColor: '#ff0004',
             left: "-=1500"
         });
-        $(".stat-box .value").html(stats[0]);
-        // $("#emot").html("<img src='4.png'/>");
+        $(".stat-box .value").html(stats[3] + "%");
+        $(".stat-box").css('color', '#E08484');
+        $(".stat-box .value").append('<img src="/assets/4.png" >');
         document.location = "/posts/" + idString + "?annoyed=id";
         break;
     case 38:    //up arrow key
@@ -54,7 +55,9 @@ $(document).keydown(function(e){
             backgroundColor: '#02f90e',
             top: "-=1500"
         });
-        $(".stat-box .value").html(stats[0]);
+        $(".stat-box .value").html(stats[0] + "%");
+        $(".stat-box").css('color', '#70C04B');
+        $(".stat-box .value").append('<img src="/assets/1.png" >');
         document.location = "/posts/" + idString + "?excited=id";
         break;
     case 39:    //right arrow key
@@ -62,7 +65,9 @@ $(document).keydown(function(e){
             backgroundColor: '#fc6635',
             left: "+=1500"
         });
-        $(".stat-box .value").html(stats[1]);
+        $(".stat-box .value").html(stats[1] + "%");
+        $(".stat-box").css('color', '#F8AF46');
+        $(".stat-box .value").append('<img src="/assets/2.png" >');
         document.location = "/posts/" + idString + "?amused=id";
         break;
     case 40:    //bottom arrow key
@@ -70,7 +75,9 @@ $(document).keydown(function(e){
             backgroundColor: '#02c8ff',
             top: "+=1500"
         });
-        $(".stat-box .value").html(stats[2]);
+        $(".stat-box .value").html(stats[2] + "%");
+        $(".stat-box").css('color', '#2EC6DC');
+        $(".stat-box .value").append('<img src="/assets/3.png" >');
         document.location = "/posts/" + idString + "?sympathetic=id";
         break;
     }
@@ -294,26 +301,6 @@ window.addEventListener('load', function(){
 
 //dropdown
 
-$(document).ready(function() {
-                var hidden = true;
-                $('.dd-link').click(function(e) {
-                    e.preventDefault();
-                    if (hidden){
-                       $(this).next('.dd-dropdown').fadeToggle(200, function(){hidden = false;});
-                    }
-                });
-
-                $('html').click(function() {
-                    if (!hidden) {
-                        $('.dd-dropdown').fadeOut();
-                        hidden=true;
-                    }
-                });
-
-                $('.dd-dropdown').click(function(event) {
-                    event.stopPropagation();
-                });
-            });
 
 
 

@@ -18,7 +18,7 @@
           <div class="col-md-6">
             <h3> this was your post: </h3>
             <div class="w1">
-              <h2><%= weef.my_post(current_user.id).text %></h2>
+              <h2>"<%= weef.my_post(current_user.id).text %>"</h2>
                 <%= image_tag("#{weef.my_post(current_user.id).emotion_id}.png") %>
             </div>
           </div>
@@ -26,7 +26,7 @@
           <div class="col-md-6">
             <h3> this was their post: </h3>
             <div class="w2">
-                <h2><%= weef.their_post(current_user.id).text %></h2>
+                <h2>"<%= weef.their_post(current_user.id).text %>"</h2>
                 <%= image_tag("#{weef.their_post(current_user.id).emotion_id}.png") %>
               </div>
           </div>
