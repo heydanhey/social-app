@@ -7,7 +7,6 @@
 
         $http.get('../api/v1/posts.json').then(function(response){
           $scope.posts = response.data;
-          console.log(response.data);
         });
       };
 
@@ -15,7 +14,7 @@
  
       $scope.sortBy = function(sortAttribute) {
         if (sortAttribute != $scope.sortByAttribute) {
-          $scope.descending = false;
+          $scope.descending = true;
         } else {
           $scope.descending = !$scope.descending;
         }
@@ -27,4 +26,4 @@
 }());
 
 
-// postsCtrl.$inject = ['$scope', '$http'];
+

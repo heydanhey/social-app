@@ -13,7 +13,7 @@
       <% @weefs.each do |weef| %>
         <div>
           <h4> You weef'd with: <%= weef.weefer(current_user.id).name%></h4>
-          <h4> This Weef expires at <%= weef.expiration %> </h4>
+          <h4> This Weef expires on <%= weef.expiration %> </h4>
 
           <div class="col-md-6">
             <h3> this was your post: </h3>
@@ -31,7 +31,7 @@
               </div>
           </div>
 
-          <div class="weef-menu">
+          <div class="weef-menu col-xs-12">
             <div class="col-md-4">
               <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default weef-btn" %>
             </div>

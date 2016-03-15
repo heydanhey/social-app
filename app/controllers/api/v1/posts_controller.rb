@@ -2,7 +2,9 @@ class Api::V1::PostsController < ApplicationController
 
   def index
     @posts = Post.where(user_id: current_user.id)
+
     @stats = {}
+    
     @posts.each do |post|
       @stats[post.id] = [post.get_percentage(1), post.get_percentage(2), post.get_percentage(3), post.get_percentage(4)]
     end

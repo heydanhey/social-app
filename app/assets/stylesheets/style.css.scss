@@ -1,5 +1,5 @@
 body {
-  padding-bottom: 55px;
+  padding-bottom: 75px;
   background-image: image-url("congruent_pentagon.png");
   background-color: black;
   background-attachment: fixed;
@@ -52,11 +52,12 @@ body {
   float: right;
 }
 
-
 .alert {
+  margin: auto;
+  width: 95%;
   position: absolute;
   z-index: 1;
-  background-color: red;
+  background-color: #EBFDD4;
   opacity: 0.6;
 }
 

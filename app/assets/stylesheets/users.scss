@@ -37,7 +37,7 @@
 .post-archive{
   font-family: 'Montserrat', sans-serif;
   margin: auto;
-  background-color: #ffe3bc;
+  // background-color: #ffe3bc;
   // border-style: solid;
   // border-color: black;
   width: 100%;
@@ -55,25 +55,47 @@
   // border-radius: 25px;
 }
 
+.table th {
+  text-align: center;
+  margin: auto;
+  // border-bottom: 1px solid gray;
+  // margin: 10px;
+}
+
+#text-header {
+  text-align: left;
+}
+
 td.post-text-td {
-  width: 45%;
+  width: 48%;
 }
 
 td.post-weaction-td {
-  width: 45%;
+  width: 48%;
   text-align: center;
 }
 
 td.trash {
-  width: 10%;
+  width: 4%;
   margin: auto;
   text-align: center;
 }
-
-
 
 .user img {
   border-radius: 15%;
 }
 
+.ng-enter, .ng-move{
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.ng-leave{
+  -webkit-animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  -o-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
 

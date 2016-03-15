@@ -47,6 +47,7 @@ th.emotion {
 
 .w1 {
   background-color: #13BFD9;
+  background-image: image-url("congruent_pentagon.png");
   text-align: center;
   // border-style: solid;
   // border-color: #13BFD9;
@@ -56,11 +57,11 @@ th.emotion {
   padding: 12px;
   margin: 5px;
   font-family: 'Montserrat', sans-serif;
-  color: white;
 }
 
 .w2 {
   background-color: #6ABD45;
+  background-image: image-url("congruent_pentagon.png");
   text-align: center;
   // border-style: solid;
   // border-color: #6ABD45;
@@ -70,7 +71,6 @@ th.emotion {
   padding: 12px;
   margin: 5px;
   font-family: 'Montserrat', sans-serif;
-  color: white;
 }
 
 .w1 img {
@@ -94,6 +94,7 @@ th.emotion {
 }
 
 .weef-menu {
+  padding-top: 10px;
   width: 100%;
   margin: auto;
 }

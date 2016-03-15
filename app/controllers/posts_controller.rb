@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
     @stats = [@post.get_percentage(1), @post.get_percentage(2), @post.get_percentage(3), @post.get_percentage(4)]
     gon.stats = @stats
-
+    
     if params[:excited]
       post_action(1)
     elsif params[:amused]

@@ -6,64 +6,61 @@
 
 <div ng-app="app">
   <div ng-controller="postsCtrl" ng-init="setup()">
-
-    <div class="post-archive">
+    <div class="row">
+    <div class="col-xs-12">
+    <div class="table-responsive post-archive">
 
       <table class="table post-table">
         <tr>
-          <th ng-click="sortBy('text')">Text</th>
+          <th id="text-header" ng-click="sortBy('text')">Text</th>
           <th ng-click="sortBy('emotion_id')"><i class="fa fa-meh-o fa-2x"></i></th>
-          <th ng-click="sortBy('stats[0]')">1</th>
-          <th ng-click="sortBy('stats[1]')">2</th>
-          <th ng-click="sortBy('stats[2]')">3</th>
-          <th ng-click="sortBy('stats[3]')">4</th>
+          <th ng-click="sortBy('stat_1')"><img src="assets/1.png" style="width:25px; height:25px;"></th>
+          <th ng-click="sortBy('stat_2')"><img src="assets/2.png" style="width:25px; height:25px;"></th>
+          <th ng-click="sortBy('stat_3')"><img src="assets/3.png" style="width:25px; height:25px;"></th>
+          <th ng-click="sortBy('stat_4')"><img src="assets/4.png" style="width:25px; height:25px;"></th>
           <th>Action</th>
         </tr>
 
-    <tr ng-repeat="post in posts | filter: {text: textFilter, emotion_id: emotionFilter} | orderBy:sortByAttribute:descending">
+        <tr ng-repeat="post in posts | filter: {text: textFilter, emotion_id: emotionFilter} | orderBy:sortByAttribute:descending">
 
-      <td class="post-text-td">{{post.text}}</td>
+          <td class="post-text-td">{{post.text}}</td>
 
-      <td>{{post.emotion_id}}</td>
+          <td> <img src="assets/{{post.emotion_id}}.png" style="width:25px; height:25px;"> </td>
 
-      <td colspan="4" class="post-weaction-td">
-        <div class="progress">
-          <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: {{post.stats[0]}}" data-toggle="tooltip" data-placement="top" title="{{post.stats[0]}}">
-            <span class="sr-only" >{{post.stats[0]}}</span>
-          </div>
-          <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: {{post.stats[1]}}" data-toggle="tooltip" data-placement="top" title="{{post.stats[1]}}">
-            <span class="sr-only">{{post.stats[1]}}</span>
-          </div>
-          <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: {{post.stats[2]}}" data-toggle="tooltip" data-placement="top" title="{{post.stats[2]}}">
-            <span class="sr-only">{{post.stats[2]}}</span>
-          </div>
-          <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: {{post.stats[3]}}" data-toggle="tooltip" data-placement="top" title="{{post.stats[3]}}">
-            <span class="sr-only">{{post.stats[3]}}</span>
-          </div>
-        </div>
-      </td>
+          <td colspan="4" class="post-weaction-td">
+            <div class="progress">
+              <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: {{post.stat_1}}%" data-toggle="tooltip" data-placement="top" title="{{post.stat_1}}%">
+                <span class="sr-only" >{{post.stat_1}}</span>
+              </div>
+              <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: {{post.stat_2}}%" data-toggle="tooltip" data-placement="top" title="{{post.stat_2}}%">
+                <span class="sr-only">{{post.stat_2}}</span>
+              </div>
+              <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: {{post.stat_3}}%" data-toggle="tooltip" data-placement="top" title="{{post.stat_3}}%">
+                <span class="sr-only">{{post.stat_3}}</span>
+              </div>
+              <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: {{post.stat_4}}%" data-toggle="tooltip" data-placement="top" title="{{post.stat_4}}%">
+                <span class="sr-only">{{post.stat_4}}</span>
+              </div>
+            </div>
+          </td>
 
-      <td class="trash">
-        <div>
-          <a href="/posts/{{post.id}}" data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
+          <td class="trash">
+            <div>
+              <a href="/posts/{{post.id}}" data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </div>
+    </div>
 
-
-
-
-
-<%= link_to "back", "/users/#{current_user.id}", class: "btn btn-default" %> 
+    <%= link_to "back", "/users/#{current_user.id}", class: "btn btn-default" %> 
 
 
 
 
   </div>
 </div>
-
-
 </div>
 

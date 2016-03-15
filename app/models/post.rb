@@ -16,8 +16,12 @@ class Post < ActiveRecord::Base
   def self.get_post_by_location(user)
     post = Post.near([user.latitude, user.longitude], user.location_radius).sample
     # this while loop just prevents the current user being fed his own posts, thus you can not weef with yourself
-    while post.user_id == user.id
-      post = Post.get_post_by_location(user)
+    if post != nil
+      while post.user_id == user.id
+        post = Post.get_post_by_location(user)
+      end
+    else
+      post = Post.first
     end
     return post
   end
@@ -28,10 +32,10 @@ class Post < ActiveRecord::Base
     number_of_emotions = weactions.where(emotion_id: emotion_id).count
     
     if number_of_emotions == 0
-      return "0%"
+      return 0
     else
       percentage = '%.0f' % ((number_of_emotions.to_f / total_weactions.to_f) * 100.0)
-      return "#{percentage.to_s}%"
+      return percentage
     end
   end
   
