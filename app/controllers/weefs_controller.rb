@@ -5,7 +5,7 @@ class WeefsController < ApplicationController
   def index
     # Get all weefs
 
-    # This call isn't currently working on herku because of case sensitivy in postgrql to column names
+    # This call isn't currently working on herku because of case sensitivy in postgrql to column names -  FIXED
     all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_a_id=weactions.id OR weefs.weaction_b_id=weactions.id WHERE weactions.user_id=#{current_user.id}") 
     # all_weefs = current_user.weefs.all
     # Check Active weefs
@@ -24,7 +24,7 @@ class WeefsController < ApplicationController
       @posts = Post.where(user_id: params[:id])
     elsif params[:their_weactions]
       @see_post = false
-      @weactions = Weaction.where(user_id: params[:id])
+      @weactions = Weaction.where(user_id: params[:id]).limit(25)
     end
   end
 

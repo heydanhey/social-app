@@ -63,8 +63,8 @@ $(document).keydown(function(e){
     case 39:    //right arrow key
         $(".box").finish().animate({
             backgroundColor: '#fc6635',
-            left: "+=1500"
-        });
+            left: "+=2000"
+        }, 500);
         $(".stat-box .value").html(stats[1] + "%");
         $(".stat-box").css('color', '#F8AF46');
         $(".stat-box .value").append('<img src="/assets/2.png" >');
