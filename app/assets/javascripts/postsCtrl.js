@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-  angular.module("app").controller("postsCtrl", function($scope, $http){
+  app.controller("postsCtrl", function($scope, $http){
       
       $scope.setup = function(){
 
