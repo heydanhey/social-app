@@ -1,12 +1,18 @@
-table {
+#table-their-posts {
   width: 100%;
   border: none;
+  margin: auto;
+  text-align: left;
+  font-size: 120%;
 }
-th.post {
+.post th td {
+  text-align: left;
   width: 80%;
+  padding: 20px;
 }
-th.emotion {
+.emotion th td {
   width: 20%;
+  text-align: center;
 }
 
 

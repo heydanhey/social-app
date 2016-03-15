@@ -1,48 +1,71 @@
 <div class="jumbotron weef">
 
+<div ng-app="app">
+  <div ng-controller="weefsCtrl" ng-init="setup()">
 <% if @see_post %>
 
 <h1>their post archive</h1>
 
-<table class="table table-condensed">
-  <tr>
-    <th>User</th>
-    <th>Post</th>
-    <th>Emotion</th>
-    <th>Date/Time</th>
-  </tr> 
+<hr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.user.name %></td>
-    <td><%= post.text %></td>
-    <td><%= post.emotion.name %></td>
-    <td><%= post.friendly_post_time %></td>
-  </tr>
-<% end %>
-</table>
+    <div class="row">
+    <div class="col-xs-12">
+    <div class="table-responsive post-archive">
+
+      <table id="table-their-posts">
+        <tr>
+          <th class="post" ng-click="sortBy('text')">Post</th>
+          <th class="emotion" ng-click="sortBy('emotion_id')"><i class="fa fa-meh-o fa-3x"></i></th>
+        </tr>
+
+        <tr ng-repeat="post in posts | orderBy:sortByAttribute:descending">
+
+          <td class="post">{{post.text}}</td>
+
+          <td class="emotion"> <img src="/assets/{{post.emotion_id}}.png" style="width:50px; height:50px;"> </td>
+
+        </tr>
+      </table>
+    </div>
+    </div>
+    </div>
 
 <% else %>
 
 <h1>their Weactions</h1>
 
-<table class="table table-condensed">
-  <tr>
-    <th>Posts</th>
-    <th>Weactions</th>
-  </tr>
+<hr>
 
-<% @weactions.each do |weaction| %>
-  <tr>
-    <% if weaction.post != nil %>
-    <td><%= weaction.post.text %></td>
-    <td><%= weaction.emotion_id %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
+    <div class="row">
+    <div class="col-xs-12">
+    <div class="table-responsive post-archive">
+
+      <table id="table-their-posts">
+        <tr>
+          <th class="post" ng-click="sortBy('text')">Post</th>
+          <th class="emotion" ng-click="sortBy('emotion_id')"><i class="fa fa-meh-o fa-3x"></i></th>
+        </tr>
+
+        <tr ng-repeat="weaction in weactions | orderBy:sortByAttribute:descending">
+
+          <td class="post">{{weaction.text}}</td>
+
+          <td class="emotion"><img src="/assets/{{weaction.emotion_id}}.png" style="width:50px; height:50px;"> </td>
+
+        </tr>
+      </table>
+    </div>
+    </div>
+    </div>
+
+
 
 <% end %>
+
+  </div>
+</div>
+
+<%= link_to "back", "/weefs", class: "btn btn-default" %> 
 
 </div>
 

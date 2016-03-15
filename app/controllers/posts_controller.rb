@@ -71,7 +71,7 @@ class PostsController < ApplicationController
     #number is representative of each emotion_id, 1=excited, 2=amused, 3=sympathetic, 4=annoyed
 
       if @post.emotion_id == emotion
-        # double check to make sure a user isn't weactiong to his own post
+        # double check to make sure a user isn't weacting to his own post
         if @post.user_id == current_user.id
           redirect_to "/posts/#{Post.sample}"
         end
@@ -81,7 +81,7 @@ class PostsController < ApplicationController
         # Because match is true...Begin Weef check
         # Grab all matched weactions from the author of the post
         their_weactions = Weaction.where(user_id: @post.user_id).where(match: true)
-        # Bucket vaiable for current weef
+        # Bucket variable for current weef
         weef = Weef.new
         # Iterate through their weactions to see if the current user wrote any of those posts...if so then create a weef 
         their_weactions.each do |weaction|
