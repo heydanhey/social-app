@@ -180,7 +180,7 @@
         }, false)
     }
 
-    window.addEventListener('load', function(){
+    window.addEventListener('DOMContentLoaded', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
         var el = document.getElementById('touchsurface3')
