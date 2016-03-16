@@ -180,11 +180,11 @@
         }, false)
     }
 
-    window.addEventListener('load', function(){
+    document.getElementById('main-container').addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
         console.log("jest before")
-        var el = document.querySelector(".box")
+        var el = document.getElementById('touchsurface2')
         console.log(el)
         var inner = document.getElementById('inner')
         var hidetimer = null
