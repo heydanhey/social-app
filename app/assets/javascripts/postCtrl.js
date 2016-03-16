@@ -150,6 +150,7 @@
             var touchobj = e.changedTouches[0]
             swipedir = 'none'
             var dist = 0
+            console.log("start");
             startX = touchobj.pageX
             startY = touchobj.pageY
             startTime = new Date().getTime() // record time when finger first makes contact with surface
@@ -181,7 +182,7 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        var el = document.getElementById('touchsurface2')
+        var el = window.getElementById('touchsurface2')
         var inner = document.getElementById('inner')
         var hidetimer = null
         swipedetect(el, function(swipedir){
