@@ -73,7 +73,7 @@ class PostsController < ApplicationController
       if @post.emotion_id == emotion
         # double check to make sure a user isn't weacting to his own post
         if @post.user_id == current_user.id
-          redirect_to "/posts/#{Post.sample}"
+          redirect_to "/api/v1/posts/#{Post.sample.id}.json"
         end
         # if the params match the post author's intended emotion, then a weaction is created with match=true
         this_weaction = Weaction.create(user_id: current_user.id, post_id: @post.id, emotion_id: emotion, match: 1)
@@ -112,9 +112,10 @@ class PostsController < ApplicationController
       if (@post = Post.get_post_by_location(current_user)) != nil
         redirect_to "/api/v1/posts/#{@post.id}.json"
       else
-        flash[:warning] = "No posts in your location radius, please broaden your search!"
+        # flash[:warning] = "No posts in your location radius, please broaden your search!"
         # If there's no posts within radius, redirect to user profile
-        redirect_to "/users/#{current_user.id}"
+        # redirect_to "/users/#{current_user.id}"
+        render json: "no_posts_in_location_radius"
       end
     end  
 end

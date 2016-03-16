@@ -180,7 +180,7 @@
         }, false)
     }
 
-    document.getElementById('main-container').addEventListener('load', function(){
+    window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
         console.log("jest before")
