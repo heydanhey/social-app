@@ -36,7 +36,8 @@
 
           $('body').append($compile(newElement)($scope).fadeIn());
 
-          loadSwipe();
+          var el = document.getElementById('touchsurface2')
+          loadSwipe(el);
         });
       };
 
@@ -187,22 +188,23 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        loadSwipe();
+        var el = document.getElementById('touchsurface2');
+        loadSwipe(el);
 
     }, false);
 
 
 
-    var loadSwipe = function(){
+    var loadSwipe = function(el){
 
         console.log("just before")
-        var el = document.getElementById('touchsurface2')
-        console.log(el)
-        var inner = document.getElementById('inner')
-        var hidetimer = null
+        // var el = document.getElementById('touchsurface2')
+        console.log(el);
+        var inner = document.getElementById('inner');
+        var hidetimer = null;
         swipedetect(el, function(swipedir){
             if (swipedir != 'none'){
-                clearTimeout(hidetimer)
+                clearTimeout(hidetimer);
                 console.log("swipe detectd");
                 switch (swipedir) {
             case "left":
