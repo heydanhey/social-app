@@ -183,7 +183,7 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        var el = document.querySelector('body')
+        var el = document.querySelector(".box")
         console.log(el)
         var inner = document.getElementById('inner')
         var hidetimer = null
