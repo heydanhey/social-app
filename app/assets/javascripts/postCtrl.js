@@ -29,10 +29,14 @@
 
           oldElement.remove();
 
+
+
           var newElement = "<div id='touchsurface2' class='jumbotron view-post box' style='display: block; width: 95%; max-width: 900px;'><div id='inner'><h1>{{nextPost.text}}</h1></div><div class='flags' style='display: inline-block'; float: right;><i class='fa fa-chevron-circle-down fa-2x'></i><i class='fa fa-chevron-circle-up fa-2x'></i><i class='fa fa-chevron-circle-left fa-2x'></i><i class='fa fa-chevron-circle-right fa-2x'></i><i class='fa fa-flag fa-2x'></i></div></div>"
 
 
           $('body').append($compile(newElement)($scope).fadeIn());
+
+          loadSwipe();
         });
       };
 
@@ -44,7 +48,7 @@
               $(".box").animate({
                   backgroundColor: '#ff0004',
                   left: "-=1500"
-              }, 500, function(){$scope.getNextPost("/posts/" + $scope.activeId + "?annoyed=id")});
+              }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?annoyed=id")});
               $(".stat-box .value").html($scope.activeStat4 + "%");
               $(".stat-box").css('color', '#E08484');
               $(".stat-box .value").append('<img src="/assets/4.png" >');
@@ -56,7 +60,7 @@
               $(".box").animate({
                   backgroundColor: '#02f90e',
                   top: "-=1500"
-              }, 500, function(){$scope.getNextPost("/posts/" + $scope.activeId + "?excited=id")});
+              }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?excited=id")});
               $(".stat-box .value").html($scope.activeStat1 + "%");
               $(".stat-box").css('color', '#70C04B');
               $(".stat-box .value").append('<img src="/assets/1.png" >');
@@ -67,7 +71,7 @@
               $(".box").animate({
                   backgroundColor: '#fc6635',
                   left: "+=2000"
-              }, 500, function(){$scope.getNextPost("/posts/" + $scope.activeId + "?amused=id")});
+              }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?amused=id")});
               $(".stat-box .value").html($scope.activeStat2 + "%");
               $(".stat-box").css('color', '#F8AF46');
               $(".stat-box .value").append('<img src="/assets/2.png" >');
@@ -78,7 +82,7 @@
               $(".box").animate({
                   backgroundColor: '#02c8ff',
                   top: "+=1500"
-              }, 500, function(){$scope.getNextPost("/posts/" + $scope.activeId + "?sympathetic=id")});
+              }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?sympathetic=id")});
               $(".stat-box .value").html($scope.activeStat3 + "%");
               $(".stat-box").css('color', '#2EC6DC');
               $(".stat-box .value").append('<img src="/assets/3.png" >');
@@ -183,7 +187,15 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        console.log("jest before")
+        loadSwipe();
+
+    }, false);
+
+
+
+    var loadSwipe = function(){
+
+        console.log("just before")
         var el = document.getElementById('touchsurface2')
         console.log(el)
         var inner = document.getElementById('inner')
@@ -255,7 +267,7 @@
                 // }, 1000)
             }
         })
-    }, false)
+    }
 
 
       
