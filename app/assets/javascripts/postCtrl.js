@@ -183,7 +183,7 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        var el = document.querySelector('body')
+        var el = document.querySelector('#touchsurface2')
         var inner = document.getElementById('inner')
         var hidetimer = null
         swipedetect(el, function(swipedir){
