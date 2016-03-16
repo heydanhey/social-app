@@ -29,15 +29,14 @@
 
           oldElement.remove();
 
-
-
           var newElement = "<div id='touchsurface2' class='jumbotron view-post box' style='display: block; width: 95%; max-width: 900px;'><div id='inner'><h1>{{nextPost.text}}</h1></div><div class='flags' style='display: inline-block'; float: right;><i class='fa fa-chevron-circle-down fa-2x'></i><i class='fa fa-chevron-circle-up fa-2x'></i><i class='fa fa-chevron-circle-left fa-2x'></i><i class='fa fa-chevron-circle-right fa-2x'></i><i class='fa fa-flag fa-2x'></i></div></div>"
 
 
           $('body').append($compile(newElement)($scope).fadeIn());
 
-          var el = document.getElementById('touchsurface2')
-          loadSwipe(el);
+          var newEl = angular.element(document.querySelector('#touchsurface2'));
+
+          loadSwipe(newEl);
         });
       };
 
