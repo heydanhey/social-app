@@ -183,6 +183,7 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
+        console.log("jest before")
         var el = document.querySelector(".box")
         console.log(el)
         var inner = document.getElementById('inner')
