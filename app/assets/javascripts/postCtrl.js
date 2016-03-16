@@ -178,7 +178,7 @@
         }, false)
     }
 
-    window.addEventListener('pageinit', function(){
+    window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
         var el = document.getElementById('touchsurface2')
@@ -187,7 +187,7 @@
         swipedetect(el, function(swipedir){
             if (swipedir != 'none'){
                 clearTimeout(hidetimer)
-                // alert("SWIPE detected!");
+                alert("SWIPE detected!");
                 switch (swipedir) {
             case "left":
 
