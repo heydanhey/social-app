@@ -180,10 +180,10 @@
         }, false)
     }
 
-    window.addEventListener('DOMContentLoaded', function(){
+    window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        var el = document.getElementById('touchsurface3')
+        var el = document.querySelector('body')
         var inner = document.getElementById('inner')
         var hidetimer = null
         swipedetect(el, function(swipedir){
