@@ -149,7 +149,7 @@
         touchsurface.addEventListener('touchstart', function(e){
             var touchobj = e.changedTouches[0]
             swipedir = 'none'
-            dist = 0
+            var dist = 0
             startX = touchobj.pageX
             startY = touchobj.pageY
             startTime = new Date().getTime() // record time when finger first makes contact with surface
@@ -179,8 +179,8 @@
     }
 
     window.addEventListener('load', function(){
-        var idNumber = gon.post.id;
-        var idString = idNumber.toString();
+        // var idNumber = gon.post.id;
+        // var idString = idNumber.toString();
         var el = document.getElementById('touchsurface2')
         var inner = document.getElementById('inner')
         var hidetimer = null
