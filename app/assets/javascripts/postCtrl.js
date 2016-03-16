@@ -25,9 +25,9 @@
           $scope.activeStat4 = $scope.nextPost.stat_4
           console.log($scope.nextPost);
 
-          // var oldElement = angular.element(document.querySelector('#touchsurface2'));
+          var oldElement = angular.element(document.querySelector('#touchsurface2'));
 
-          // oldElement.remove();
+          oldElement.remove();
 
           var newElement = "<div id='touchsurface2' class='jumbotron view-post box' style='display: block; width: 95%; max-width: 900px;'><div id='inner'><h1>{{nextPost.text}}</h1></div><div class='flags' style='display: inline-block'; float: right;><i class='fa fa-chevron-circle-down fa-2x'></i><i class='fa fa-chevron-circle-up fa-2x'></i><i class='fa fa-chevron-circle-left fa-2x'></i><i class='fa fa-chevron-circle-right fa-2x'></i><i class='fa fa-flag fa-2x'></i></div></div>"
 
@@ -183,7 +183,7 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        var el = document.querySelector('#touchsurface2')
+        var el = document.querySelector('#touchsurface3')
         console.log(el)
         var inner = document.getElementById('inner')
         var hidetimer = null
