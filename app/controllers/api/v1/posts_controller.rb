@@ -22,7 +22,12 @@ class Api::V1::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    gon.post = @post
+    @stat_1 = @post.get_percentage(1)
+    @stat_2 = @post.get_percentage(2)
+    @stat_3 = @post.get_percentage(3)
+    @stat_4 = @post.get_percentage(4)
+
+    # gon.post = @post
   end
 
   # def update

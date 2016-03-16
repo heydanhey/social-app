@@ -35,53 +35,54 @@ $(document).ready(function(e){
     $(".stat-box").fadeIn(500);
 });
 
-$(document).keydown(function(e){
-    var idNumber = gon.post.id;
-    var stats = gon.stats;
-    var idString = idNumber.toString();
-    switch (e.which){
-    case 37:    //left arrow key
-        $(".box").finish().animate({
-            backgroundColor: '#ff0004',
-            left: "-=1500"
-        });
-        $(".stat-box .value").html(stats[3] + "%");
-        $(".stat-box").css('color', '#E08484');
-        $(".stat-box .value").append('<img src="/assets/4.png" >');
-        document.location = "/posts/" + idString + "?annoyed=id";
-        break;
-    case 38:    //up arrow key
-        $(".box").finish().animate({
-            backgroundColor: '#02f90e',
-            top: "-=1500"
-        });
-        $(".stat-box .value").html(stats[0] + "%");
-        $(".stat-box").css('color', '#70C04B');
-        $(".stat-box .value").append('<img src="/assets/1.png" >');
-        document.location = "/posts/" + idString + "?excited=id";
-        break;
-    case 39:    //right arrow key
-        $(".box").finish().animate({
-            backgroundColor: '#fc6635',
-            left: "+=2000"
-        }, 500);
-        $(".stat-box .value").html(stats[1] + "%");
-        $(".stat-box").css('color', '#F8AF46');
-        $(".stat-box .value").append('<img src="/assets/2.png" >');
-        document.location = "/posts/" + idString + "?amused=id";
-        break;
-    case 40:    //bottom arrow key
-        $(".box").finish().animate({
-            backgroundColor: '#02c8ff',
-            top: "+=1500"
-        });
-        $(".stat-box .value").html(stats[2] + "%");
-        $(".stat-box").css('color', '#2EC6DC');
-        $(".stat-box .value").append('<img src="/assets/3.png" >');
-        document.location = "/posts/" + idString + "?sympathetic=id";
-        break;
-    }
-});
+// $(document).keydown(function(e){
+//     var idNumber = gon.post.id;
+//     var stats = gon.stats;
+//     var idString = idNumber.toString();
+//     switch (e.which){
+//     case 37:    //left arrow key
+//         $(".box").finish().animate({
+//             backgroundColor: '#ff0004',
+//             left: "-=1500"
+//         });
+//         $(".stat-box .value").html(stats[3] + "%");
+//         $(".stat-box").css('color', '#E08484');
+//         $(".stat-box .value").append('<img src="/assets/4.png" >');
+//         // document.location = "/posts/" + idString + "?annoyed=id";
+//         angular.element(document.getElementById('postCtrl')).scope().getNextPost("/posts/" + idString + "?annoyed=id");
+//         break;
+//     case 38:    //up arrow key
+//         $(".box").finish().animate({
+//             backgroundColor: '#02f90e',
+//             top: "-=1500"
+//         });
+//         $(".stat-box .value").html(stats[0] + "%");
+//         $(".stat-box").css('color', '#70C04B');
+//         $(".stat-box .value").append('<img src="/assets/1.png" >');
+//         // document.location = "/posts/" + idString + "?excited=id";
+//         break;
+//     case 39:    //right arrow key
+//         $(".box").finish().animate({
+//             backgroundColor: '#fc6635',
+//             left: "+=2000"
+//         }, 500);
+//         $(".stat-box .value").html(stats[1] + "%");
+//         $(".stat-box").css('color', '#F8AF46');
+//         $(".stat-box .value").append('<img src="/assets/2.png" >');
+//         // document.location = "/posts/" + idString + "?amused=id";
+//         break;
+//     case 40:    //bottom arrow key
+//         $(".box").finish().animate({
+//             backgroundColor: '#02c8ff',
+//             top: "+=1500"
+//         });
+//         $(".stat-box .value").html(stats[2] + "%");
+//         $(".stat-box").css('color', '#2EC6DC');
+//         $(".stat-box .value").append('<img src="/assets/3.png" >');
+//         // document.location = "/posts/" + idString + "?sympathetic=id";
+//         break;
+//     }
+// });
 
 
 

@@ -110,7 +110,7 @@ class PostsController < ApplicationController
       # This is where I pull in a random post from a selected location radius
       # If statement to check to make sure a nearby post exits?
       if (@post = Post.get_post_by_location(current_user)) != nil
-        redirect_to "/posts/#{@post.id}"
+        redirect_to "/api/v1/posts/#{@post.id}.json"
       else
         flash[:warning] = "No posts in your location radius, please broaden your search!"
         # If there's no posts within radius, redirect to user profile

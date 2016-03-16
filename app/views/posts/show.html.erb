@@ -1,46 +1,30 @@
-<div id="behind">
-  <div id="inner2" class="stat-box">
-    <h1 class="value"></h1>
-
-  </div>
-</div>
-
-
-<div id="touchsurface2" class="jumbotron view-post box">
-    <div id="inner">
-
-     <h1><%= @post.text %></h1>
-  
+<div ng-app="app">
+  <div id="postCtrl" ng-controller="postCtrl" ng-init="setup()">
+    <div id="behind">
+      <div id="inner2" class="stat-box">
+        <h1 class="value"></h1>
+      </div>
     </div>
 
-<div class="flags">
-<i class="fa fa-chevron-circle-down fa-2x"></i>
-<i class="fa fa-chevron-circle-up fa-2x"></i>
-<i class="fa fa-chevron-circle-left fa-2x"></i>
-<i class="fa fa-chevron-circle-right fa-2x"></i>
-<i class="fa fa-flag fa-2x"></i>
-</div>
 
-<div ng-app="app">
-  <div ng-controller="postCtrl" ng-init="setup()">
+    <div id="touchsurface2" class="jumbotron view-post box">
+      <div id="inner">
 
+       <h1>{{post.text}}</h1>
+    
+      </div>
 
+      <div class="flags">
+        <i class="fa fa-chevron-circle-down fa-2x"></i>
+        <i class="fa fa-chevron-circle-up fa-2x"></i>
+        <i class="fa fa-chevron-circle-left fa-2x"></i>
+        <i class="fa fa-chevron-circle-right fa-2x"></i>
+        <i class="fa fa-flag fa-2x"></i>
+      </div>
 
-
-
-
-
-
-
+    </div>
 
   </div>
 </div>
-
-
-
-
-
-</div>
-
 
 
