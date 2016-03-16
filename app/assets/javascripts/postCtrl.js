@@ -183,7 +183,7 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        var el = document.querySelector('#touchsurface3')
+        var el = document.querySelector('div')
         console.log(el)
         var inner = document.getElementById('inner')
         var hidetimer = null
