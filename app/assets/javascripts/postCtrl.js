@@ -29,17 +29,10 @@
 
           oldElement.remove();
 
-
-
           var newElement = "<div id='touchsurface2' class='jumbotron view-post box' style='display: block; width: 95%; max-width: 900px;'><div id='inner'><h1>{{nextPost.text}}</h1></div><div class='flags' style='display: inline-block'; float: right;><i class='fa fa-chevron-circle-down fa-2x'></i><i class='fa fa-chevron-circle-up fa-2x'></i><i class='fa fa-chevron-circle-left fa-2x'></i><i class='fa fa-chevron-circle-right fa-2x'></i><i class='fa fa-flag fa-2x'></i></div></div>"
 
 
-          $('body').append($compile(newElement)($scope).fadeIn());
-
-          var newEl = angular.element(document.querySelectorAll('#touchsurface2'));
-          console.log(newEl[newEl.length-1]);
-          // var el = document.getElementById('touchsurface2')
-          // loadSwipe(newEl[-1]);
+          $('#touchsurface3').append($compile(newElement)($scope).fadeIn());
         });
       };
 
@@ -190,23 +183,15 @@
     window.addEventListener('load', function(){
         // var idNumber = gon.post.id;
         // var idString = idNumber.toString();
-        var el = document.getElementById('touchsurface2');
-        loadSwipe(el);
-
-    }, false);
-
-
-
-    var loadSwipe = function(el){
-
-        console.log("just before")
+        console.log("jst before")
         // var el = document.getElementById('touchsurface2')
-        console.log(el);
-        var inner = document.getElementById('inner');
-        var hidetimer = null;
+        var el = document.querySelector('#touchsurface3');
+        console.log(el)
+        var inner = document.getElementById('inner')
+        var hidetimer = null
         swipedetect(el, function(swipedir){
             if (swipedir != 'none'){
-                clearTimeout(hidetimer);
+                clearTimeout(hidetimer)
                 console.log("swipe detectd");
                 switch (swipedir) {
             case "left":
@@ -271,7 +256,7 @@
                 // }, 1000)
             }
         })
-    }
+    }, false)
 
 
       
