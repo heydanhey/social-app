@@ -12,13 +12,14 @@
   width: 80%;
   height: 80vh;
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   // text-align: center;
   color: white;
   font-size: 50%;
   background-color: none;
   vertical-align: middle;
   line-height: 500px;
+  margin: auto;
 }
 
 #inner2 {
@@ -34,10 +35,13 @@
   text-align: center;
   font-size: 20vh;
   position: relative;
-  top: 50%;
+  top: 30%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transform: translateX(10%);
+  -ms-transform: translateX(10%);
+  transform: translateX(10%);
 }
 
 .stat-box{
@@ -49,6 +53,7 @@
   display: none;
   height: 75vh;
   position: relative;
+  z-index: -1;
 }
 
 #inner {

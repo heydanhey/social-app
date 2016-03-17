@@ -20,12 +20,15 @@ class Api::V1::PostsController < ApplicationController
   #   end
   # end
 
-  def show
+  def show()
     @post = Post.find(params[:id])
     @stat_1 = @post.get_percentage(1)
     @stat_2 = @post.get_percentage(2)
     @stat_3 = @post.get_percentage(3)
     @stat_4 = @post.get_percentage(4)
+
+    @weef_response = session[:weef_response]
+    # @weef_
 
     if params[:excited]
       post_action(1)
@@ -36,6 +39,7 @@ class Api::V1::PostsController < ApplicationController
     elsif params[:annoyed]
       post_action(4)
     end
+
   end
 
   # def update
@@ -55,7 +59,7 @@ class Api::V1::PostsController < ApplicationController
 
   def post_action(emotion)
     #number is representative of each emotion_id, 1=excited, 2=amused, 3=sympathetic, 4=annoyed
-
+      session[:weef_response] = false
       if @post.emotion_id == emotion
         # double check to make sure a user isn't weacting to his own post
         if @post.user_id == current_user.id
@@ -69,10 +73,11 @@ class Api::V1::PostsController < ApplicationController
         their_weactions = Weaction.where(user_id: @post.user_id).where(match: true)
         # Bucket variable for current weef
         weef = Weef.new
+        
         # Iterate through their weactions to see if the current user wrote any of those posts...if so then create a weef 
         their_weactions.each do |weaction|
           if weaction.post.user_id == current_user.id
-            flash[:success] = "You Weef'd!"
+            session[:weef_response] = true
             weef.update(weaction_a_id: weaction.id, weaction_b_id: this_weaction.id)
           end
         end

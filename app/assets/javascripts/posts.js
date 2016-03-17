@@ -1,4 +1,4 @@
-
+$('#flashModal').modal({ show: false})
 
 // document.onkeydown = function(e) {
 //     var idNumber = gon.post.id;
@@ -34,6 +34,10 @@ $(document).ready(function(e){
     $(".box").fadeIn();
     $(".stat-box").fadeIn(500);
 });
+
+// $(document).ready(function(e){
+//     $(".jumbotron").fadeIn();
+// });
 
 // $(document).keydown(function(e){
 //     var idNumber = gon.post.id;

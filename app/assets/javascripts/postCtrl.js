@@ -4,10 +4,10 @@
 
       $scope.setup = function(){
         $scope.activeId = gon.post.id;
-        $scope.activeStat1 = gon.stats[0]
-        $scope.activeStat2 = gon.stats[1]
-        $scope.activeStat3 = gon.stats[2]
-        $scope.activeStat4 = gon.stats[3]
+        $scope.activeStat1 = gon.stats[0];
+        $scope.activeStat2 = gon.stats[1];
+        $scope.activeStat3 = gon.stats[2];
+        $scope.activeStat4 = gon.stats[3];
         $http.get('../api/v1/posts/' + $scope.activeId + '.json').then(function(response){
           $scope.post = response.data;
           console.log($scope.post);
@@ -18,12 +18,13 @@
 
         $http.get(thisPostPath).then(function(response){
           $scope.nextPost = response.data;
-          $scope.activeId = $scope.nextPost.id
-          $scope.activeStat1 = $scope.nextPost.stat_1
-          $scope.activeStat2 = $scope.nextPost.stat_2
-          $scope.activeStat3 = $scope.nextPost.stat_3
-          $scope.activeStat4 = $scope.nextPost.stat_4
-          console.log($scope.nextPost);
+          $scope.activeId = $scope.nextPost.id;
+          $scope.activeStat1 = $scope.nextPost.stat_1;
+          $scope.activeStat2 = $scope.nextPost.stat_2;
+          $scope.activeStat3 = $scope.nextPost.stat_3;
+          $scope.activeStat4 = $scope.nextPost.stat_4;
+          $scope.weefResponse = $scope.nextPost.weef_response;
+          console.log($scope.weefResponse);
 
           var oldElement = angular.element(document.querySelector('#touchsurface2'));
 
@@ -31,6 +32,12 @@
 
           var newElement = "<div id='touchsurface2' class='jumbotron view-post box' style='display: block; width: 95%; max-width: 900px;'><div id='inner'><h1>{{nextPost.text}}</h1></div><div class='flags' style='display: inline-block'; float: right;><i class='fa fa-chevron-circle-down fa-2x'></i><i class='fa fa-chevron-circle-up fa-2x'></i><i class='fa fa-chevron-circle-left fa-2x'></i><i class='fa fa-chevron-circle-right fa-2x'></i><i class='fa fa-flag fa-2x'></i></div></div>"
 
+          var flash = "<div class='alert'><h1>YOU WEEF'D</h1></div>"
+
+          if($scope.weefResponse){
+            $('#touchsurface3').append($compile(flash)($scope).fadeIn(1000).fadeOut(1000));
+            $('#flashModal').modal('show');
+          };
 
           $('#touchsurface3').append($compile(newElement)($scope).fadeIn());
         });

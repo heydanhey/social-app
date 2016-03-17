@@ -6,3 +6,5 @@
   json.stat_2 @stat_2.to_i
   json.stat_3 @stat_3.to_i
   json.stat_4 @stat_4.to_i
+
+  json.weef_response @weef_response
