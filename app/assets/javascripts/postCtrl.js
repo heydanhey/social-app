@@ -199,7 +199,7 @@
                 $(".box").animate({
                   backgroundColor: '#ff0004',
                   left: "-=1500"
-                }, 500, function(){$scope.getNextPost("/posts/" + $scope.activeId + "?annoyed=id")});
+                }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?annoyed=id")});
                 $(".stat-box .value").html($scope.activeStat4 + "%");
                 $(".stat-box").css('color', '#E08484');
                 $(".stat-box .value").append('<img src="/assets/4.png" >');
@@ -213,7 +213,7 @@
                 $(".box").animate({
                   backgroundColor: '#02f90e',
                   top: "-=1500"
-                }, 500, function(){$scope.getNextPost("/posts/" + $scope.activeId + "?excited=id")});
+                }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?excited=id")});
                 $(".stat-box .value").html($scope.activeStat1 + "%");
                 $(".stat-box").css('color', '#70C04B');
                 $(".stat-box .value").append('<img src="/assets/1.png" >');
@@ -227,7 +227,7 @@
                 $(".box").animate({
                     backgroundColor: '#fc6635',
                     left: "+=2000"
-                }, 500, function(){$scope.getNextPost("/posts/" + $scope.activeId + "?amused=id")});
+                }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?amused=id")});
                 $(".stat-box .value").html($scope.activeStat2 + "%");
                 $(".stat-box").css('color', '#F8AF46');
                 $(".stat-box .value").append('<img src="/assets/2.png" >');
@@ -241,7 +241,7 @@
                 $(".box").animate({
                   backgroundColor: '#02c8ff',
                   top: "+=1500"
-                }, 500, function(){$scope.getNextPost("/posts/" + $scope.activeId + "?sympathetic=id")});
+                }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?sympathetic=id")});
                 $(".stat-box .value").html($scope.activeStat3 + "%");
                 $(".stat-box").css('color', '#2EC6DC');
                 $(".stat-box .value").append('<img src="/assets/3.png" >');
