@@ -32,12 +32,11 @@ $('#flashModal').modal({ show: false})
 
 $(document).ready(function(e){
     $(".box").fadeIn();
+    $(".create-post").fadeIn();
+    $(".user").fadeIn();
     $(".stat-box").fadeIn(500);
 });
 
-// $(document).ready(function(e){
-//     $(".jumbotron").fadeIn();
-// });
 
 // $(document).keydown(function(e){
 //     var idNumber = gon.post.id;
