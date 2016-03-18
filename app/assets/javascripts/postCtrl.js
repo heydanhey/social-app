@@ -35,8 +35,9 @@
           var flash = "<div class='alert'><h1>YOU WEEF'D</h1></div>"
 
           if($scope.weefResponse){
+            
             $('#flashModal').modal('show');
-            $('#touchsurface3').append($compile(flash)($scope).fadeIn(1000).fadeOut(1000));
+            // $('#touchsurface3').append($compile(flash)($scope).fadeIn(1000).fadeOut(1000));
           };
 
           $('#touchsurface3').append($compile(newElement)($scope).fadeIn());
