@@ -8,3 +8,5 @@
   json.stat_4 @stat_4.to_i
 
   json.weef_response @weef_response
+
+  json.weef_id @weef.id

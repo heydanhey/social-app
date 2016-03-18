@@ -24,6 +24,7 @@
           $scope.activeStat3 = $scope.nextPost.stat_3;
           $scope.activeStat4 = $scope.nextPost.stat_4;
           $scope.weefResponse = $scope.nextPost.weef_response;
+          $scope.weefId = $scope.nextPost.weef_id;
           console.log($scope.weefResponse);
 
           var oldElement = angular.element(document.querySelector('#touchsurface2'));
@@ -35,7 +36,7 @@
           var flash = "<div class='alert'><h1>YOU WEEF'D</h1></div>"
 
           if($scope.weefResponse){
-            
+
             $('#flashModal').modal('show');
             // $('#touchsurface3').append($compile(flash)($scope).fadeIn(1000).fadeOut(1000));
           };

@@ -4,6 +4,14 @@ class ChatsController < ApplicationController
 
     @chats = Chat.where(weef_id: params[:id])
 
+
+    # Set read posts to served.
+    @chats.each do |chat|
+      if chat.user_id != current_user.id
+        chat.update(served: true)
+      end
+    end
+    
   end
 
   def create

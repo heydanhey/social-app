@@ -28,7 +28,7 @@ class Api::V1::PostsController < ApplicationController
     @stat_4 = @post.get_percentage(4)
 
     @weef_response = session[:weef_response]
-    # @weef_
+    @weef = Weef.last
 
     if params[:excited]
       post_action(1)
