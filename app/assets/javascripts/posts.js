@@ -1,4 +1,4 @@
-$('#flashModal').modal({ show: false})
+// $('#flashModal').modal({ show: false})
 
 // document.onkeydown = function(e) {
 //     var idNumber = gon.post.id;
