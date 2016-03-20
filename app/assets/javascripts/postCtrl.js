@@ -97,48 +97,6 @@
           }
       });
 
-      //Animation function called by the swipe event
-
-      // var animateThis = function(e, direction) {
-      //   var idNumber = gon.post.id;
-      //   var stats = gon.stats;
-      //   var idString = idNumber.toString();
-      //   switch (direction){
-      //   case 'left':    //left arrow key
-      //       $(".box").finish().animate({
-      //           left: "-=1500",
-      //           // backgroundColor: '#ff0004'
-      //       });
-      //       $(".stat-box .value").html(stats[3]);
-      //       document.location = "/posts/" + idString + "?annoyed=id";
-      //       break;
-      //   case 'up':    //up arrow key
-      //       $(".box").finish().animate({
-      //           top: "-=1500",
-      //           // backgroundColor: '#02f90e'
-      //       });
-      //       $(".stat-box .value").html(stats[0]);
-      //       document.location = "/posts/" + idString + "?excited=id";
-      //       break;
-      //   case 'right':    //right arrow key
-      //       $(".box").finish().animate({
-      //           left: "+=1500",
-      //           // backgroundColor: '#fc6635'
-      //       });
-      //       $(".stat-box .value").html(stats[1]);
-      //       document.location = "/posts/" + idString + "?amused=id";
-      //       break;
-      //   case 'down':    //bottom arrow key
-      //       $(".box").finish().animate({
-      //           top: "+=1500",
-      //           // backgroundColor: '#02c8ff'
-      //       });
-      //       $(".stat-box .value").html(stats[2]);
-      //       document.location = "/posts/" + idString + "?sympathetic=id";
-      //       break;
-      //     }
-      // }
-
       //This is the js for the touch controls
 
       function swipedetect(el, callback){
@@ -203,66 +161,60 @@
                 clearTimeout(hidetimer)
                 console.log("swipe detectd");
                 switch (swipedir) {
+
             case "left":
+
+                $(".stat-box .value").html($scope.activeStat4 + "%");
+                $(".stat-box").css('color', '#E08484');
+                $(".stat-box .value").append('<img src="/assets/4.png" >');
 
                 $(".box").animate({
                   backgroundColor: '#ff0004',
                   left: "-=1500"
                 }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?annoyed=id")});
-                $(".stat-box .value").html($scope.activeStat4 + "%");
-                $(".stat-box").css('color', '#E08484');
-                $(".stat-box .value").append('<img src="/assets/4.png" >');
 
-                //alert(idString);
-                // animateThis(el, 'left');
-                // document.location = "/posts/" + idString + "?annoyed=id";
                 break;
+
             case "up":
+
+                $(".stat-box .value").html($scope.activeStat1 + "%");
+                $(".stat-box").css('color', '#70C04B');
+                $(".stat-box .value").append('<img src="/assets/1.png" >');
 
                 $(".box").animate({
                   backgroundColor: '#02f90e',
                   top: "-=1500"
                 }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?excited=id")});
-                $(".stat-box .value").html($scope.activeStat1 + "%");
-                $(".stat-box").css('color', '#70C04B');
-                $(".stat-box .value").append('<img src="/assets/1.png" >');
 
-                // alert('up');
-                // animateThis(el, 'up');
-                // document.location = "/posts/" + idString + "?excited=id";
                 break;
+
             case "right":
+
+                $(".stat-box .value").html($scope.activeStat2 + "%");
+                $(".stat-box").css('color', '#F8AF46');
+                $(".stat-box .value").append('<img src="/assets/2.png" >');
 
                 $(".box").animate({
                     backgroundColor: '#fc6635',
                     left: "+=2000"
                 }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?amused=id")});
-                $(".stat-box .value").html($scope.activeStat2 + "%");
-                $(".stat-box").css('color', '#F8AF46');
-                $(".stat-box .value").append('<img src="/assets/2.png" >');
 
-                // alert('right');
-                // animateThis(el, 'right');
-                // document.location = "/posts/" + idString + "?amused=id";
                 break;
+
             case "down":
+
+                $(".stat-box .value").html($scope.activeStat3 + "%");
+                $(".stat-box").css('color', '#2EC6DC');
+                $(".stat-box .value").append('<img src="/assets/3.png" >');
 
                 $(".box").animate({
                   backgroundColor: '#02c8ff',
                   top: "+=1500"
                 }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?sympathetic=id")});
-                $(".stat-box .value").html($scope.activeStat3 + "%");
-                $(".stat-box").css('color', '#2EC6DC');
-                $(".stat-box .value").append('<img src="/assets/3.png" >');
-                
-                // alert('down');
-                // animateThis(el, 'down');
-                // document.location = "/posts/" + idString + "?sympathetic=id";
+
                 break;
         }
-                // hidetimer = setTimeout(function(){ // reset background image after 1 second
-                //     inner.style.background = ''
-                // }, 1000)
+
             }
         })
     }, false)

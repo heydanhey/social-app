@@ -28,19 +28,9 @@
   font-family: 'Questrial', sans-serif;
 }
 
-// .post-div {
-//   background-color: red;
-//   border-radius: 2px;
-//   border: black;
-//   border-style: solid;
-// }
-
 .post-archive{
   font-family: 'Montserrat', sans-serif;
   margin: auto;
-  // background-color: #ffe3bc;
-  // border-style: solid;
-  // border-color: black;
   width: 100%;
   text-align: left;
   border-radius: 15px;
@@ -54,6 +44,15 @@
   // border: #ff9966;
   border-style: none;
   // border-radius: 25px;
+}
+
+@media screen and (max-width: 479px) {
+    .table, .table-row {
+        display: block;
+    }
+    .table-cell {
+        display:inline-block;
+    }
 }
 
 .table th {
