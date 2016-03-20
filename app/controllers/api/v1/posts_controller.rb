@@ -105,8 +105,8 @@ class Api::V1::PostsController < ApplicationController
       else
         # flash[:warning] = "No posts in your location radius, please broaden your search!"
         # If there's no posts within radius, redirect to user profile
-        # redirect_to "/users/#{current_user.id}"
-        render json: "no_posts_in_location_radius"
+        redirect_to "/users/#{current_user.id}"
+        # render json: "no_posts_in_location_radius"
       end
     end  
 

@@ -37,6 +37,43 @@ class UsersController < ApplicationController
     # @image = Faker::Avatar.image(@user.name, "200x200")
     @image = "https://api.adorable.io/avatars/285/#{@user.name}.png"
 
+    total_num_weactions = @user.weactions.count
+
+    @profile_stats = []
+
+    @profile_stats << total_num_weactions
+
+    @profile_stats << @user.weactions.where(emotion_id: 1).count
+    @profile_stats << @user.weactions.where(emotion_id: 2).count
+    @profile_stats << @user.weactions.where(emotion_id: 3).count
+    @profile_stats << @user.weactions.where(emotion_id: 4).count
+    gon.profile_stats = @profile_stats
+
+    @profile_area_chart = []
+    @profile_area_chart << @user.created_at
+
+    [1,2,3,4].each do |number|
+
+      date = @user.created_at.midnight
+      weactions = @user.weactions.where(emotion_id: number)
+      data_array = []
+
+      while date < Weaction.last.created_at.midnight
+        data = 0
+        weactions.each do |weaction|
+          if weaction.created_at.midnight == date
+            data += 1
+          end
+        end
+        date = date + 1.day
+        data_array << data
+      end
+
+      @profile_area_chart << data_array
+    end
+    p '*********************'
+    p @profile_area_chart
+    gon.area_chart = @profile_area_chart
   end
 
   def update

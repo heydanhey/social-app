@@ -1,73 +1,77 @@
 <div class="jumbotron user">
 
-<div class="row">
+  <div class="row">
 
-  <div class="col-xs-6 col-md-4"> <%= image_tag(@image, size: "200x200") %></div>
+    <div class="col-xs-6 col-md-4"> <%= image_tag(@image, size: "200x200") %></div>
 
-  <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 col-md-8">
 
- 
-          <h3><%= @user.name %></h3>
-          <br />
+      <h3><%= @user.name %></h3>
+      <br />
 
-          <p>set radius:</p>      
+        <p>set radius:</p>      
 
-          <section>
-            <div class="view">
-              <div class="example">
-                <div id="slider-range"></div>
-                <span class="example-val" id="slider-range-value"></span>
-                <hr>
-          <%= form_tag "/users/#{current_user.id}", method: :patch do %>
+        <section>
 
-         <%= text_field_tag(:location_radius) %>
-          
+          <div class="view">
 
-          <%= submit_tag "Update", class: "btn btn-default" %>
-          <% end %>
-                  <script>
-                    var rangeSlider = document.getElementById('slider-range');
+            <div class="example">
 
-                    noUiSlider.create(rangeSlider, {
-                      start: [ <%= @user.location_radius %> ],
-                      range: {
-                        'min': [  5 ],
-                        'max': [ 5000 ]
-                      }
-                    });
-                  </script>   
+              <div id="slider-range"></div>
 
-                  <script>
-                    var rangeSliderValueElement = document.getElementById('location_radius');
+              <span class="example-val" id="slider-range-value"></span>
 
-                    rangeSlider.noUiSlider.on('update', function( values, handle ) {
-                      rangeSliderValueElement.value = values[handle];
-                    });
-                  </script>   
+              <hr>
+              <%= form_tag "/users/#{current_user.id}", method: :patch do %>
 
-              </div>
+              <%= text_field_tag(:location_radius) %>
+        
+              <%= submit_tag "Update", class: "btn btn-default" %>
+
+              <% end %>
+
+              <script>
+                var rangeSlider = document.getElementById('slider-range');
+
+                noUiSlider.create(rangeSlider, {
+                  start: [ <%= @user.location_radius %> ],
+                  range: {
+                    'min': [  5 ],
+                    'max': [ 5000 ]
+                  }
+                });
+              </script>   
+
+              <script>
+                var rangeSliderValueElement = document.getElementById('location_radius');
+
+                rangeSlider.noUiSlider.on('update', function( values, handle ) {
+                  rangeSliderValueElement.value = values[handle];
+                });
+              </script>   
+
             </div>
-          </section>
+
+          </div>
+
+        </section>
+
+      </div>
 
     </div>
 
+    <hr>
 
-  
-  
+    <p> Weaction Profile </p>
 
+    <div id="chart-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    
+    <hr>
 
-
-  </div>
-  <p>Number of weactions: <%= @user.weactions.count %></p>
-
-   <p>Excited: <%= @user.weactions.where(emotion_id: 1).count %></p>
-   <p>Amused: <%= @user.weactions.where(emotion_id: 2).count %></p>
-   <p>Sympathetic: <%= @user.weactions.where(emotion_id: 3).count %></p>
-   <p>Annoyed: <%= @user.weactions.where(emotion_id: 4).count %></p>
+    <div id="area-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 
-
-  <hr>
+    <hr>
 
 
           <div class="weef-menu">
