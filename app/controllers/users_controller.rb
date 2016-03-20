@@ -71,8 +71,6 @@ class UsersController < ApplicationController
 
       @profile_area_chart << data_array
     end
-    p '*********************'
-    p @profile_area_chart
     gon.area_chart = @profile_area_chart
   end
 
