@@ -1,6 +1,6 @@
 body {
   padding-bottom: 75px;
-  background-image: image-url("congruent_pentagon.png");
+  background-image: image-url("congruent_pentagon.png") !important;
   background-color: black;
   background-attachment: fixed;
 }
@@ -15,7 +15,7 @@ body p {
 }
 
 .main-container .jumbotron {
-    border-radius: 25px;
+    // border-radius: 25px;
     width: 95%;
     max-width: 900px;
     padding-left: 20px;
@@ -60,7 +60,16 @@ body {
 
 .flags {
   display: inline-block;
+  padding-top: 5px;
+  float: left;
+}
+
+.flag {
+  display: inline-block;
+  color: #5a5b5b;
   float: right;
+  padding-top: 5px;
+  vertical-align: top;
 }
 
 .alert {
@@ -74,11 +83,43 @@ body {
 }
 
 .fa-flag {
-  padding-top: 5px;
+  padding-top: 0px;
 }
 
 .navbar-brand {
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
 
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  background-color: #333;
+
+  z-index: 1;
+
+  border-radius: 100%;  
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
 }

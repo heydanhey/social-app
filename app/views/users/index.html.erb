@@ -12,7 +12,7 @@
       <table class="table post-table">
       
         <tr class="table-row">
-          <th id="text-header" class="table-cell" ng-click="sortBy('text')">Text</th>
+          <th id="text-header" class="table-cell" ng-click="sortBy('text')"></th>
           <th class="table-cell" ng-click="sortBy('emotion_id')"><i class="fa fa-meh-o fa-2x"></i></th>
           <th class="table-cell" ng-click="sortBy('stat_1')"><img src="assets/1-sm.png" style="width:25px; height:25px;"></th>
           <th class="table-cell" ng-click="sortBy('stat_2')"><img src="assets/2-sm.png" style="width:25px; height:25px;"></th>
@@ -23,7 +23,7 @@
 
         <tr class="table-row" ng-repeat="post in posts | filter: {text: textFilter, emotion_id: emotionFilter} | orderBy:sortByAttribute:descending">
 
-          <td class="table-cell">{{post.text}}</td>
+          <td class="table-cell"><h4>{{post.text}}</h4></td>
 
           <td class="table-cell"> <img src="assets/{{post.emotion_id}}.png" style="width:25px; height:25px;"> </td>
 
@@ -45,11 +45,12 @@
           </td>
 
           <td class="table-cell">
-            <div>
+            <div style='text-align: center;'>
               <a href="/posts/{{post.id}}" data-method="delete" data-confirm="You Sure?"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
             </div>
           </td>
         </tr>
+
       </table>
 
     </div>

@@ -1,13 +1,17 @@
 <div class="jumbotron weef">
 
 <div ng-app="app">
+
   <div ng-controller="weefsCtrl" ng-init="setup()">
+
+
 <% if @see_post %>
 
 <h1>their post archive</h1>
 
-<hr>
+  <hr>
 
+    
     <div class="row">
     <div class="col-xs-12">
     <div class="table-responsive post-archive">
@@ -15,7 +19,9 @@
       <table id="table-their-posts">
         <tr>
           <th class="post" ng-click="sortBy('text')">Post</th>
+
           <th class="emotion" ng-click="sortBy('emotion_id')"><i class="fa fa-meh-o fa-3x"></i></th>
+
         </tr>
 
         <tr ng-repeat="post in posts | orderBy:sortByAttribute:descending">
@@ -25,6 +31,7 @@
           <td class="emotion"> <img src="/assets/{{post.emotion_id}}-sm.png" style="width:50px; height:50px;"> </td>
 
         </tr>
+
       </table>
     </div>
     </div>
@@ -35,6 +42,7 @@
 <h1>their Weactions</h1>
 
 <hr>
+
 
     <div class="row">
     <div class="col-xs-12">

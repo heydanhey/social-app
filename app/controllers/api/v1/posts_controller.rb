@@ -1,7 +1,7 @@
 class Api::V1::PostsController < ApplicationController
 
   def index
-    @posts = Post.where(user_id: current_user.id)
+    @posts = Post.where(user_id: current_user.id).reverse_order
 
     @stats = {}
     

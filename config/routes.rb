@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # devise_for :users
   devise_for :users, :controllers => { :registrations => "registrations" }
 
@@ -31,6 +32,8 @@ Rails.application.routes.draw do
 
   get '/chats/:id' => 'chats#show'
   post '/chats/:id' => 'chats#create'
+
+  get 'landing' => 'landings#index'
 
   namespace :api do
     namespace :v1 do  

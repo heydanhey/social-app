@@ -1,12 +1,14 @@
+
+
 (function() {
   "use strict";
 
   app.controller("postsCtrl",["$scope", "$http", function($scope, $http){
       
       $scope.setup = function(){
-
         $http.get('../api/v1/posts.json').then(function(response){
           $scope.posts = response.data;
+          
         });
       };
 

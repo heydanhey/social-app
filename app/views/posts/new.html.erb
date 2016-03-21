@@ -26,22 +26,26 @@
   </div>
 <br />
   <p>then attach an emotion</p><br>
-  <label>
-  <%= radio_button_tag(:emotion_id, 1) %>
-  <%= image_tag("1.png", size: "80x80") %>
-  </label>
-  <label>
-  <%= radio_button_tag(:emotion_id, 2) %>
-  <%= image_tag("2.png", size: "80x80") %>
-  </label>
-  <label>
-  <%= radio_button_tag(:emotion_id, 3) %>
-  <%= image_tag("3.png", size: "80x80") %>
-  </label>
-  <label>
-  <%= radio_button_tag(:emotion_id, 4) %>
-  <%= image_tag("4.png", size: "80x80") %>
-  </label>
+  <div style="display: inline-block;">
+    <label>
+    <%= radio_button_tag(:emotion_id, 1) %>
+    <%= image_tag("1.png", size: "80x80") %>
+    </label>
+    <label>
+    <%= radio_button_tag(:emotion_id, 2) %>
+    <%= image_tag("2.png", size: "80x80") %>
+    </label>
+  </div>
+  <div style="display: inline-block;">
+    <label>
+    <%= radio_button_tag(:emotion_id, 3) %>
+    <%= image_tag("3.png", size: "80x80") %>
+    </label>
+    <label>
+    <%= radio_button_tag(:emotion_id, 4) %>
+    <%= image_tag("4.png", size: "80x80") %>
+    </label>
+  </div>
 
 <br />
 <hr>

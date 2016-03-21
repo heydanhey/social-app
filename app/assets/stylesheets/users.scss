@@ -34,17 +34,17 @@
   width: 100%;
   text-align: left;
   border-radius: 15px;
-  padding-top: 12px;
-  padding-left: 12px;
+  padding-top: 0px;
+  padding-left: 0px;
   padding-bottom: 1px;
-  margin: 5px;
+  margin: 0px;
 }
 
-.post-table {
-  // border: #ff9966;
-  border-style: none;
-  // border-radius: 25px;
-}
+// .post-table {
+//   // border: #ff9966;
+//   border-style: solid;
+//   // border-radius: 25px;
+// }
 
 @media screen and (max-width: 479px) {
     .table, .table-row {
@@ -63,23 +63,13 @@
 }
 
 #text-header {
+
   text-align: left;
 }
 
-td.post-text-td {
-  width: 48%;
-}
-
-td.post-weaction-td {
-  width: 48%;
-  text-align: center;
-}
-
-td.trash {
-  width: 4%;
-  margin: auto;
-  text-align: center;
-}
+// .table-cell {
+//   vertical-align: top
+// }
 
 .user img {
   border-radius: 15%;  
