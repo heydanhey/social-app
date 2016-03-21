@@ -2,24 +2,22 @@
 
   <div class="row">
 
-    <div class="col-xs-6 col-md-4"> <%= image_tag(@image, size: "200x200") %></div>
+    <div class="user-img-container col-xs-6 col-md-4"> <p style="text-align: center;"><%= image_tag("Weef.png", size: "200x200", class: "user-img") %></p></div>
 
-    <div class="col-xs-12 col-md-8">
+    <div class="user-name col-xs-12 col-md-8">
+      <h6>Your user name for this session:</h6>
+      <h1><%= @user.name %></h1>
+      <hr>
+    
 
-      <h3><%= @user.name %></h3>
-      <br />
+      <div class="view">
+      <p>Please set your desired <i>weef</i> radius (in miles):</p>      
 
-        <p>set radius:</p>      
+        <div class="example">
 
-        <section>
+          <div id="slider-range"></div>
 
-          <div class="view">
-
-            <div class="example">
-
-              <div id="slider-range"></div>
-
-              <span class="example-val" id="slider-range-value"></span>
+          <span class="example-val" id="slider-range-value"></span>
 
               <hr>
               <%= form_tag "/users/#{current_user.id}", method: :patch do %>
@@ -29,7 +27,7 @@
               <%= submit_tag "Update", class: "btn btn-default" %>
 
               <% end %>
-
+              <hr>
               <script>
                 var rangeSlider = document.getElementById('slider-range');
 
@@ -37,11 +35,10 @@
                   start: [ <%= @user.location_radius %> ],
                   range: {
                     'min': [  5 ],
-                    'max': [ 5000 ]
+                    'max': [ 2000 ]
                   }
                 });
               </script>   
-
               <script>
                 var rangeSliderValueElement = document.getElementById('location_radius');
 
@@ -50,25 +47,23 @@
                 });
               </script>   
 
-            </div>
-
           </div>
 
-        </section>
+        </div>
 
       </div>
 
     </div>
 
-    <hr>
 
-    <p> Weaction Profile </p>
+    <h3 style="text-align: center;"> Weaction Profile </h3>
 
     <div id="chart-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     
     <hr>
 
     <div id="area-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
 
 
     <hr>
@@ -88,6 +83,10 @@
             </div>
           </div>
           <br>
+        
+    </div>
+
+  </div>
 
 </div>
 

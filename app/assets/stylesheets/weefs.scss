@@ -91,11 +91,16 @@
 }
 
 .w1 h3 {
-  color: black
+  color: black;
 }
 
+// .w1 .w2 h2 {
+//   color: black;
+//   font-size: 2vw;
+// }
+
 .w2 h3 {
-  color: black
+  color: black;
 }
 
 .weef-menu {
@@ -118,6 +123,10 @@
 .swipe-wrap {
   overflow: hidden;
   position: relative;
+}
+
+.weef-heading {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .swipe-wrap > div {

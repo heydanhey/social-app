@@ -50,8 +50,8 @@
       $(document).keydown(function(e){
           switch (e.which){
           case 37:    //left arrow key
+              $('html body').animate({backgroundColor: '#E08484'},500);
               $(".box").animate({
-                  backgroundColor: '#ff0004',
                   left: "-=1500"
               }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?annoyed=id")});
               $(".stat-box .value").html($scope.activeStat4 + "%");
@@ -62,8 +62,8 @@
 
               break;
           case 38:    //up arrow key
+              $('html body').animate({backgroundColor: '#70C04B'},500);
               $(".box").animate({
-                  backgroundColor: '#02f90e',
                   top: "-=1500"
               }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?excited=id")});
               $(".stat-box .value").html($scope.activeStat1 + "%");
@@ -73,9 +73,9 @@
               // $scope.getNextPost("/posts/" + $scope.activeId + "?excited=id");
               break;
           case 39:    //right arrow key
+              $('html body').animate({backgroundColor: '#F8AF46'},500);
               $(".box").animate({
-                  backgroundColor: '#fc6635',
-                  left: "+=2000"
+                  left: "+=1500"
               }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?amused=id")});
               $(".stat-box .value").html($scope.activeStat2 + "%");
               $(".stat-box").css('color', '#F8AF46');
@@ -84,8 +84,8 @@
               // $scope.getNextPost("/posts/" + $scope.activeId + "?amused=id");
               break;
           case 40:    //bottom arrow key
+              $('html body').animate({backgroundColor: '#2EC6DC'},500);
               $(".box").animate({
-                  backgroundColor: '#02c8ff',
                   top: "+=1500"
               }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?sympathetic=id")});
               $(".stat-box .value").html($scope.activeStat3 + "%");
@@ -169,7 +169,6 @@
                 $(".stat-box .value").append('<img src="/assets/4.png" >');
 
                 $(".box").animate({
-                  backgroundColor: '#ff0004',
                   left: "-=1500"
                 }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?annoyed=id")});
 
@@ -182,7 +181,6 @@
                 $(".stat-box .value").append('<img src="/assets/1.png" >');
 
                 $(".box").animate({
-                  backgroundColor: '#02f90e',
                   top: "-=1500"
                 }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?excited=id")});
 
@@ -195,7 +193,6 @@
                 $(".stat-box .value").append('<img src="/assets/2.png" >');
 
                 $(".box").animate({
-                    backgroundColor: '#fc6635',
                     left: "+=2000"
                 }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?amused=id")});
 
@@ -208,7 +205,6 @@
                 $(".stat-box .value").append('<img src="/assets/3.png" >');
 
                 $(".box").animate({
-                  backgroundColor: '#02c8ff',
                   top: "+=1500"
                 }, 500, function(){$scope.getNextPost("/api/v1/posts/" + $scope.activeId + "?sympathetic=id")});
 

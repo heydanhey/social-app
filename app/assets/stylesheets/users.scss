@@ -26,6 +26,8 @@
 
 .user h1 {
   font-family: 'Questrial', sans-serif;
+  color: #18bc9c;
+
 }
 
 .post-archive{
@@ -62,17 +64,28 @@
   // margin: 10px;
 }
 
-#text-header {
+.user-name {
+  // background-color: #18bc9c;
+  // border-radius: 15px;
+  // margin-right: 10px;
+}
 
+#text-header {
   text-align: left;
 }
 
 // .table-cell {
 //   vertical-align: top
 // }
-
-.user img {
-  border-radius: 15%;  
+@media only screen and (max-width: 700px){
+  .user-img-container {
+    width: 100%;
+  }
+}
+.user-img {
+  border-radius: 100%;
+  display: block;
+  margin: auto;  
 }
 
 .ng-enter, .ng-move{
@@ -88,4 +101,13 @@
   -o-animation: fadeOut 1s;
   animation: fadeOut 1s;
 }
+
+.view {
+  padding: 20px;
+}
+
+// .user-charts {
+//   padding-top: 30px;
+//   display: inline-block;
+// }
 

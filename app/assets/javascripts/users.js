@@ -53,8 +53,6 @@ $(function () {
                 }, {
                     name: 'RIGHT',
                     y: gon.profile_stats[2],
-                    sliced: true,
-                    selected: true,
                     color: '#F9B046'
                 }, {
                     name: 'DOWN',
@@ -78,7 +76,7 @@ $(function () {
             type: 'area'
         },
         title: {
-            text: 'Weaction profile over time'
+            text: 'Your weaction profile over time'
         },
         subtitle: {
             text: '...'
@@ -102,7 +100,7 @@ $(function () {
             }
         },
         tooltip: {
-            pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+            pointFormat: '{series.name} was swiped <b>{point.y:,.0f}</b><br/>times on day {point.x}'
         },
         plotOptions: {
             area: {
