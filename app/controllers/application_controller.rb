@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :weef_count, :chat_count
+  before_action :weef_count
 
 
 
@@ -34,14 +34,6 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def chat_count
-      if user_signed_in?
-
-        all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_a_id=weactions.id OR weefs.weaction_b_id=weactions.id WHERE weactions.user_id=#{current_user.id}")
-
-        # @chat_count = Chat.where(user_id: current_user.id).where(served: false).count
-      end
-    end
 
 end
 
