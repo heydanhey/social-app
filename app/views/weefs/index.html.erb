@@ -52,7 +52,7 @@
               <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default weef-btn" %>
             </div>
 
-              <% if  (weef.chats.where(user_id: !current_user.id).where(served: false).where(user_id: !nil).count) > 0 %>
+              <% if  (weef.chats.where(served: false).where.not(user_id: [nil, current_user.id]).count) > 0 %>
 
                 <div class="col-md-4">
                   <%= link_to "enter weef chat | #{weef.chats.where(served: false).where.not(user_id: [nil, current_user.id]).count} NEW!", "/chats/#{weef.id}", class: "btn btn-default weef-btn" %>
