@@ -71,6 +71,8 @@ class Api::V1::PostsController < ApplicationController
         # Because match is true...Begin Weef check
         # Grab all matched weactions from the author of the post
         their_weactions = Weaction.where(user_id: @post.user_id).where(match: true)
+        p "**********************"
+        p their_weactions
         # Bucket variable for current weef
         weef = Weef.new
         
