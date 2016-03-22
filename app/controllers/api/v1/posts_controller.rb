@@ -71,16 +71,18 @@ class Api::V1::PostsController < ApplicationController
         # Because match is true...Begin Weef check
         # Grab all matched weactions from the author of the post
         their_weactions = Weaction.where(user_id: @post.user_id).where(match: true)
-        p "**********************"
-        p their_weactions
+
         # Bucket variable for current weef
         weef = Weef.new
         
         # Iterate through their weactions to see if the current user wrote any of those posts...if so then create a weef 
         their_weactions.each do |weaction|
-          if weaction.post.user_id == current_user.id
-            session[:weef_response] = true
-            weef.update(weaction_a_id: weaction.id, weaction_b_id: this_weaction.id)
+
+          unless weaction.post
+            if weaction.post.user_id == current_user.id
+              session[:weef_response] = true
+              weef.update(weaction_a_id: weaction.id, weaction_b_id: this_weaction.id)
+            end
           end
         end
         # only save the most recent weef, hence, weef.save after the loop, this prevents multiple weefs being created with the same second-half weaction match  
