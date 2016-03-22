@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'posts#show'
   get '/posts' => 'posts#index'
   get '/posts/new' => 'posts#new'
   post '/posts' => 'posts#create'

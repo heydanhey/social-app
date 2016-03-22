@@ -71,6 +71,9 @@ $(function () {
 
 
 $(function () {
+    // if (!gon.area_chart){
+    //     gon.area_chart = [1,1,1,1];
+    // };
     $('#area-container').highcharts({
         chart: {
             type: 'area'

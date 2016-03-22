@@ -8,6 +8,10 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+
+    gon.area_chart = [0,0,0,0]
+    gon.profile_stats = [0]
+    
   end
 
   def create
@@ -28,6 +32,8 @@ class PostsController < ApplicationController
     else
       render :new
     end
+
+    
   end
 
   def show
@@ -46,6 +52,8 @@ class PostsController < ApplicationController
     # elsif params[:annoyed]
     #   post_action(4)
     # end
+    gon.area_chart = [0,0,0,0]
+    gon.profile_stats = [0]
   end
 
   def edit

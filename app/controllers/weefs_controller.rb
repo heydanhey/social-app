@@ -16,6 +16,9 @@ class WeefsController < ApplicationController
       end
     end
 
+    gon.area_chart = [0,0,0,0]
+    gon.profile_stats = [0]
+
   end
 
   def show
@@ -28,6 +31,9 @@ class WeefsController < ApplicationController
       @see_post = false
       @weactions = Weaction.where(user_id: params[:id]).limit(25)
     end
+    
+    gon.area_chart = [0,0,0,0]
+    gon.profile_stats = [0]
   end
-
+ 
 end

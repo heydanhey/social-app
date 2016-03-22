@@ -12,6 +12,8 @@ class ChatsController < ApplicationController
       end
     end
     
+    gon.area_chart = [0,0,0,0]
+    gon.profile_stats = [0]
   end
 
   def create

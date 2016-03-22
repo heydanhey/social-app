@@ -14,6 +14,11 @@ body p {
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  // margin-top: 15px;
+  background-color: #ededed;
+}
+
 .main-container .jumbotron {
     // border-radius: 25px;
     width: 95%;
@@ -44,10 +49,6 @@ body p {
   color: #ff9966;
 }
 
-body {
-  // margin-top: 15px;
-  background-color: #ededed;
-}
 
 .navbar .navbar-nav {
   display: inline-block;
@@ -70,6 +71,7 @@ body {
   float: right;
   padding-top: 5px;
   vertical-align: top;
+  z-index: 3;
 }
 
 .alert {

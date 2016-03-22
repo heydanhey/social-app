@@ -6,6 +6,9 @@ class UsersController < ApplicationController
     # This action will be the User Post Arcive, where a user can see a list of all his posts
     @user = User.find(current_user.id)
     @image = "https://api.adorable.io/avatars/285/#{@user.name}.png"
+
+    gon.area_chart = [0,0,0,0]
+    gon.profile_stats = [0]
   end
 
   def show
@@ -58,19 +61,25 @@ class UsersController < ApplicationController
       weactions = @user.weactions.where(emotion_id: number)
       data_array = []
 
-      while date < Weaction.last.created_at.midnight
-        data = 0
-        weactions.each do |weaction|
-          if weaction.created_at.midnight == date
-            data += 1
+      if weactions.count != 0
+        while date <= weactions.last.created_at.midnight
+          data = 0
+          weactions.each do |weaction|
+            if weaction.created_at.midnight == date
+              data += 1
+            end
           end
+          date = date + 1.day
+          data_array << data
         end
-        date = date + 1.day
-        data_array << data
+      else 
+        data_array << 0
       end
+        
 
       @profile_area_chart << data_array
     end
+
     gon.area_chart = @profile_area_chart
   end
 

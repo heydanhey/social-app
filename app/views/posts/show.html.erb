@@ -1,38 +1,63 @@
-<div ng-app="app">
-  <div id="postCtrl" ng-controller="postCtrl" ng-init="setup()">
-    <div id="behind">
-      <div id="inner2" class="stat-box">
-        <h1 class="value"></h1>
-      </div>
-    </div>
-
-
-    <div id="touchsurface2" class="jumbotron view-post box">
-      <div id="inner">
-
-       <h1>{{post.text}}</h1>
-    
+<div id="touchsurface3" class="main-container">
+  <div ng-app="app">
+    <div id="postCtrl" ng-controller="postCtrl" ng-init="setup()">
+      <div id="behind">
+        <div id="inner2" class="stat-box">
+          <h1 class="value"></h1>
+        </div>
       </div>
 
-      <div class="flags">
 
-        <img src="/assets/1-sm.png" style="width:50px; height:50px;">
-        <img src="/assets/2-sm.png" style="width:50px; height:50px;">
-        <img src="/assets/3-sm.png" style="width:50px; height:50px;">
-        <img src="/assets/4-sm.png" style="width:50px; height:50px;">
+      <div id="touchsurface2" class="jumbotron view-post box">
+        <div id="inner">
+
+         <h1>{{post.text}}</h1>
+      
+        </div>
+
+        <div class="flags">
+          <img src="/assets/1-sm.png" style="width:50px; height:50px;">
+          <img src="/assets/2-sm.png" style="width:50px; height:50px;">
+          <img src="/assets/3-sm.png" style="width:50px; height:50px;">
+          <img src="/assets/4-sm.png" style="width:50px; height:50px;">
+        </div>
+
+        <div class="flag">
+          <i class="fa fa-flag fa-2x"></i>
+        </div>
 
       </div>
 
-      <div class="flag">
-        <i class="fa fa-flag fa-2x"></i>
+
+
+  <!-- Modal -->
+      <div class="modal fade" id="flashModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Weef Alert!</h4>
+            </div>
+            <div class="modal-body">
+            <p> Hurray! you just weefed! This is amazing.</p>
+            <div class="modal-img">
+            <img src="http://a.fod4.com/images/GifGuide/dancing/flash2.gif">
+            </div>
+            </div>
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              
+              <%= link_to "Go to your weefs", "/weefs/", :class => "btn btn-primary", :role => "button" %> 
+
+            </div>
+          </div>
+        </div>
       </div>
 
-    </div>
+
 
   </div>
 </div>
-
-
-
 
 

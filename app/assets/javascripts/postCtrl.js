@@ -10,12 +10,10 @@
         $scope.activeStat4 = gon.stats[3];
         $http.get('../api/v1/posts/' + $scope.activeId + '.json').then(function(response){
           $scope.post = response.data;
-          console.log($scope.post);
         });
       };
 
       $scope.getNextPost = function(thisPostPath){
-
         $http.get(thisPostPath).then(function(response){
           $scope.nextPost = response.data;
           $scope.activeId = $scope.nextPost.id;
@@ -38,12 +36,13 @@
           if($scope.weefResponse){
 
             $('#flashModal').modal('show');
-            // $('#touchsurface3').append($compile(flash)($scope).fadeIn(1000).fadeOut(1000));
+
           };
 
           $('#touchsurface3').append($compile(newElement)($scope).fadeIn());
         });
       };
+
 
       //This is the js for the keymapping of arrows
 
