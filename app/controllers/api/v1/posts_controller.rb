@@ -78,7 +78,7 @@ class Api::V1::PostsController < ApplicationController
         # Iterate through their weactions to see if the current user wrote any of those posts...if so then create a weef 
         their_weactions.each do |weaction|
 
-          unless weaction.post
+          if weaction.post
             if weaction.post.user_id == current_user.id
               session[:weef_response] = true
               weef.update(weaction_a_id: weaction.id, weaction_b_id: this_weaction.id)
