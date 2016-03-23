@@ -10,9 +10,11 @@ if @see_post
 else
   
   json.array! @weactions do |weaction|
-    json.id weaction.id
-    json.text weaction.post.text
-    json.emotion_id weaction.post.emotion_id
+    if weaction.post
+      json.id weaction.id
+      json.text weaction.post.text
+      json.emotion_id weaction.post.emotion_id
+    end
   end
 
 end

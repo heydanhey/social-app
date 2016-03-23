@@ -19,7 +19,7 @@
 
       <table id="table-their-posts">
         <tr>
-          <th class="post" ng-click="sortBy('text')">Post</th>
+          <th class="post" ng-click="sortBy('text')"><i>Most Recent 25 Posts</i></th>
 
           <th class="emotion" ng-click="sortBy('emotion_id')"><i class="fa fa-meh-o fa-3x"></i></th>
 
@@ -44,14 +44,13 @@
 
 <hr>
 
-
-    <div class="row">
-    <div class="col-xs-12">
+<div class="row">
+  <div class="col-xs-12">
     <div class="table-responsive post-archive">
 
       <table id="table-their-posts">
         <tr>
-          <th class="post" ng-click="sortBy('text')">Post</th>
+          <th class="post" ng-click="sortBy('text')"><i>Most Recent 25 Weactions</i></th>
           <th class="emotion" ng-click="sortBy('emotion_id')"><i class="fa fa-meh-o fa-3x"></i></th>
         </tr>
 
@@ -64,17 +63,20 @@
         </tr>
       </table>
     </div>
-    </div>
-    </div>
-
-
+  </div>
+</div>
 
 <% end %>
 
   </div>
 </div>
 
-<%= link_to "back", "/weefs", class: "btn btn-default" %> 
+<hr>
+<div class="weef-menu2">
+  
+  <%= link_to "go back", "/weefs", class: "btn btn-primary round" %> 
+
+</div>
 
 </div>
 
