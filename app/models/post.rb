@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
         post = Post.get_post_by_location(user)
       end
     else
-      post = Post.first
+      post = Post.sample
     end
     return post
   end
