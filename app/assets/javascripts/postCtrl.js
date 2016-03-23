@@ -29,7 +29,7 @@
 
           oldElement.remove();
 
-          var newElement = "<div id='touchsurface2' class='jumbotron view-post box' style='display: block; width: 95%; max-width: 900px;'><div id='inner'><h1>{{nextPost.text}}</h1></div><div class='flags' style='display: inline-block'; float: left;><img src='/assets/1-sm.png' style='width:50px; height:50px;'><img src='/assets/2-sm.png' style='width:50px; height:50px;'><img src='/assets/3-sm.png' style='width:50px; height:50px;'><img src='/assets/4-sm.png' style='width:50px; height:50px;'></div><div class='flag' style='display: inline-block'; float: right;><i class='fa fa-flag fa-2x'></i></div></div>"
+          var newElement = "<div id='touchsurface2' class='jumbotron view-post box' style='display: block; width: 95%; max-width: 900px;'><div id='inner'><h1>{{nextPost.text}}</h1></div><div class='flags' style='display: inline-block'; float: left;><img src='/assets/1-sm.png' style='width:50px; height:50px;'><img src='/assets/2-sm.png' style='width:50px; height:50px;'><img src='/assets/3-sm.png' style='width:50px; height:50px;'><img src='/assets/4-sm.png' style='width:50px; height:50px;'></div></div>"
 
           var flash = "<div class='alert'><h1>YOU WEEF'D</h1></div>"
 

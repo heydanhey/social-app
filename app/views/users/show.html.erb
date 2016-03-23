@@ -25,7 +25,7 @@
 
               <%= text_field_tag(:location_radius) %>
         
-              <%= submit_tag "Update", class: "btn btn-default" %>
+              <%= submit_tag "Update", class: "btn btn-default round" %>
 
               <% end %>
               <hr>
@@ -70,17 +70,18 @@
     <hr>
 
 
-          <div class="weef-menu">
-            <div class="col-md-4">
-              <%= link_to "my posts", "/users", class: "btn btn-green weef-btn" %>
+          <div class="row weef-menu">
+
+            <div class="col-md-4 weef-btn">
+              <%= link_to "My Posts", "/users", class: "btn btn-primary round btn-size" %>
             </div>
 
-            <div class="col-md-4">
-              <%= link_to "my weefs", "/weefs", class: "btn btn-blue weef-btn" %>
+            <div class="col-md-4 weef-btn">
+              <%= link_to "My Weefs", "/weefs", class: "btn btn-primary round btn-size" %>
             </div>
 
-            <div class="col-md-4">
-              <a data-toggle="modal" data-target="#myModal" class="btn btn-red weef-btn"> User Settings </a>
+            <div class="col-md-4 weef-btn">
+              <a data-toggle="modal" data-target="#myModal" class="btn btn-primary round btn-size"> User Settings </a>
             </div>
           </div>
           <br>

@@ -52,7 +52,7 @@
 
 .w1 {
   background-color: #13BFD9;
-  background-image: image-url("congruent_pentagon.png");
+  background-image: image-url("congruent_pentagon_gray.png");
   text-align: center;
   // border-style: solid;
   // border-color: #13BFD9;
@@ -66,7 +66,7 @@
 
 .w2 {
   background-color: #6ABD45;
-  background-image: image-url("congruent_pentagon.png");
+  background-image: image-url("congruent_pentagon_gray.png");
   text-align: center;
   // border-style: solid;
   // border-color: #6ABD45;
@@ -104,14 +104,22 @@
 }
 
 .weef-menu {
+  text-align: center;
   padding-top: 10px;
-  width: 100%;
+//   padding-bottom: 10px;
+//   // width: 100%;
   margin: auto;
 }
 
 .weef-btn{
-  width: 100%;
-  margin: auto;
+  margin: 0 auto;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.wb {
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .swipe {

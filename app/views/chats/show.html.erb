@@ -1,18 +1,27 @@
 <div id="touchsurface3" class="main-container">
 <div class="jumbotron weef">
+<h1 style="padding: 0; margin: 0; text-align: center"> <%= image_tag("Chat.png", size: "200x200") %>
 
-<h1> Weef Chat!!! </h1>
+Weef Chat Room </h1>
+
+<hr>
 <p>Weef Expiration Time: <%= @chats[0].weef.expiration %></p> 
 
-<% @chats.each do |chat| %>
-  <% if chat.user_id == current_user.id %>
-  <div class="chat-left">
+<% @chats.each_with_index do |chat, index| %>
+  <% if index == 0 %>
+    <div class="chat-middle">
     <p> <%= chat.text %> </p>
   </div>
   <% else %>
-  <div class="chat-right">
-    <p> <%= chat.text %> </p>
-  </div>
+    <% if chat.user_id == current_user.id %>
+    <div class="chat-left">
+      <p> <%= chat.text %> </p>
+    </div>
+    <% else %>
+    <div class="chat-right">
+      <p> <%= chat.text %> </p>
+    </div>
+    <% end %>
   <% end %>
 <% end %>
  
@@ -25,7 +34,9 @@
     <%= text_field_tag :text, nil, class: 'form-control', rows: "3", placeholder: "Chat with your Weefer!" %>
   </div>
 
-<%= submit_tag "Submit", class: "input-group btn btn-primary" %>
+<div style="text-align: center; padding-top: 10px;">
+<%= submit_tag "Submit", class: "btn btn-lg btn-primary round" %>
+</div>
 
 <% end %>
 

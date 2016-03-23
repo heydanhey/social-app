@@ -1,9 +1,9 @@
 <div id="touchsurface3" class="main-container">
 <div class="jumbotron weef"> 
+
   <div>
-    
-    <div style="display: inline-block;">
-      <%= image_tag("Weef.png", size: "200x200") %>
+    <div style="display: inline-block; margin: auto;">
+      <p style="text-align: center;"><%= image_tag("Weef.png", size: "200x200") %></p>
     </div>
 
     <div style="display: inline-block;">
@@ -28,7 +28,7 @@
           <hr>
 
           <div class="col-md-6">
-            <h3> this was your post: </h3>
+            <h3 style="color: #90D5E0; text-align: center"> this was your post: </h3>
             <div class="w1">
               <h2>"<%= weef.my_post(current_user.id).text %>"</h2>
                 <%= image_tag("#{weef.my_post(current_user.id).emotion_id}.png") %>
@@ -36,7 +36,7 @@
           </div>
 
           <div class="col-md-6">
-            <h3> this was their post: </h3>
+            <h3 style="color: #B3D5A4; text-align: center"> this was their post: </h3>
             <div class="w2">
                 <h2>"<%= weef.their_post(current_user.id).text %>"</h2>
                 <%= image_tag("#{weef.their_post(current_user.id).emotion_id}.png") %>
@@ -44,24 +44,25 @@
           </div>
 
           <div class="weef-menu col-xs-12">
-            <div class="col-md-4">
-              <%= link_to "See your weefer's posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn btn-default weef-btn" %>
+
+            <div class="col-md-4 wb">
+              <%= link_to "Weefer Posts", "/weefs/#{weef.weefer(current_user.id).id}?their_posts=id", class: "btn-size btn btn-primary round" %>
             </div>
 
-            <div class="col-md-4">
-              <%= link_to "See your weefer's weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn btn-default weef-btn" %>
+            <div class="col-md-4 wb">
+              <%= link_to "Weefer Weactions", "/weefs/#{weef.weefer(current_user.id).id}?their_weactions=id", class: "btn-size btn btn-primary round" %>
             </div>
 
               <% if  (weef.chats.where(served: false).where.not(user_id: [nil, current_user.id]).count) > 0 %>
 
-                <div class="col-md-4">
-                  <%= link_to "enter weef chat | #{weef.chats.where(served: false).where.not(user_id: [nil, current_user.id]).count} NEW!", "/chats/#{weef.id}", class: "btn btn-default weef-btn" %>
+                <div class="col-md-4 wb">
+                  <%= link_to "Enter Weef Chat | #{weef.chats.where(served: false).where.not(user_id: [nil, current_user.id]).count} NEW!", "/chats/#{weef.id}", class: "btn-size btn btn-primary round" %>
                 </div>
 
               <% else %>
 
-                <div class="col-md-4">
-                  <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn btn-default weef-btn" %>
+                <div class="col-md-4 wb">
+                  <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn-size btn btn-default round" %>
                 </div>
 
               <% end %>
@@ -73,8 +74,8 @@
 
     <% if @weef_count > 1 %>
       <div style='text-align:center;padding-top:20px;'>
-        <button onclick='mySwipe.prev()'>prev</button> 
-        <button onclick='mySwipe.next()'>next</button>
+        <button onclick='mySwipe.prev()'>Previous Weef</button> 
+        <button onclick='mySwipe.next()'>Next Weef</button>
       </div>  
     <% end %> 
 
