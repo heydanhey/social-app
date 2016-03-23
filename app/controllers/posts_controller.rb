@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:success] = "Post Created, Start Weacting!!!!"
-      redirect_to "api/v1/posts/#{Post.get_post_by_location(current_user).id}"
+      redirect_to "/posts/#{Post.get_post_by_location(current_user).id}"
     else
       render :new
     end
