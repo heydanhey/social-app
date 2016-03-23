@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <%= image_tag("wefresh_logo_2.png", class: "img-responsive", size: "400x400") %>
+                    <%= image_tag("wefresh_logo.png", class: "img-responsive") %>
                     <div class="intro-text">
                         <span class="name">WeFreshed</span>
                         <hr class="star-light">
@@ -13,7 +13,7 @@
                 </div>
 
                  <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="/" class="btn btn-lg btn-outline">
+                    <a href="/" class="btn-landing btn-lg btn-outline">
                         <i class="fa fa-rocket"></i> Get Started
                     </a>
                 </div>
@@ -30,66 +30,71 @@
 
                 <div class="col-sm-4 portfolio-item">
 
-                  <h2 class="text-center"> EXPRESS </h2>
+                  <h2 style="color: #EC5825" class="text-center"> EXPRESS </h2>
                   <hr class="pen-primary">
 
-                  <p>WeFreshed is a place to anonymously post your personal thoughts, feelings, and expressions.</p>
-
-
-
-
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
-                    </a>
+                  <p><i>WeFreshed</i> is a place to anonymously post your personal thoughts, feelings, and expressions.</p>
+                  <br>
+                  <h4 style="color: #EC5825" class="text-center"><i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> </h4>
                 </div>
 
 
                 <div class="col-sm-4 portfolio-item">
 
-                  <h2 class="text-center"> REACT </h2>
+                  <h2 style="color: #13BFD9" class="text-center"> WEACT </h2>
                   <hr class="arrow-primary">
 
-                  <p>WeFreshed lets you know how people reacted to your posts, and lets you react to the posts of others. </p>
-
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
-                    </a>
+                  <p><i>WeFreshed</i> lets you know how people reacted to your posts, and lets you react to the posts of others. </p>
+                  <br>
+                    <h4 style="color: #13BFD9" class="text-center"><i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> </h4>
                 </div>
 
 
                 <div class="col-sm-4 portfolio-item">
 
-                  <h2 class="text-center"> CONNECT </h2>
+                  <h2 style="color: #6ABD45" class="text-center"> CONNECT </h2>
                   <hr class="star-primary">
 
-                  <p>WeFreshed connects you with like-minded people based on your mutual reactions.</p>
-
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
-                    </a>
+                  <p><i>WeFreshed</i> connects you with like-minded people based on your mutual reactions.</p><br>
+                    <br>
+                  <h4 style="color: #6ABD45" class="text-center"><i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> <i style="text-align: center;" class="fa fa-star fa"></i> </h4>
                 </div>
 
-
-              
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+
+            <h2 class="text-center">The Characters</h2>
+             <br><br>
+             
+            <div class="row">
+                <div class="col-md-3">
+                    <p><i class="fa fa-arrow-circle-o-right"></i> Swipe or keypress in the <i style="color: #EC5825">right</i> direction if the post you just read has you feeling amused, happy or just puts a smile on your face.</p>
+        
+                    <%= image_tag("2.png", class: "img-responsive") %>
+
+                </div>
+                <div class="col-md-3">
+                    <p><i class="fa fa-arrow-circle-o-down"></i> Not every post will have you laughing. If you react feeling sympathetic just push it <i style="color: #19C0D9">down</i> and a new post will load straight away.</p>
+                    
+                    <%= image_tag("3.png", class: "img-responsive") %>
+                </div>
+                <div class="col-md-3">
+                    <p><i class="fa fa-arrow-circle-o-left"></i> Sometimes you will get angry or annoyed, that's just part of weacting. Just swipe in the <i style="color: #D14646">left</i> direction and take a deep breath. </p>
+                    <%= image_tag("4.png", class: "img-responsive") %>
+                </div>
+                <div class="col-md-3">
+                    <p><i class="fa fa-arrow-circle-o-up"></i> Meh. Blah. Huh? Those are completely normal reactions to have. Swipe <i style="color: #009344">up</i> when a post has you confused, ambivilent, or even a little disgusted. </p>
+                    <%= image_tag("1.png", class: "img-responsive") %>
+                </div>
+                
+            </div>
+        </div>
+    </section>
     <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
@@ -100,75 +105,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>WeFreshed is an anonymous, location-based social media app that allows users to react to text that other users post via swiping in the direction of one of four distinct emojis on their screen. Then, if two users connect based on their chosen emotional expectations, also known as a 'Weef', the users can peruse each other’s WeFreshed feeds and communicate with each other directly for 24 hours, at which point their Weef expires.</p>
+                <div class="col-md-12 ">
+                    <p><i>WeFreshed</i> is an anonymous, location-based social media app that allows users to react to text that other users post via swiping in the direction of one of four distinct emojis on their screen. Then, if two users connect based on their chosen emotional expectations, also known as a <i>Weef</i>, the users can peruse each other’s WeFreshed feeds and communicate with each other directly for 24 hours, at which point their Weef expires.</p>
+                    <br>
+                    <p><i>WeFreshed</i> will be way to make connections that are based on shared interests/opinions that are highly unique and personal, as opposed to generic or obvious shared interests/opinions. WeFreshed will allow users to speak freely without social status interfering with their posts.</p>
                 </div>
-                <div class="col-lg-4">
-                    <p>WeFreshed will be way to make connections that are based on shared interests/opinions that are highly unique and personal, as opposed to generic or obvious shared interests/opinions. WeFreshed will allow users to speak freely without social status interfering with their posts.</p>
-                </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Get Started
+                
+            </div>
+        </div>
+        <br><br>
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="/" class="btn-landing btn-lg btn-outline">
+                        <i class="fa fa-rocket"></i> Get Started
                     </a>
                 </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Contact Me</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="text-center">
@@ -176,32 +128,30 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                        
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/wefreshed/" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="https://www.periscope.tv/wefreshed" class="btn-social btn-outline"><i class="fa fa-fw fa-product-hunt"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                <a href="https://twitter.com/WeFreshed" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="https://www.pinterest.com/wefreshed" class="btn-social btn-outline"><i class="fa fa-fw fa-pinterest"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                                <a href="https://vine.co/u/1308640808538394624" class="btn-social btn-outline"><i class="fa fa-fw fa-vine"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>About WeFreshed</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                        
                     </div>
                 </div>
             </div>
