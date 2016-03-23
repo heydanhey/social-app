@@ -57,8 +57,18 @@
     </div>
 
 
-    <h3 style="text-align: center;"> Weaction Profile </h3>
-
+    <h2 style="text-align: center; color: #F26522;"> Weaction Profile </h2>
+    <h4 style="text-align: center;">Total number of weactions: <i style="color: #00AEEF"><%= @user.weactions.count %> </i>
+   | Weaction Status: <i style="color: #00AEEF">
+    <% if @user.weactions.count <= 10 %>
+      Begginner Status
+    <% elsif @user.weactions.count > 11 && @user.weactions.count <= 50 %>
+      Intermetiate Wefresher
+    <% else %>
+      Star Weactionary!
+    <% end %>
+    </i></h4>
+    <hr>
     <div id="chart-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     
     <hr>

@@ -51,7 +51,7 @@ class Weef < ActiveRecord::Base
   end
 
   def expiration
-    t = (created_at + 24.hours)
+    t = ((created_at - 7.hours) + 24.hours)
     Time.at(t).utc.strftime("%A, %B %e, %Y %l:%m %p ")
   end
 
