@@ -82,7 +82,7 @@ $(function () {
             text: 'Your weaction profile over time'
         },
         subtitle: {
-            text: '...'
+            text: ''
         },
         xAxis: {
             allowDecimals: false,
