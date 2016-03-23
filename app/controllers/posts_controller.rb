@@ -27,8 +27,8 @@ class PostsController < ApplicationController
     @post = Post.new({text: params[:text], user_id: current_user.id, emotion_id: params[:emotion_id], latitude: coordinates[0], longitude: coordinates[1]})
 
     if @post.save
-      flash[:success] = "Post Created, Start Weacting!!!!"
-      redirect_to "/posts/#{Post.get_post_by_location(current_user).id}"
+      flash[:success] = "Post Created!!!!"
+      redirect_to "/users/#{current_user.id}"
     else
       render :new
     end
