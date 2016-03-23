@@ -3,6 +3,8 @@ class Api::V1::PostsController < ApplicationController
   def index
     @posts = Post.where(user_id: current_user.id).reverse_order
 
+    @posts = @posts.select(:id, :user_id).select(:text, :emotion_id).distinct
+
     @stats = {}
     
     @posts.each do |post|
