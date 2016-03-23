@@ -56,13 +56,13 @@
               <% if  (weef.chats.where(served: false).where.not(user_id: [nil, current_user.id]).count) > 0 %>
 
                 <div class="col-md-4 wb">
-                  <%= link_to "Enter Weef Chat | #{weef.chats.where(served: false).where.not(user_id: [nil, current_user.id]).count} NEW!", "/chats/#{weef.id}", class: "btn-size btn btn-primary round" %>
+                  <%= link_to "Weef Chat | #{weef.chats.where(served: false).where.not(user_id: [nil, current_user.id]).count} NEW!", "/chats/#{weef.id}", class: "btn-size btn btn-primary round" %>
                 </div>
 
               <% else %>
 
                 <div class="col-md-4 wb">
-                  <%= link_to "enter weef chat", "/chats/#{weef.id}", class: "btn-size btn btn-default round" %>
+                  <%= link_to "Enter Weef Chat", "/chats/#{weef.id}", class: "btn-size btn btn-default round" %>
                 </div>
 
               <% end %>
