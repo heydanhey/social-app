@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'users#show', as: :authenticated_root
+      #Added code here to direct to Weact page directly after login.
+      root 'posts#show', id: Post.all.sample, as: :authenticated_root
     end
 
     unauthenticated do

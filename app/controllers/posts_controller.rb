@@ -28,7 +28,8 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:success] = "Post Created!!!!"
-      redirect_to "/users/#{current_user.id}"
+      #added this redirect to go to weact page directly after post creation
+      redirect_to "/posts/#{Post.get_post_by_location(current_user).id}"
     else
       render :new
     end
