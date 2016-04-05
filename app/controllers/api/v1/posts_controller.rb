@@ -72,7 +72,7 @@ class Api::V1::PostsController < ApplicationController
 
         # Because match is true...Begin Weef check
         # Grab all matched weactions from the author of the post
-        their_weactions = Weaction.where(user_id: @post.user_id).where(match: true)
+        their_weactions = Weaction.where(user_id: @post.user_id).where(match: true).where(active: true)
 
         # Bucket variable for current weef
         weef = Weef.new
@@ -90,7 +90,17 @@ class Api::V1::PostsController < ApplicationController
         # only save the most recent weef, hence, weef.save after the loop, this prevents multiple weefs being created with the same second-half weaction match  
         if weef.id != nil
           weef.save
+
+          # This sets the weactions to inactive after the weef-4.4.16
+          a = Weaction.find_by(id: weef.weaction_a_id)
+          a.active = false
+          a.save
+          b = Weaction.find_by(id: weef.weaction_b_id)
+          b.active = false
+          b.save
+
         end
+
         # End Weef check
 
         # Since a new weef was created, lets go ahead and activate the weef chat room [start clock]
