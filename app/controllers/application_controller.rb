@@ -11,11 +11,16 @@ class ApplicationController < ActionController::Base
 
         # This call isn't currently working on herku because of case sensitivy in postgrql to column names
         all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_a_id=weactions.id OR weefs.weaction_b_id=weactions.id WHERE weactions.user_id=#{current_user.id}")
-        
+
         # all_weefs = current_user.weefs.all
         weefs = []
         all_weefs.each do |weef|
-          unless weef.time_left <= 0
+          if weef.time_left <= 0
+            if weef.active == true
+              weef.active = false
+              weef.save
+            end
+          else
             weefs << weef
           end
         end

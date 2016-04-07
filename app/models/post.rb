@@ -15,10 +15,28 @@ class Post < ActiveRecord::Base
 
   def self.get_post_by_location(user)
     post = Post.near([user.latitude, user.longitude], user.location_radius).sample
-    # this while loop just prevents the current user being fed his own posts, thus you can not weef with yourself
+
+
+    all_weefs = Weef.joins("INNER JOIN weactions ON weefs.weaction_a_id=weactions.id OR weefs.weaction_b_id=weactions.id WHERE weactions.user_id=#{user.id}")
+
+
+    # collect all the users ids of people you may be currently weef'd with
+    weefers = []
+    all_weefs.each do |weef|
+      if weef.active == true
+        weefers << Weaction.find(weef.weaction_a_id).user_id
+        weefers << Weaction.find(weef.weaction_b_id).user_id
+      end
+    end
+
+
     if post != nil
-      while post.user_id == user.id
-        post = Post.get_post_by_location(user)
+      weefers.each do |weefer|
+    # this while loop just prevents the current user being fed his own posts, thus you can not weef with yourself
+    # also a check to being fed a post from someone you already weef'd with
+        while (post.user_id == user.id) || (post.user_id == weefer)
+          post = Post.get_post_by_location(user)
+        end
       end
     else
       post = Post.sample
