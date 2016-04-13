@@ -38,6 +38,21 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user.id)
+    unless session[:update_user]
+      coordinates = Geocoder.coordinates(request.remote_ip)
+      # if Geocoder fails, assigns these fake coords
+      if coordinates == nil
+        coordinates = [41.9474, -87.7037]
+      end    
+      @user.latitude = coordinates[0]
+      @user.longitude = coordinates[1]
+      session[:update_user] = true
+      @user.save
+    end
+
+
+
     @post = Post.find(params[:id])
     gon.post = @post
 

@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   def index
     # This action will be the User Post Arcive, where a user can see a list of all his posts
     @user = User.find(current_user.id)
-    @image = "https://api.adorable.io/avatars/285/#{@user.name}.png"
 
     gon.area_chart = [0,0,0,0]
     gon.profile_stats = [0]
@@ -23,23 +22,21 @@ class UsersController < ApplicationController
     # Once per Session
     # Assign location coordinates
     # Reassign user name for current session
-    unless session[:update_user]
-      @user.name = Bazaar.object.titleize
-      # coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
-      coordinates = Geocoder.coordinates(request.remote_ip)
-      # if Geocoder fails, assigns these fake coords
-      if coordinates == nil
-        coordinates = [41.9474, -87.7037]
-      end
+    # unless session[:update_user]
+    #   @user.name = Bazaar.object.titleize
+    #   # coordinates = Geocoder.coordinates(Faker::Internet.ip_v4_address)
+    #   coordinates = Geocoder.coordinates(request.remote_ip)
+    #   # if Geocoder fails, assigns these fake coords
+    #   if coordinates == nil
+    #     coordinates = [41.9474, -87.7037]
+    #   end
       
-      @user.latitude = coordinates[0]
-      @user.longitude = coordinates[1]
-      session[:update_user] = true
-      @user.save
-    end
-    # @image = Faker::Avatar.image(@user.name, "200x200")
-    @image = "https://api.adorable.io/avatars/285/#{@user.name}.png"
-
+    #   @user.latitude = coordinates[0]
+    #   @user.longitude = coordinates[1]
+    #   session[:update_user] = true
+    #   @user.save
+    #end
+    
     total_num_weactions = @user.weactions.count
 
     @profile_stats = []
