@@ -30,18 +30,8 @@
 
         };
 
-    //   $scope.color =(box, weef){
-    //   if (weef.emotion_id == "1") {
-    //     box.className = "green";
-    //   } else if (weef.emotion_id == "2") {
-    //     box.className = "purple";
-    //   } else if (weef.emotion_id == "3") {
-    //     box.className = "blue";
-    //   } else if (weef.emotion_id == "4") {
-    //     box.className = "red";
-    //   }
       $scope.descending = false;
-    // }
+
       $scope.sortBy = function(sortAttribute) {
         if (sortAttribute != $scope.sortByAttribute) {
           $scope.descending = false;
