@@ -1,4 +1,4 @@
-== README
+# README
 
 WeFreshed is an anonymous, location-based social media app that allows users to react to text that other users post via swiping in the direction of one of four distinct emojis on their screen. Then, if two users connect based on their chosen emotional expectations, also known as a Weef, the users can peruse each other’s WeFreshed feeds and communicate with each other directly for 24 hours, at which point their Weef expires.
 
