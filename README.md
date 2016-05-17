@@ -9,6 +9,6 @@ View the [Screencast](https://vimeo.com/165598562/e89e22f197).
 Application details:
 * Ruby version: 2.2.2 
 * Rails version: 4.2.3 
-* This is a MySQL db fin development and a Postgres database in production
-* AngularJS and JQueryis used on the front end
+* Cureently uses a MySQL database in development and a Postgres database in production
+* AngularJS and JQuery used on the front end
 
